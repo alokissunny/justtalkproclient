@@ -10,11 +10,11 @@ const routes: Routes = [{
   children: [{
     path: 'dashboard',
     component: DashboardComponent,
-  }, 
+  },
   {
     path: 'advisor',
     loadChildren: './advisors/advisor.module#AdvisorModule',
-  },{
+  }, {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {
