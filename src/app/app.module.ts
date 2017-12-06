@@ -10,17 +10,20 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { CoreModule } from './@core/core.module';
 
+import { customHttpProvider } from './_helpers/index';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
+import { NbThemeService } from '@nebular/theme';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
-//import { RegisterComponent } from './register/index';
+import { RegisterComponent } from './register/index';
+import { AdvisorCardComponent } from './components/advisor-card/advisor-card.component';
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent],
+  declarations: [AppComponent, LoginComponent, AdvisorCardComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -32,7 +35,7 @@ import { LoginComponent } from './login/index';
     CoreModule.forRoot(),
   ],
   bootstrap: [AppComponent],
-  providers: [AlertService, AuthenticationService, UserService,
+  providers: [AlertService, AuthenticationService, UserService,customHttpProvider,
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
-import { UserService } from '../../../@core/data/users.service';
+import { UserService } from '../../../_services/user.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   user: any;
 
-  userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
+  userMenu = [{ title: 'Login' }];
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
@@ -25,8 +25,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUsers()
-      .subscribe((users: any) => this.user = users.rupsu);
+    // this.userService.getUsers()
+    //   .subscribe((users: any) => this.user = users.rupsu);
+    this.user = this.userService.getCurrentUser();
   }
 
   toggleSidebar(): boolean {
@@ -45,5 +46,15 @@ export class HeaderComponent implements OnInit {
 
   startSearch() {
     this.analyticsService.trackEvent('startSearch');
+  }
+  getmenu() {
+    if(this.userService.isSessionActive())
+    {
+      this.userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
+    }
+    else {
+      this.userMenu = [{ title: 'Login' }];
+    }
+    return this.userMenu;
   }
 }

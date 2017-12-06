@@ -26,4 +26,11 @@ export class UserService {
     delete(_id: string) {
         return this.http.delete('/users/' + _id);
     }
+    getCurrentUser() {
+        var user = JSON.parse(localStorage.getItem('currentUser'));
+        return user? user :{username :  "Hi Guest !"};
+    }
+    isSessionActive() {
+        return localStorage.getItem('currentUser') ? true : false;
+    }
 }
