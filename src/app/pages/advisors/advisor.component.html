@@ -1,1 +1,20 @@
-<div>Hello advisors</div>
+<div>
+  <table>
+    <tr *ngFor = "let advisor of advisors">
+      <td>
+        <app-advisor-card></app-advisor-card>
+      </td>
+      <td>
+        <app-advisor-card></app-advisor-card>
+      </td>
+    </tr>
+    <!--<tr>
+      <td>
+        <app-advisor-card></app-advisor-card>
+      </td>
+      <td>
+        <app-advisor-card></app-advisor-card>
+      </td>
+    </tr>-->
+  </table>
+</div>

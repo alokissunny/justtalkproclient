@@ -20,10 +20,10 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
-import { AdvisorCardComponent } from './components/advisor-card/advisor-card.component';
+
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, AdvisorCardComponent],
+  declarations: [AppComponent, LoginComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
