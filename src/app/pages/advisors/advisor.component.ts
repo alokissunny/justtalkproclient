@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AdvisorService} from './advisor.service'
+import {AdvisorService} from './advisor.service';
 
 @Component({
   selector: 'advisors',
@@ -14,9 +14,10 @@ constructor( private advisorService: AdvisorService) {
 
 }
   ngOnInit() {
-   this.advisorService.getAdvisor(null).subscribe((advisors) => {
+   this.advisorService.getAdvisor(null).subscribe((advisors: any) => {
+     this.advisors = advisors;
      console.log(advisors);
-   })
+   });
 
   }
 }

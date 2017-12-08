@@ -8,8 +8,8 @@ import { ReplaySubject } from 'rxjs';
 export class AdvisorService {
 
   constructor() { }
-  getAdvisor(cat : String) {
-      var ret = new ReplaySubject(1);
+  getAdvisor(cat: String) {
+      const ret = new ReplaySubject(1);
       setTimeout( () => {
           ret.next(advisors);
       });

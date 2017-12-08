@@ -1,12 +1,11 @@
 export class Advisor {
-    userName : String;
-    firstName : String;
-    lastName : String;
-    category : String;
-    image : any;
+    userName: String;
+    firstName: String;
+    lastName: String;
+    category: String;
+    image: any;
     basicInfo: String;
-    phoneAvailablity : boolean;
+    phoneAvailablity: boolean;
     phone: Number;
-    rating : Number;
-    comments : Array<String>;
-}
+    rating: Number;
+    comments: Array<String>; }

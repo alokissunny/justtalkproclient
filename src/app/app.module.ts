@@ -20,10 +20,12 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
+import {PostQueryComponent} from './components/post-query/post-query.component';
+
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, PostQueryComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -35,7 +37,10 @@ import { RegisterComponent } from './register/index';
     CoreModule.forRoot(),
   ],
   bootstrap: [AppComponent],
-  providers: [AlertService, AuthenticationService, UserService,customHttpProvider,
+   entryComponents: [
+    PostQueryComponent,
+  ],
+  providers: [AlertService, AuthenticationService, UserService, customHttpProvider,
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })
