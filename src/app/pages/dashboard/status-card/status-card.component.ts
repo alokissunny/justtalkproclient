@@ -26,6 +26,6 @@ export class StatusCardComponent {
   @Input() type: string;
   @Input() on = true;
   clicked(event) {
-   this.router.navigateByUrl('/pages/advisor');
+   this.router.navigateByUrl('/pages/advisor/'+this.type);
     }
 }

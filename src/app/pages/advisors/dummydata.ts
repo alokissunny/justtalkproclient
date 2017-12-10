@@ -1,5 +1,5 @@
 export const  advisors = [{
-     userName : "alok",
+     username : "alok",
     firstName : "alok",
     lastName : "String",
     category : "String",
@@ -11,7 +11,7 @@ export const  advisors = [{
     comments : ["sjdkgdgf","sdkjfgdsg"]
 },
 {
-     userName : "alok",
+     username : "alok",
     firstName : "alok",
     lastName : "String",
     category : "String",
@@ -23,7 +23,7 @@ export const  advisors = [{
     comments : ["sjdkgdgf","sdkjfgdsg"]
 },
 {
-     userName : "alok",
+     username : "alok",
     firstName : "alok",
     lastName : "String",
     category : "String",
@@ -35,7 +35,7 @@ export const  advisors = [{
     comments : ["sjdkgdgf","sdkjfgdsg"]
 },
 {
-     userName : "alok",
+     username : "alok",
     firstName : "alok",
     lastName : "String",
     category : "String",

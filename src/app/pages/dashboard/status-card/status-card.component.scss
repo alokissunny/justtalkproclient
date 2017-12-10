@@ -31,19 +31,19 @@
       -webkit-backface-visibility: hidden;
       color: nb-theme(color-white);
 
-      &.primary {
+      &.car {
         @include btn-hero-primary-gradient();
         @include btn-hero-primary-bevel-glow-shadow();
       }
-      &.success {
+      &.fin {
         @include btn-hero-success-gradient();
         @include btn-hero-success-bevel-glow-shadow();
       }
-      &.info {
+      &.prop {
         @include btn-hero-info-gradient();
         @include btn-hero-info-bevel-glow-shadow();
       }
-      &.warning {
+      &.rel {
         @include btn-hero-warning-gradient();
         @include btn-hero-warning-bevel-glow-shadow();
       }
@@ -53,16 +53,16 @@
       background: lighten(nb-theme(card-bg), 5%);
 
       .icon {
-        &.primary {
+        &.car {
           background-image: btn-hero-primary-light-gradient();
         }
-        &.success {
+        &.fin {
           background-image: btn-hero-success-light-gradient();
         }
-        &.info {
+        &.prop {
           background-image: btn-hero-info-light-gradient();
         }
-        &.warning {
+        &.rel {
           background-image: btn-hero-warning-light-gradient();
         }
       }

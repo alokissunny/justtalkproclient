@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PostQueryComponent } from '../post-query/post-query.component';
+import {Advisor} from '../../_models/advisormodel';
 
 
 @Component({
@@ -11,7 +13,21 @@ import { PostQueryComponent } from '../post-query/post-query.component';
 export class AdvisorCardComponent implements OnInit {
 
   about: String = 'asdkjgdgfd';
-  constructor(private modalService: NgbModal) { }
+  _advisor: Advisor;
+  starRate = 2;
+  @Input()
+  set advisor(value: Advisor) {
+    this._advisor = value;
+    this.ref.markForCheck();
+
+  }
+  get advisor() :Advisor {
+    return this._advisor;
+
+  }
+  constructor(private modalService: NgbModal,private ref: ChangeDetectorRef) {
+    
+   }
 
   ngOnInit() {
   }

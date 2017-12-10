@@ -12,7 +12,7 @@ const routes: Routes = [{
     component: DashboardComponent,
   },
   {
-    path: 'advisor',
+    path: 'advisor/:cat',
     loadChildren: './advisors/advisor.module#AdvisorModule',
   }, {
     path: 'ui-features',

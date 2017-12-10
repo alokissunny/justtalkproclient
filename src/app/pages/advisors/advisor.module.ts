@@ -4,11 +4,12 @@ import {AdvisorRoutingModule} from './advisor-routing.module'
 import { AdvisorCardComponent } from '../../components/advisor-card/advisor-card.component'
 import {AdvisorService} from './advisor.service';
 import { CommonModule } from '@angular/common';
+import { ThemeModule } from '../../@theme/theme.module';
 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
-   AdvisorRoutingModule, CommonModule,
+   AdvisorRoutingModule, CommonModule,ThemeModule
   ],
   declarations: [
       AdvisorComponent, AdvisorCardComponent,

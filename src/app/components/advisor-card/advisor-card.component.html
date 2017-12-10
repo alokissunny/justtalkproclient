@@ -1,12 +1,19 @@
-<div style=" display: flex">
+<div style=" display: flex" *ngIf="advisor?.userName">
 <div>
     <img src="assets/images/eva.png" height="30px" width="30px"/>
 </div>
 <div >
     <div>
-        <span>{{name}} </span>
-    <span>" {{about}} "</span>
-    <div>rating</div>
+        <span>"{{advisor?.userName}}" </span>
+    <span>" {{advisor?.basicInfo}} "</span>
+   <ngb-rating [(rate)]="starRate" max=5>
+            <ng-template let-fill="fill">
+              <span class="star fill" [class.filled]="fill === 100">
+                <i class="ion-android-star" *ngIf="fill === 100"></i>
+                <i class="ion-android-star-outline" *ngIf="fill !== 100"></i>
+              </span>
+            </ng-template>
+              </ngb-rating>
     <button (click)="openQuery()"> Post query</button>
     </div>
 </div>
