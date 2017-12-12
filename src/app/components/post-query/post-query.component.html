@@ -2,14 +2,13 @@
       <nb-card-header>post your query</nb-card-header>
       <nb-card-body>
         <form>
-         
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Subject">
+            <input type="text" class="form-control" placeholder="Subject" name="subject" [(ngModel)]="subject">
           </div>
           <div class="form-group">
-            <textarea class="form-control" placeholder="Message"></textarea>
+            <textarea class="form-control" placeholder="Message" name="message" [(ngModel)]="message"></textarea>
           </div>
-          <button type="submit" class="btn btn-success">Send</button>
+          <button type="submit" class="btn btn-success" (click)="sendQuery()">Send</button>
         </form>
       </nb-card-body>
     </nb-card>

@@ -3,6 +3,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PostQueryComponent } from '../post-query/post-query.component';
 import {Advisor} from '../../_models/advisormodel';
+import {QueryService} from '../post-query/post-query.service';
 
 
 @Component({
@@ -25,14 +26,13 @@ export class AdvisorCardComponent implements OnInit {
     return this._advisor;
 
   }
-  constructor(private modalService: NgbModal,private ref: ChangeDetectorRef) {
-    
+  constructor(private modalService: NgbModal,private ref: ChangeDetectorRef,private query:QueryService ) {
    }
 
   ngOnInit() {
   }
   openQuery() {
-    console.log("hello");
+    this.query.advisor = this._advisor.userName;
     const activeModal = this.modalService.open(PostQueryComponent, { size: 'lg', container: 'nb-layout' });
 
     activeModal.componentInstance.modalHeader = 'Large Modal';

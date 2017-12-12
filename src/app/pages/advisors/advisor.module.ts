@@ -5,16 +5,17 @@ import { AdvisorCardComponent } from '../../components/advisor-card/advisor-card
 import {AdvisorService} from './advisor.service';
 import { CommonModule } from '@angular/common';
 import { ThemeModule } from '../../@theme/theme.module';
+import {QueryService} from '../../components/post-query/post-query.service';
 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
-   AdvisorRoutingModule, CommonModule,ThemeModule
+   AdvisorRoutingModule, CommonModule, ThemeModule,
   ],
   declarations: [
       AdvisorComponent, AdvisorCardComponent,
   ],
-  providers : [AdvisorService  ],
+  providers : [AdvisorService ,QueryService ],
 })
 export class AdvisorModule {
 }
