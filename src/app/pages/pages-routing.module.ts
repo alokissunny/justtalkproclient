@@ -14,6 +14,10 @@ const routes: Routes = [{
   {
     path: 'advisor/:cat',
     loadChildren: './advisors/advisor.module#AdvisorModule',
+  },
+  {
+    path: 'messages',
+    loadChildren: './messages/message.module#MessageModule',
   }, {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
@@ -36,7 +40,7 @@ const routes: Routes = [{
     path: 'tables',
     loadChildren: './tables/tables.module#TablesModule',
   }
-  , 
+  ,
   {
     path: '',
     redirectTo: 'dashboard',
