@@ -1,5 +1,8 @@
 <div>
+  <ul>
   <div *ngFor="let message of messages">
-      {{message.subject}}
+     <app-message-row [dataModel] = "message">
+     </app-message-row>
   </div>
+  </ul>
 </div>

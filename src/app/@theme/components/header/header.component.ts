@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { UserService } from '../../../_services/user.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
+import { Router }   from '@angular/router';
 
 @Component({
   selector: 'ngx-header',
@@ -21,7 +22,8 @@ export class HeaderComponent implements OnInit {
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private userService: UserService,
-              private analyticsService: AnalyticsService) {
+              private analyticsService: AnalyticsService,
+              private router : Router) {
   }
 
   ngOnInit() {
@@ -56,5 +58,8 @@ export class HeaderComponent implements OnInit {
       this.userMenu = [{ title: 'Login' }];
     }
     return this.userMenu;
+  }
+  navigateToMessage() {
+    this.router.navigateByUrl('/pages/messages');
   }
 }

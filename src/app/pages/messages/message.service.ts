@@ -4,18 +4,19 @@ import { Advisor } from '../../_models/advisormodel'
 import { ReplaySubject } from 'rxjs';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { data } from './dummydata'
+import {UserService} from '../../_services/user.service';
 
 @Injectable()
 export class MessageService {
 
-    constructor(private http: Http) { }
+    currentUser : String;
+    constructor(private http: Http, private userService : UserService) { }
 
     getAllMessages() {
-          const ret = new ReplaySubject(1);
-      setTimeout( () => {
-          ret.next(data);
-      });
-      return ret;
+
+            this.currentUser = this.userService.getCurrentUser().username;
+        return this.http.get('/ask/requestor/'+this.currentUser).map((response: Response) => response.json());
+
     }
 
 }

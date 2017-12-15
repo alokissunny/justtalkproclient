@@ -24,6 +24,7 @@ import {PostQueryComponent} from './components/post-query/post-query.component';
 
 
 
+
 @NgModule({
   declarations: [AppComponent, LoginComponent, PostQueryComponent],
   imports: [
