@@ -21,6 +21,7 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import {PostQueryComponent} from './components/post-query/post-query.component';
+import { CommentModule } from 'ng2-comment'; 
 
 
 
@@ -32,7 +33,7 @@ import {PostQueryComponent} from './components/post-query/post-query.component';
     BrowserAnimationsModule,
     HttpModule,
     AppRoutingModule,
-
+CommentModule,
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),

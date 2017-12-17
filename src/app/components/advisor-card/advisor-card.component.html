@@ -1,20 +1,39 @@
 <div style=" display: flex" *ngIf="advisor?.userName">
-<div>
-    <img src="assets/images/eva.png" height="100px" width="100px"/>
-</div>
-<div >
-    <div>
-        <span>"{{advisor?.userName}}" </span>
-    <span>" {{advisor?.basicInfo}} "</span>
-   <ngb-rating [(rate)]="starRate" max=5>
-            <ng-template let-fill="fill">
-              <span class="star fill" [class.filled]="fill === 100">
-                <i class="ion-android-star" *ngIf="fill === 100"></i>
-                <i class="ion-android-star-outline" *ngIf="fill !== 100"></i>
-              </span>
-            </ng-template>
-              </ngb-rating>
-    <button (click)="openQuery()"> Post query</button>
+    <div class="items">
+        <img src="assets/images/eva.png" height="100px" width="100px" />
+        <button (click)="openQuery()" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
+    left: 0;
+    bottom: 0; cursor:pointer;background-color: cadetblue;
+    display: inherit;height: 45px;font-size: x-small;
+    height: 40px;
+    padding: 15px;
+    font-family: inherit;
+    margin: 10px;"> Post query</button>
     </div>
-</div>
+    <div class="items" style="min-width: 300px ;   ">
+        <div style=" color: cadetblue;
+    font-size: large;">
+            <span>{{advisor?.firstName}} </span>
+            <span>{{advisor?.lastName}} </span>
+        </div>
+        <span style="display: inherit">{{advisor?.basicInfo}}</span>
+        <span class="txt" style="display: inherit ; cursor:pointer;">{{advisor?.location}}</span>
+    </div>
+    <div class="items" style="width : 600px">
+        <div style="float : right">
+          <span class="txt" style="display: inherit ;  cursor:pointer;">feedbacks</span>
+             <img src="assets/images/like.png"  style="margin-top: 10px;
+    height: 30px;
+    width: 70px;" />
+             <button  class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
+    right: 0;
+    bottom: 0; cursor:pointer; background-color: cadetblue;
+    display: inherit;height: 45px;font-size: x-small;
+    height: 40px;
+    padding: 15px;
+    font-family: inherit;
+    margin: 10px;"> Book Appointment</button>
+            
+        </div>
+    </div>
 </div>

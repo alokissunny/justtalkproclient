@@ -1,15 +1,23 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {  OnInit, Input } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PostQueryComponent } from '../post-query/post-query.component';
 import {Advisor} from '../../_models/advisormodel';
 import {QueryService} from '../post-query/post-query.service';
+import { Component, OpaqueToken, Inject } from '@angular/core';
 
+const APP_CONFIG_DATA = {
+	server_ip_addr: "http://localhost:4000"
+}
 
+const APP_CONFIG_TOKEN = new OpaqueToken('config');
 @Component({
   selector: 'app-advisor-card',
   templateUrl: './advisor-card.component.html',
-  styleUrls: ['./advisor-card.component.scss']
+  styleUrls: ['./advisor-card.component.scss'],
+  providers: [
+		{ provide: APP_CONFIG_TOKEN, useValue: APP_CONFIG_DATA }
+	]
 })
 export class AdvisorCardComponent implements OnInit {
 
@@ -26,7 +34,8 @@ export class AdvisorCardComponent implements OnInit {
     return this._advisor;
 
   }
-  constructor(private modalService: NgbModal,private ref: ChangeDetectorRef,private query:QueryService ) {
+  
+  constructor(private modalService: NgbModal,private ref: ChangeDetectorRef,private query:QueryService, @Inject(APP_CONFIG_TOKEN) public config: OpaqueToken ) {
    }
 
   ngOnInit() {
