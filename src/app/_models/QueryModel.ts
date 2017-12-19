@@ -6,5 +6,7 @@ export class QueryModel {
     requestor : String;
     advisor : String ;
     requestOn : Number;
-    reply : QueryReplyModel
+    reply : QueryReplyModel;
+    unread : true;
+    _id: String;
 }

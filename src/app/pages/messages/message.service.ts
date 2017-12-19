@@ -18,5 +18,8 @@ export class MessageService {
         return this.http.get('/ask/requestor/'+this.currentUser).map((response: Response) => response.json());
 
     }
+    deleteMessage(id) {
+          return this.http.post('/ask/delete/'+id,{});
+    }
 
 }

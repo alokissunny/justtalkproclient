@@ -3,6 +3,7 @@ import { MessageService } from './message.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 import {QueryModel}  from '../../_models/QueryModel';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'messages',
@@ -22,9 +23,12 @@ export class MessageComponent implements OnInit {
       this.cd.markForCheck();
     });
   }
-//   prepareData(message : any) {
-//  let ret : QueryModel = new QueryModel();
-//  ret.subject = message;
+  removeMessage(evt) {
+    let id = evt.id;
+    _.remove(this.messages, function(item) {
+      return id === item._id;
+    })
+  }
 
-//   }
+
 }

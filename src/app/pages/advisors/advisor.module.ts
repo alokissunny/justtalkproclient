@@ -10,7 +10,7 @@ import { CommentModule } from 'ng2-comment';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
-   AdvisorRoutingModule, CommonModule, ThemeModule,CommentModule
+   AdvisorRoutingModule, CommonModule, ThemeModule,//CommentModule
   ],
   declarations: [
       AdvisorComponent, AdvisorCardComponent,

@@ -25,6 +25,7 @@ this.qm.message = this.message;
 this.qm.requestOn = new Date().getTime();
 this.qm.advisor = this.query.advisor;
 this.qm.requestor = this.userService.getCurrentUser()["username"];
+this.qm.unread = true;
 this.query.postQuery(this.qm).subscribe(() => {
 alert("Query submitted succefully");
 this.activeModal.close();

@@ -33,7 +33,7 @@ import { CommentModule } from 'ng2-comment';
     BrowserAnimationsModule,
     HttpModule,
     AppRoutingModule,
-CommentModule,
+// CommentModule,
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),

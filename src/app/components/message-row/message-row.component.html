@@ -1,6 +1,6 @@
-<div>
-  <span id="subject" > {{subject}} </span>
-   <span id="message" > {{message}} </span>
+<div [ngClass]="messageClass">
+  <span id="subject" > {{advisor}} </span>
+   <span id="message" > {{subject}} </span>
   <span id="time" > {{time}}</span>
-  <i class="ion-trash-a"></i>
+  <i class="ion-trash-a" style="float: right" (click)="deleteMessage()"></i>
 </div>
