@@ -18,6 +18,7 @@ export class MessageRowComponent implements OnInit {
   _dataModel : QueryModel;
   unread : Boolean;
   messageClass : String = "nonread";
+  showDetail: Boolean;
     @Input()
     set dataModel (value : QueryModel) {
       this._dataModel = value;
@@ -46,7 +47,8 @@ export class MessageRowComponent implements OnInit {
     this.messageService.readMessage(this.id).subscribe(() => {
       this.unread = false;
       this.messageClass ="read";
-    })
+    });
+    this.showDetail = true;
   }
   deleteMessage() {
     this.messageService.deleteMessage(this.id).subscribe(() => {

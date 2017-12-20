@@ -1,3 +1,10 @@
-<p>
-  message-detail works!
-</p>
+<ul>
+<div *ngFor = "let reply of replies">
+<div>
+  {{reply.message}}
+</div>
+</div>
+</ul>
+<div>
+  {{model.message}}
+</div>
