@@ -14,9 +14,9 @@ export class MessageRowComponent implements OnInit {
   advisor : String;
   subject : String;
   message : String;
-  time : Date;
+  time : String;
   _dataModel : QueryModel;
-  unread : true;
+  unread : Boolean;
   messageClass : String = "nonread";
     @Input()
     set dataModel (value : QueryModel) {
@@ -24,7 +24,7 @@ export class MessageRowComponent implements OnInit {
       this.subject = this._dataModel.subject;
       this.message = this._dataModel.message;
       this.advisor = this._dataModel.advisor;
-      this.time = new Date(this._dataModel.requestOn as any);
+      this.time = new Date(this._dataModel.requestOn as any).toDateString();
       this.unread = this._dataModel.unread;
       this.id = this._dataModel._id;
       if(this.unread)
@@ -41,6 +41,12 @@ export class MessageRowComponent implements OnInit {
   constructor(private messageService : MessageService) { }
 
   ngOnInit() {
+  }
+  onMessageClick() {
+    this.messageService.readMessage(this.id).subscribe(() => {
+      this.unread = false;
+      this.messageClass ="read";
+    })
   }
   deleteMessage() {
     this.messageService.deleteMessage(this.id).subscribe(() => {

@@ -21,7 +21,8 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import {PostQueryComponent} from './components/post-query/post-query.component';
-import { CommentModule } from 'ng2-comment'; 
+import { CommentModule } from 'ng2-comment';
+
 
 
 

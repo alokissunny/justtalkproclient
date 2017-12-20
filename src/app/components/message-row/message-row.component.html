@@ -1,6 +1,19 @@
-<div [ngClass]="messageClass">
-  <span id="subject" > {{advisor}} </span>
-   <span id="message" > {{subject}} </span>
-  <span id="time" > {{time}}</span>
+<div [ngClass]="messageClass" (click)="onMessageClick()">
+  <div style="display: inline-block;
+    min-width: 200px;
+    max-width: 200px;"> <span id="from" > {{advisor}} </span></div>
+  <div style="display: inline-block;
+    min-width: 600px;
+    max-width: 600px;">
+    <span id="subject"> {{subject}} </span>
+  </div>
+  <div style="display: inline-block;
+   position: absolute;
+    right: 100px">
+    <span id="time"> {{time}}</span>
+  </div>
   <i class="ion-trash-a" style="float: right" (click)="deleteMessage()"></i>
+</div>
+<div *ngIf="showDetail">
+  <app-message-detail [model] = "_dataModel"></app-message-detail>
 </div>

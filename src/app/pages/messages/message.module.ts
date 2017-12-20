@@ -7,12 +7,15 @@ import { ThemeModule } from '../../@theme/theme.module';
 import {QueryService} from '../../components/post-query/post-query.service';
 import {MessageRowComponent} from '../../components/message-row/message-row.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MessageDetailComponent } from '../../components/message-detail/message-detail.component'; 
+
+
 @NgModule({
   imports: [
    MessageRoutingModule, CommonModule, ThemeModule,
   ],
   declarations: [
-      MessageComponent, MessageRowComponent
+      MessageComponent, MessageRowComponent, MessageDetailComponent
   ],
   providers : [MessageService ,QueryService ],
 })

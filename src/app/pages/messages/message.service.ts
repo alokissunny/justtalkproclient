@@ -21,5 +21,8 @@ export class MessageService {
     deleteMessage(id) {
           return this.http.post('/ask/delete/'+id,{});
     }
+    readMessage(id) {
+        return this.http.post('/ask/read/'+id,{});
+    }
 
 }
