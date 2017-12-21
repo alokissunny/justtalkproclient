@@ -22,13 +22,15 @@ import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import {PostQueryComponent} from './components/post-query/post-query.component';
 import { CommentModule } from 'ng2-comment';
+import {SendReplyComponent} from './components/send-reply/send-reply.component';
+
 
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PostQueryComponent],
+  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -41,7 +43,7 @@ import { CommentModule } from 'ng2-comment';
   ],
   bootstrap: [AppComponent],
    entryComponents: [
-    PostQueryComponent,
+    PostQueryComponent,SendReplyComponent
   ],
   providers: [AlertService, AuthenticationService, UserService, customHttpProvider,
     { provide: APP_BASE_HREF, useValue: '/' },

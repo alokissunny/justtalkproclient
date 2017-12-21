@@ -1,10 +1,15 @@
-<ul>
-<div *ngFor = "let reply of replies">
+<ul style="background-color: gainsboro ; ">
+<div *ngFor = "let reply of replies" class="reply">
+  <div>
+  {{reply.repliedBy}} <span> wrote </span>
+</div>
 <div>
   {{reply.message}}
 </div>
+<div>Time : {{getTime(reply)}}</div>
 </div>
 </ul>
-<div>
+<div class="reply">
   {{model.message}}
+  <button style="float: right" (click)="openReplyPopup()">Reply</button>
 </div>

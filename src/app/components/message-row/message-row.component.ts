@@ -48,7 +48,7 @@ export class MessageRowComponent implements OnInit {
       this.unread = false;
       this.messageClass ="read";
     });
-    this.showDetail = true;
+    this.showDetail = !this.showDetail
   }
   deleteMessage() {
     this.messageService.deleteMessage(this.id).subscribe(() => {
