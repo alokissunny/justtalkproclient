@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MessageService} from '../../pages/messages/message.service';
 
 @Component({
   selector: 'app-send-reply',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SendReplyComponent implements OnInit {
 
-  constructor() { }
+    constructor(private messageService : MessageService) { }
 
   ngOnInit() {
   }
