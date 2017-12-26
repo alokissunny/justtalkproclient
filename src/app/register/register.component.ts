@@ -1,16 +1,20 @@
 ﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import {CATEGORIES} from '../constants';
+import {CODE} from '../constants';
 import { AlertService, UserService } from '../_services/index';
 
 @Component({
     moduleId: module.id,
+     styleUrls: ['register.component.scss'],
     templateUrl: 'register.component.html'
 })
 
 export class RegisterComponent {
+    advisorCategories = CATEGORIES;
     model: any = {};
     loading = false;
+    code = CODE;
 
     constructor(
         private router: Router,
@@ -19,7 +23,7 @@ export class RegisterComponent {
 
     register() {
         this.loading = true;
-        this.userService.create(this.model)
+        this.userService.createAdvisor(this.model)
             .subscribe(
                 data => {
                     this.alertService.success('Registration successful', true);

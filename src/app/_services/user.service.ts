@@ -2,6 +2,7 @@
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { User } from '../_models/index';
+import {Advisor} from '../_models/advisormodel';
 
 @Injectable()
 export class UserService {
@@ -18,7 +19,9 @@ export class UserService {
     create(user: User) {
         return this.http.post('/users/register', user);
     }
-
+    createAdvisor(advisor : Advisor) {
+        return this.http.post('/advisors/register',advisor);
+    }
     update(user: User) {
         return this.http.put('/users/' + user._id, user);
     }

@@ -8,4 +8,6 @@ export class Advisor {
     phoneAvailablity: boolean;
     phone: Number;
     rating: Number;
+    email : String;
+    location: String;
     comments: Array<String>; }
