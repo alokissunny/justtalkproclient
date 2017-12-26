@@ -57,4 +57,5 @@ export class MessageRowComponent implements OnInit {
     });
   }
 
+
 }

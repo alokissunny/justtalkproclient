@@ -137,22 +137,22 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Auth',
     icon: 'nb-locked',
     children: [
+      // {
+      //   title: 'Register',
+      //   link: '/register',
+      // },
       {
-        title: 'Login',
-        link: '/login',
+        title: 'Register As Advisor',
+        link: '/register',
       },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-      {
-        title: 'Request Password',
-        link: '/auth/request-password',
-      },
-      {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
-      },
+      // {
+      //   title: 'Request Password',
+      //   link: '/auth/request-password',
+      // },
+      // {
+      //   title: 'Reset Password',
+      //   link: '/auth/reset-password',
+      // },
     ],
   },
 ];

@@ -8,13 +8,18 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
-import {LoginComponent} from './login/index'
+import {LoginComponent} from './login/index';
+import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
   { path: 'login',
     component : LoginComponent  
   },
+   {
+        path: 'register',
+        component: RegisterComponent,
+      },
   // {
   //   path: 'auth',
   //   component: NbAuthComponent,
@@ -27,10 +32,10 @@ const routes: Routes = [
   //       path: 'login',
   //       component: NbLoginComponent,
   //     },
-  //     {
-  //       path: 'register',
-  //       component: NbRegisterComponent,
-  //     },
+      {
+        path: 'register',
+        component: NbRegisterComponent,
+      },
   //     {
   //       path: 'logout',
   //       component: NbLogoutComponent,

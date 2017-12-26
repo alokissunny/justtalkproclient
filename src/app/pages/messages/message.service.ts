@@ -5,11 +5,14 @@ import { ReplaySubject } from 'rxjs';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { data } from './dummydata'
 import {UserService} from '../../_services/user.service';
-
+import {Subject} from 'rxjs/Subject';
 @Injectable()
 export class MessageService {
 
+    refreshChannel = new Subject();
     currentUser : String;
+    //hack
+    queryID:String;
     constructor(private http: Http, private userService : UserService) { }
 
     getAllMessages() {
@@ -23,6 +26,9 @@ export class MessageService {
     }
     readMessage(id) {
         return this.http.post('/ask/read/'+id,{});
+    }
+    sendReply(id, data) {
+        return this.http.post('/ask/sendreply/'+id, data);
     }
 
 }

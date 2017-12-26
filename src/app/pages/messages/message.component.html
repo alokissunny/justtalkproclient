@@ -1,7 +1,7 @@
 <div>
   <ul>
   <div *ngFor="let message of messages">
-     <app-message-row [dataModel] = "message" (delete)= "removeMessage($event)">
+     <app-message-row [dataModel] = "message" (delete)= "removeMessage($event)" >
      </app-message-row>
   </div>
   </ul>

@@ -18,7 +18,13 @@ export class MessageComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.messageService.getAllMessages().subscribe((data: any) => {
+    this.messageService.refreshChannel.subscribe(() => {
+      this.refresh();
+    });
+    this.refresh();
+  }
+  refresh() {
+this.messageService.getAllMessages().subscribe((data: any) => {
       this.messages = data;
       this.cd.markForCheck();
     });

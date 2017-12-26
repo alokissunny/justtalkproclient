@@ -30,7 +30,7 @@ import {SendReplyComponent} from './components/send-reply/send-reply.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent],
+  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent , RegisterComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
