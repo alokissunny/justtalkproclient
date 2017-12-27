@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component , OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {CATEGORIES} from '../constants';
 import {CODE} from '../constants';
@@ -10,7 +10,7 @@ import { AlertService, UserService } from '../_services/index';
     templateUrl: 'register.component.html'
 })
 
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
     advisorCategories = CATEGORIES;
     model: any = {};
     loading = false;
@@ -33,5 +33,8 @@ export class RegisterComponent {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+    }
+    ngOnInit() {
+        console.log("register initialised");
     }
 }

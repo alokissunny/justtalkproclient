@@ -32,10 +32,10 @@ const routes: Routes = [
   //       path: 'login',
   //       component: NbLoginComponent,
   //     },
-      {
-        path: 'register',
-        component: NbRegisterComponent,
-      },
+      // {
+      //   path: 'register',
+      //   component: NbRegisterComponent,
+      // },
   //     {
   //       path: 'logout',
   //       component: NbLogoutComponent,

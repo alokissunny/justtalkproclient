@@ -1,14 +1,14 @@
 export const CATMAP = {
-    "FIN": "finance",
-    "CAR": "Career",
-    "REL": "Relationship",
-    "PROP": "Property",
+    "fin": "finance",
+    "car": "Career",
+    "rel": "Relationship",
+    "prop": "Property",
 
 }
 export const CODE = {
-    "finance": "FIN",
-    "Career": "CAR",
-    "Relationship": "REL",
-    "Property": "PROP",
+    "finance": "fin",
+    "Career": "car",
+    "Relationship": "rel",
+    "Property": "prop",
 }
-export const CATEGORIES = [CATMAP.FIN, CATMAP.CAR, CATMAP.REL, CATMAP.PROP];
+export const CATEGORIES = [CATMAP.fin, CATMAP.car, CATMAP.rel, CATMAP.prop];
