@@ -36,4 +36,8 @@ export class UserService {
     isSessionActive() {
         return localStorage.getItem('currentUser') ? true : false;
     }
+    isLoginUserAdvisor(){
+        var user = JSON.parse(localStorage.getItem('currentUser'));
+        return this.isSessionActive() && user.isAdvisor;
+    }
 }

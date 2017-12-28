@@ -18,6 +18,10 @@ export class MessageService {
     getAllMessages() {
 
             this.currentUser = this.userService.getCurrentUser().username;
+            if(this.userService.isLoginUserAdvisor()) {
+                return this.http.get('/ask/advisor/'+this.currentUser).map((response: Response) => response.json());
+            }
+
         return this.http.get('/ask/requestor/'+this.currentUser).map((response: Response) => response.json());
 
     }

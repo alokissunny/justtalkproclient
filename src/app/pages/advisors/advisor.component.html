@@ -1,11 +1,8 @@
 <div>
   <table style="width: 100%">
     <tr *ngFor = "let advisor of advisors;index as i; even as isEven; odd as isOdd">
-      <td *ngIf="isEven" class="card">
+      <td  class="card">
         <app-advisor-card [advisor] = advisor></app-advisor-card>
-      </td>
-      <td *ngIf="isEven" class="card">
-        <app-advisor-card [advisor] = advisors[i+1]></app-advisor-card>
       </td>
     </tr>
     <!--<tr>

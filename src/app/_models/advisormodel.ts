@@ -1,5 +1,5 @@
 export class Advisor {
-    userName: String;
+    username: String;
     firstName: String;
     lastName: String;
     category: String;

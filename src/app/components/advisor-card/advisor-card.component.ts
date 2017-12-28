@@ -36,7 +36,7 @@ export class AdvisorCardComponent implements OnInit {
   ngOnInit() {
   }
   openQuery() {
-    this.query.advisor = this._advisor.userName;
+    this.query.advisor = this._advisor.username;
     const activeModal = this.modalService.open(PostQueryComponent, { size: 'lg', container: 'nb-layout' });
 
     activeModal.componentInstance.modalHeader = 'Large Modal';
