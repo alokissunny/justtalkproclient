@@ -36,5 +36,6 @@ export class RegisterComponent implements OnInit {
     }
     ngOnInit() {
         console.log("register initialised");
+        this.model.category = "fin";
     }
 }

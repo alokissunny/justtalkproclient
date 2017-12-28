@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         // reset login status
+        this.model.isAdvisor = false;
         this.authenticationService.logout();
 
         // get return url from route parameters or default to '/'
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
 
     login() {
         this.loading = true;
-        this.authenticationService.login(this.model.username, this.model.password)
+        this.authenticationService.login(this.model.username, this.model.password, this.model.isAdvisor)
             .subscribe(
                 data => {
                     this.router.navigate([this.returnUrl]);
