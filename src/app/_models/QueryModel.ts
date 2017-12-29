@@ -7,6 +7,10 @@ export class QueryModel {
     advisor : String ;
     requestOn : Number;
     reply : QueryReplyModel;
-    unread : true;
     _id: String;
+    deleteForAdvisor : Boolean = false;
+    deleteForRequestor : Boolean = false;
+    unreadForRequestor : Boolean = true;
+    unreadForAdvisor : Boolean = true;
+
 }
