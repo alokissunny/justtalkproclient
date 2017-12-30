@@ -40,7 +40,7 @@ const routes: Routes = [{
     path: 'tables',
     loadChildren: './tables/tables.module#TablesModule',
   }
-  ,
+    ,
   {
     path: '',
     redirectTo: 'dashboard',

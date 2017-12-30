@@ -19,7 +19,8 @@ export class SendReplyComponent implements OnInit {
     var data = {
       "message" : this.message,
       "repliedBy" : this.messageService.currentUser,
-      "repliedOn" : new Date().getTime()
+      "repliedOn" : new Date().getTime(),
+      "lastUpdatedFrom" : this.messageService.myfirstName
     }
     this.messageService.sendReply(this.messageService.queryID,data).subscribe(() => {
       this.messageService.refreshChannel.next();

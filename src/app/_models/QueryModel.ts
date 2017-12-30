@@ -12,5 +12,6 @@ export class QueryModel {
     deleteForRequestor : Boolean = false;
     unreadForRequestor : Boolean = true;
     unreadForAdvisor : Boolean = true;
+    lastUpdatedFrom : String;
 
 }

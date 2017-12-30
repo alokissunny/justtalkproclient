@@ -25,4 +25,16 @@ export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
     link: '/pages/dashboard',
     home: true,
   },
+  {
+    title: 'Messages',
+    icon: 'nb-home',
+    link: '/pages/messages',
+    home: true,
+  },
+  {
+    title: 'Calender',
+    icon: 'nb-home',
+    //link: '/pages/messages',
+    home: true,
+  },
 ];

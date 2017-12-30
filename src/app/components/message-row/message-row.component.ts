@@ -20,6 +20,7 @@ export class MessageRowComponent implements OnInit {
   unread: Boolean;
   messageClass: String = "nonread";
   showDetail: Boolean;
+  lastUpdatedFrom: String;
   @Input()
   set dataModel(value: QueryModel) {
     this._dataModel = value;
@@ -27,7 +28,8 @@ export class MessageRowComponent implements OnInit {
     this.message = this._dataModel.message;
     this.advisor = this._dataModel.advisor;
     this.time = new Date(this._dataModel.requestOn as any).toDateString();
-    if (this.userService.isLoginUserAdvisor()) {
+    this.lastUpdatedFrom = this._dataModel.lastUpdatedFrom;
+    if (this.userService.getCurrentUser().username == this._dataModel.advisor) {
       this.unread = this._dataModel.unreadForAdvisor;
     }
     else {
@@ -51,14 +53,14 @@ export class MessageRowComponent implements OnInit {
   ngOnInit() {
   }
   onMessageClick() {
-    this.messageService.readMessage(this.id).subscribe(() => {
+    this.messageService.readMessage(this.id, this.userService.getCurrentUser().username == this._dataModel.requestor).subscribe(() => {
       this.unread = false;
       this.messageClass = "read";
     });
     this.showDetail = !this.showDetail
   }
   deleteMessage() {
-    this.messageService.deleteMessage(this.id).subscribe(() => {
+    this.messageService.deleteMessage(this.id,this.userService.getCurrentUser().username == this._dataModel.requestor).subscribe(() => {
       this.delete.emit({ id: this.id });
 
     });
