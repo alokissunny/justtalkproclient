@@ -1,0 +1,23 @@
+<nb-card>
+    <nb-card-header>Book Your Appointment </nb-card-header>
+    <nb-card-body>
+        <form>
+            <div class="form-group">
+                <div>Choose meeting time </div>
+                <div>
+                    <mwl-demo-utils-date-time-picker name="datepicker" [(ngModel)]="event.start" placeholder="Not set">
+                    </mwl-demo-utils-date-time-picker>
+                </div>
+            </div>
+            <div class="form-group">
+                <span>Add Notes</span>
+                <textarea class="form-control" placeholder="Message" name="message" [(ngModel)]="message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success btn-round btn-demo" style="display: inherit ;
+     cursor:pointer; background-color: cadetblue;
+    display: inherit;font-size: x-small;
+    font-family: inherit;
+    " (click)="book()" > Send</button>
+        </form>
+    </nb-card-body>
+</nb-card>

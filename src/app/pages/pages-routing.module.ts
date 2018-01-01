@@ -18,7 +18,12 @@ const routes: Routes = [{
   {
     path: 'messages',
     loadChildren: './messages/message.module#MessageModule',
-  }, {
+  }, 
+  {
+    path: 'calender',
+    loadChildren: './calender/calender.module#CalenderModule',
+  },
+  {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {

@@ -29,12 +29,12 @@ export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
     title: 'Messages',
     icon: 'nb-home',
     link: '/pages/messages',
-    home: true,
+    home: false,
   },
   {
     title: 'Calender',
     icon: 'nb-home',
-    //link: '/pages/messages',
-    home: true,
+    link: '/pages/calender',
+    home: false,
   },
 ];

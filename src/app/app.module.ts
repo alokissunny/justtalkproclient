@@ -23,14 +23,15 @@ import { RegisterComponent } from './register/index';
 import {PostQueryComponent} from './components/post-query/post-query.component';
 import { CommentModule } from 'ng2-comment';
 import {SendReplyComponent} from './components/send-reply/send-reply.component';
-
-
+import {BookComponent} from './components/book-cancel/book-cancel.component';
+import {DemoUtilsModule} from './date-utils/module';
+import {BookService} from './components/book-cancel/book-cancel.service';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent , RegisterComponent],
+  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent , RegisterComponent , BookComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -40,12 +41,13 @@ import {SendReplyComponent} from './components/send-reply/send-reply.component';
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
+    DemoUtilsModule
   ],
   bootstrap: [AppComponent],
    entryComponents: [
-    PostQueryComponent,SendReplyComponent
+    PostQueryComponent,SendReplyComponent, BookComponent
   ],
-  providers: [AlertService, AuthenticationService, UserService, customHttpProvider,
+  providers: [AlertService, AuthenticationService, UserService, customHttpProvider,BookService,
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })

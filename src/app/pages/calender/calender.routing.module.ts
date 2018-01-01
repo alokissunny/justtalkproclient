@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MessageComponent} from './message.component';
+import {CalenderComponent} from './calender.component';
 const routes: Routes = [{
   path: '',
-  component: MessageComponent,
+  component: CalenderComponent,
 }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MessageRoutingModule { }
+export class CalenderRoutingModule { }
 

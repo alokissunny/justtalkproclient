@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {AdvisorComponent} from './advisor.component';
+import {BookComponent} from '../../components/book-cancel/book-cancel.component'
 
 
 

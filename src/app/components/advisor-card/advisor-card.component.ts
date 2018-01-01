@@ -5,6 +5,7 @@ import { PostQueryComponent } from '../post-query/post-query.component';
 import {Advisor} from '../../_models/advisormodel';
 import {QueryService} from '../post-query/post-query.service';
 import { Component, Inject } from '@angular/core';
+import {BookComponent} from '../book-cancel/book-cancel.component';
 
 
 
@@ -40,6 +41,12 @@ export class AdvisorCardComponent implements OnInit {
     const activeModal = this.modalService.open(PostQueryComponent, { size: 'lg', container: 'nb-layout' });
 
     activeModal.componentInstance.modalHeader = 'Large Modal';
+  }
+  bookcancel() {
+const activeModal = this.modalService.open(BookComponent, { size: 'lg', container: 'nb-layout' });
+
+    activeModal.componentInstance.modalHeader = 'Large Modal';
+
   }
 
 }

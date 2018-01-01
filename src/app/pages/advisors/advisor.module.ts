@@ -13,7 +13,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
    AdvisorRoutingModule, CommonModule, ThemeModule,//CommentModule
   ],
   declarations: [
-      AdvisorComponent, AdvisorCardComponent,
+      AdvisorComponent, AdvisorCardComponent
   ],
   providers : [AdvisorService ,QueryService ],
 })
