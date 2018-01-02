@@ -1,23 +1,26 @@
 <nb-card>
     <nb-card-header>Book Your Appointment </nb-card-header>
     <nb-card-body>
-        <form>
+        <form style="font-weight: 500">
             <div class="form-group">
-                <div>Choose meeting time </div>
-                <div>
-                    <mwl-demo-utils-date-time-picker name="datepicker" [(ngModel)]="event.start" placeholder="Not set">
-                    </mwl-demo-utils-date-time-picker>
-                </div>
-            </div>
-            <div class="form-group">
-                <span>Add Notes</span>
-                <textarea class="form-control" placeholder="Message" name="message" [(ngModel)]="message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-success btn-round btn-demo" style="display: inherit ;
+                <div style="float: left">Choose meeting time </div>
+                <div style="    margin-right: 40px;
+
+     margin-left: 300px; 
+    margin-bottom: 40px;">
+<mwl-demo-utils-date-time-picker name="datepicker" [(ngModel)]="event.start" placeholder="Not set">
+</mwl-demo-utils-date-time-picker>
+</div>
+</div>
+<div class="form-group">
+    <span>Add Notes</span>
+    <textarea class="form-control" placeholder="Message" name="message" [(ngModel)]="message"></textarea>
+</div>
+<button type="submit" class="btn btn-success btn-round btn-demo" style="display: inherit ;
      cursor:pointer; background-color: cadetblue;
     display: inherit;font-size: x-small;
     font-family: inherit;
     " (click)="book()" > Send</button>
-        </form>
-    </nb-card-body>
+</form>
+</nb-card-body>
 </nb-card>

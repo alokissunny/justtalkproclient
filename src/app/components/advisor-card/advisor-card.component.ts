@@ -6,6 +6,7 @@ import {Advisor} from '../../_models/advisormodel';
 import {QueryService} from '../post-query/post-query.service';
 import { Component, Inject } from '@angular/core';
 import {BookComponent} from '../book-cancel/book-cancel.component';
+import {BookService} from '../book-cancel/book-cancel.service';
 
 
 
@@ -31,7 +32,7 @@ export class AdvisorCardComponent implements OnInit {
 
   }
   
-  constructor(private modalService: NgbModal,private ref: ChangeDetectorRef,private query:QueryService ) {
+  constructor(private modalService: NgbModal,private ref: ChangeDetectorRef,private query:QueryService , private bookService : BookService) {
    }
 
   ngOnInit() {
@@ -43,6 +44,7 @@ export class AdvisorCardComponent implements OnInit {
     activeModal.componentInstance.modalHeader = 'Large Modal';
   }
   bookcancel() {
+    this.bookService.advisor = this._advisor.username;
 const activeModal = this.modalService.open(BookComponent, { size: 'lg', container: 'nb-layout' });
 
     activeModal.componentInstance.modalHeader = 'Large Modal';

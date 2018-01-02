@@ -61,7 +61,7 @@ export const DATE_TIME_PICKER_CONTROL_VALUE_ACCESSOR: any = {
 export class DateTimePickerComponent implements ControlValueAccessor {
   @Input() placeholder: string;
 
-  date: Date;
+  date: Date = new Date();
 
   dateStruct: NgbDateStruct;
 
@@ -97,11 +97,12 @@ export class DateTimePickerComponent implements ControlValueAccessor {
   updateDate(): void {
     const newDate: Date = setYear(
       setMonth(
-        setDate(this.date, this.dateStruct.day),
+        setDate(new Date(), this.dateStruct.day),
         this.dateStruct.month - 1
       ),
       this.dateStruct.year
     );
+    this.date = newDate;
     this.onChangeCallback(newDate);
   }
 

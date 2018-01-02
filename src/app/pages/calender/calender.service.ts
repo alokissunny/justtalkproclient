@@ -89,12 +89,26 @@ export class CalenderService {
       draggable: true
     }
   ];
+  url = "/appointment/advisor/";
+  constructor(private http: Http , private userService : UserService) {
 
+  }
     getMyEvents() {
-      let subject = new Subject();
-      setTimeout( () => {
-            subject.next(this.events);
-      }, 2);
-          return subject;
-    }
+      return this.http.get(this.url+ this.userService.getCurrentUser().username).map((response) => {
+          return this.prepareEvents(response.json());
+      });
+
+}
+
+prepareEvents (appointments) {
+  let events = [];
+  appointments.forEach(appointment => {
+    var obj = {};
+    obj["start"] = new Date( appointment.start);
+    obj["title"] = appointment.title;
+    obj["color"] = colors.yellow;
+    events.push(obj);
+  });
+  return events;
+}
 }

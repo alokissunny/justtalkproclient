@@ -29,7 +29,6 @@ this.qm.unreadForAdvisor = true;
 this.qm.unreadForRequestor = true;
 this.qm.lastUpdatedFrom = this.userService.getCurrentUser()["firstName"];
 this.query.postQuery(this.qm).subscribe(() => {
-alert("Query submitted succefully");
 this.activeModal.close();
 });
 
