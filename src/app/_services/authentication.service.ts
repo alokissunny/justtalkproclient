@@ -2,9 +2,12 @@
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
+import { ReplaySubject } from 'rxjs';
 
 @Injectable()
 export class AuthenticationService {
+
+    onLogin = new ReplaySubject();
     constructor(private http: Http) { }
 
     login(username: string, password: string , isAdvisor :boolean) {

@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertService, AuthenticationService } from '../_services/index';
 
 @Component({
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
-        private alertService: AlertService) { }
+        private alertService: AlertService , private activeModal : NgbActiveModal) { }
 
     ngOnInit() {
         // reset login status
@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.model.username, this.model.password, this.model.isAdvisor)
             .subscribe(
                 data => {
+                    this.activeModal.close();
+                    this.authenticationService.onLogin.next({});
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {

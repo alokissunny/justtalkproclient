@@ -26,7 +26,7 @@ import {SendReplyComponent} from './components/send-reply/send-reply.component';
 import {BookComponent} from './components/book-cancel/book-cancel.component';
 import {DemoUtilsModule} from './date-utils/module';
 import {BookService} from './components/book-cancel/book-cancel.service';
-
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -47,7 +47,7 @@ import {BookService} from './components/book-cancel/book-cancel.service';
    entryComponents: [
     PostQueryComponent,SendReplyComponent, BookComponent
   ],
-  providers: [AlertService, AuthenticationService, UserService, customHttpProvider,BookService,
+  providers: [AlertService, AuthenticationService, UserService, customHttpProvider,BookService,NgbActiveModal ,
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })

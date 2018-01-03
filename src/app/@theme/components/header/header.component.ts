@@ -31,6 +31,9 @@ export class HeaderComponent implements OnInit {
     // this.userService.getUsers()
     //   .subscribe((users: any) => this.user = users.rupsu);
     this.user = this.userService.getCurrentUser();
+    this.authenticationService.onLogin.subscribe(() => {
+        this.user = this.userService.getCurrentUser();
+    })
   }
 
   toggleSidebar(): boolean {
