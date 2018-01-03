@@ -107,6 +107,10 @@ prepareEvents (appointments) {
     obj["start"] = new Date( appointment.start);
     obj["title"] = appointment.title;
     obj["color"] = colors.yellow;
+    obj["requestor"] = appointment.requestor;
+    obj["message"] = appointment.message;
+    obj["requestorName"] = appointment.requestorName;
+    obj["time"] = appointment.time;
     events.push(obj);
   });
   return events;

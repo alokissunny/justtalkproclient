@@ -6,5 +6,6 @@ export class BookingModel {
     advisor : String;
     advisorName : String;
     message : String;
+    time : String;
 
 }

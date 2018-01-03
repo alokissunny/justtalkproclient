@@ -1,18 +1,22 @@
 <ng-template #modalContent let-close="close">
   <div class="modal-header">
-    <h5 class="modal-title">Event action occurred</h5>
+    <h5 class="modal-title">Appointment</h5>
     <button type="button" class="close" (click)="close()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
     <div>
-      Action:
-      <pre>{{ modalData?.action }}</pre>
+      Appointment By :
+      <pre>{{ modalData?.event.requestorName }}</pre>
     </div>
     <div>
-      Event:
-      <pre>{{ modalData?.event | json }}</pre>
+      Info :
+      <pre>{{ modalData?.event.title}}</pre>
+    </div>
+    <div>
+      Time :
+      <pre>{{ modalData?.event.time }} Lunch</pre>
     </div>
   </div>
   <div class="modal-footer">
@@ -23,26 +27,13 @@
 <div class="row text-center">
   <div class="col-md-4">
     <div class="btn-group">
-      <div
-        class="btn btn-primary"
-        mwlCalendarPreviousView
-        [view]="view"
-        [(viewDate)]="viewDate"
-        (viewDateChange)="activeDayIsOpen = false">
+      <div class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
         Previous
       </div>
-      <div
-        class="btn btn-outline-secondary"
-        mwlCalendarToday
-        [(viewDate)]="viewDate">
+      <div class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate">
         Today
       </div>
-      <div
-        class="btn btn-primary"
-        mwlCalendarNextView
-        [view]="view"
-        [(viewDate)]="viewDate"
-        (viewDateChange)="activeDayIsOpen = false">
+      <div class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
         Next
       </div>
     </div>
@@ -52,22 +43,13 @@
   </div>
   <div class="col-md-4">
     <div class="btn-group">
-      <div
-        class="btn btn-primary"
-        (click)="view = 'month'"
-        [class.active]="view === 'month'">
+      <div class="btn btn-primary" (click)="view = 'month'" [class.active]="view === 'month'">
         Month
       </div>
-      <div
-        class="btn btn-primary"
-        (click)="view = 'week'"
-        [class.active]="view === 'week'">
+      <div class="btn btn-primary" (click)="view = 'week'" [class.active]="view === 'week'">
         Week
       </div>
-      <div
-        class="btn btn-primary"
-        (click)="view = 'day'"
-        [class.active]="view === 'day'">
+      <div class="btn btn-primary" (click)="view = 'day'" [class.active]="view === 'day'">
         Day
       </div>
     </div>
@@ -75,46 +57,27 @@
 </div>
 <br>
 <div [ngSwitch]="view">
-  <mwl-calendar-month-view
-    *ngSwitchCase="'month'"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    [activeDayIsOpen]="activeDayIsOpen"
-    (dayClicked)="dayClicked($event.day)"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)">
+  <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen"
+    (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-month-view>
-  <mwl-calendar-week-view
-    *ngSwitchCase="'week'"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
+  <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
     (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-week-view>
-  <mwl-calendar-day-view
-    *ngSwitchCase="'day'"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
+  <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
     (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-day-view>
 </div>
 
 <br><br><br>
 
-<h3>
+<!--<h3>
   Edit events
-  <button
-    class="btn btn-primary pull-right"
-    (click)="addEvent()">
+  <button class="btn btn-primary pull-right" (click)="addEvent()">
     Add new
   </button>
   <div class="clearfix"></div>
-</h3>
-
+</h3>-->
+<!--
 <table class="table table-bordered">
 
   <thead>
@@ -131,46 +94,28 @@
   <tbody>
     <tr *ngFor="let event of events; let index = index">
       <td>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="event.title"
-          (keyup)="refresh.next()">
+        <input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()">
       </td>
       <td>
-        <input
-          type="color"
-          [(ngModel)]="event.color.primary"
-          (change)="refresh.next()">
+        <input type="color" [(ngModel)]="event.color.primary" (change)="refresh.next()">
       </td>
       <td>
-        <input
-          type="color"
-          [(ngModel)]="event.color.secondary"
-          (change)="refresh.next()">
+        <input type="color" [(ngModel)]="event.color.secondary" (change)="refresh.next()">
       </td>
       <td>
-        <mwl-demo-utils-date-time-picker
-          [(ngModel)]="event.start"
-          (ngModelChange)="refresh.next()"
-          placeholder="Not set">
+        <mwl-demo-utils-date-time-picker [(ngModel)]="event.start" (ngModelChange)="refresh.next()" placeholder="Not set">
         </mwl-demo-utils-date-time-picker>
       </td>
       <td>
-        <mwl-demo-utils-date-time-picker
-          [(ngModel)]="event.end"
-          (ngModelChange)="refresh.next()"
-          placeholder="Not set">
+        <mwl-demo-utils-date-time-picker [(ngModel)]="event.end" (ngModelChange)="refresh.next()" placeholder="Not set">
         </mwl-demo-utils-date-time-picker>
       </td>
       <td>
-        <button
-          class="btn btn-danger"
-          (click)="events.splice(index, 1); refresh.next()">
+        <button class="btn btn-danger" (click)="events.splice(index, 1); refresh.next()">
           Delete
         </button>
       </td>
     </tr>
   </tbody>
 
-</table>
+</table>-->
