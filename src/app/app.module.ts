@@ -27,6 +27,9 @@ import {BookComponent} from './components/book-cancel/book-cancel.component';
 import {DemoUtilsModule} from './date-utils/module';
 import {BookService} from './components/book-cancel/book-cancel.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -37,7 +40,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     HttpModule,
     AppRoutingModule,
-// CommentModule,
+    ReactiveFormsModule,
+ AgmCoreModule.forRoot({
+      apiKey: "AIzaSyDh0cCwo1_WRML-0QYxKP60LkClJC3Tjig",
+      libraries: ["places"]
+    }),
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
