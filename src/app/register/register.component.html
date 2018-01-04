@@ -44,7 +44,7 @@
       </nb-card-body>
     </nb-card>
 </div>-->
-<div class="row ">
+<div style="margin-left: 30%;" class="row ">
   <div class="col-sm-7 custom-row jumbotron">
 
     <form novalidate (ngSubmit)="onFormSubmit(signupForm)" #signupForm="ngForm">
@@ -56,7 +56,7 @@
           <label for="inputUser" class="col-lg-2
 		      control-label">UserName</label>
           <div class="col-lg-7">
-            <input type="text" class="form-control" [ngModel]="user.username" name="username" #username="ngModel" id="inputEmail" placeholder="Email"
+            <input type="text" class="form-control" [ngModel]="user.username" name="username" #username="ngModel" id="username" placeholder="Username"
                required>
           </div>
 
@@ -72,6 +72,61 @@
             </div>
           </div>
         </div>
+                <!-- Firstname input block -->
+        <div class="form-group">
+          <label for="inputfirstName" class="col-lg-2
+		      control-label">firstName</label>
+          <div class="col-lg-7">
+            <input type="text" class="form-control" [ngModel]="user.firstName" name="firstName" #firstName="ngModel" id="inputfirstName" placeholder="firstName"
+               required>
+          </div>
+
+
+          <!-- firstName error block -->
+
+          <div *ngIf="firstName.invalid && ( firstName.touched)" class="col-sm-3 text-danger">
+            <div *ngIf="firstName.errors?.required">
+              firstName field can't be blank
+            </div>
+          </div>
+        </div>
+        <!-- lastName input block -->
+        <div class="form-group">
+          <label for="inputlastName" class="col-lg-2
+		      control-label">lasttName</label>
+          <div class="col-lg-7">
+            <input type="text" class="form-control" [ngModel]="user.lastName" name="lastName" #lastName="ngModel" id="inputlastName" placeholder="lastName"
+               required>
+          </div>
+
+
+          <!-- lastName error block -->
+
+          <div *ngIf="lastName.invalid && ( lastName.touched)" class="col-sm-3 text-danger">
+            <div *ngIf="lastName.errors?.required">
+              lastName field can't be blank
+            </div>
+          </div>
+        </div>
+         <!-- location input block -->
+        <div class="form-group">
+          <label for="inputlastName" class="col-lg-2
+		      control-label">location</label>
+          <div class="col-lg-7">
+            <input autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" type="text"  [(ngModel)]="user.location" name="location"  id="location" placeholder="location"
+               required>
+          </div>
+
+
+          <!-- location error block -->
+
+          <!--<div *ngIf="location.invalid && ( location.touched)" class="col-sm-3 text-danger">
+            <div *ngIf="location.errors?.required">
+              location field can't be blank
+            </div>
+          </div>-->
+        </div>
+        
         <!-- Email input block -->
         <div class="form-group">
           <label for="inputEmail" class="col-lg-2
@@ -126,6 +181,19 @@
         </div>
 
         <br>
+        <!-- Select Category block -->
+        <div class="form-group">
+          <label for="select" class="col-lg-2">Choose Expert Category</label>
+          <div class="col-lg-7">
+            <select id="selectcat" class="form-control" [ngModel]="user.category" name="category" required>
+		          
+		          <option *ngFor = "let e of advisorCategories"  
+		            [value] = "e"> {{e}} 
+		          </option>
+		        </select>
+          </div>
+        </div>
+
         <!-- Select Gender block -->
         <div class="form-group">
           <label for="select" class="col-lg-2">Gender</label>

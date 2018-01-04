@@ -5,6 +5,7 @@
         <app-advisor-card [advisor] = advisor></app-advisor-card>
       </td>
     </tr>
+    <div *ngIf="advisors.length == 0 ">Sorry No Advisor !</div>
     <!--<tr>
       <td>
         <app-advisor-card></app-advisor-card>

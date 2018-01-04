@@ -41,40 +41,38 @@ export class RegisterComponent implements OnInit {
                 this.loading = false;
             });
     }
-    // ngOnInit() {
-    //     this.model.category = "fin";
-    //     //create search FormControl
-    //     this.searchControl = new FormControl();
-    //     //load Places Autocomplete
-    //     this.mapsAPILoader.load().then(() => {
-    //         let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-    //             types: ["address"]
-    //         });
-    //         autocomplete.addListener("place_changed", () => {
-    //             this.ngZone.run(() => {
-    //                 //get the place result
-    //                 let place: any = autocomplete.getPlace();
+    ngOnInit() {
+        this.model.category = "fin";
+        //create search FormControl
+        this.searchControl = new FormControl();
+        //load Places Autocomplete
+        this.mapsAPILoader.load().then(() => {
+            let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+                types: ["address"]
+            });
+            autocomplete.addListener("place_changed", () => {
+                this.ngZone.run(() => {
+                    //get the place result
+                    let place: any = autocomplete.getPlace();
 
-    //                 //verify result
-    //                 if (place.geometry === undefined || place.geometry === null) {
-    //                     return;
-    //                 }
-    //             });
-    //         });
-    //     });
-    // }
+                    //verify result
+                    if (place.geometry === undefined || place.geometry === null) {
+                        return;
+                    }
+                });
+            });
+        });
+         this.gender =  ['Male', 'Female', 'Others'];
+    //Create a new user object
+    this.user = new User({email:"", password: { pwd: "" , confirmPwd: ""}, gender: this.gender[0], terms: false});
+    }
     //test
      //Property for the gender
   private gender: string[];
   //Property for the user
   private user:User;
 
-  ngOnInit() {
 
-    this.gender =  ['Male', 'Female', 'Others'];
-    //Create a new user object
-    this.user = new User({email:"", password: { pwd: "" , confirmPwd: ""}, gender: this.gender[0], terms: false});
-  }
      onFormSubmit({ value, valid}: { value: User, valid: boolean }) {
     	this.user = value;
     	console.log( this.user);

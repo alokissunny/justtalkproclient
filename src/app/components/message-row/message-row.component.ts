@@ -21,9 +21,12 @@ export class MessageRowComponent implements OnInit {
   messageClass: String = "nonread";
   showDetail: Boolean;
   lastUpdatedFrom: String;
+  opponent :String;
   @Input()
   set dataModel(value: QueryModel) {
+    
     this._dataModel = value;
+  
     this.subject = this._dataModel.subject;
     this.message = this._dataModel.message;
     this.advisor = this._dataModel.advisor;
@@ -41,6 +44,8 @@ export class MessageRowComponent implements OnInit {
       this.messageClass = "nonread";
     else
       this.messageClass = "read";
+
+      this.opponent = this._dataModel.requestor == this.userService.getCurrentUser().username ? this._dataModel.advisor : this._dataModel.requestor;
 
   }
   get dataModel(): QueryModel {
