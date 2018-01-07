@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
     model: any = {};
     loading = false;
     code = CODE;
+    place;
     @ViewChild("search")
     public searchElementRef: ElementRef;
     constructor(
@@ -46,22 +47,22 @@ export class RegisterComponent implements OnInit {
         //create search FormControl
         this.searchControl = new FormControl();
         //load Places Autocomplete
-        this.mapsAPILoader.load().then(() => {
-            let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-                types: ["address"]
-            });
-            autocomplete.addListener("place_changed", () => {
-                this.ngZone.run(() => {
-                    //get the place result
-                    let place: any = autocomplete.getPlace();
+        // this.mapsAPILoader.load().then(() => {
+        //     let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+        //         types: ["address"]
+        //     });
+        //     autocomplete.addListener("place_changed", () => {
+        //         this.ngZone.run(() => {
+        //             //get the place result
+        //             this.place= autocomplete.getPlace();
 
-                    //verify result
-                    if (place.geometry === undefined || place.geometry === null) {
-                        return;
-                    }
-                });
-            });
-        });
+        //             //verify result
+        //             if (this.place.geometry === undefined || this.place.geometry === null) {
+        //                 return;
+        //             }
+        //         });
+        //     });
+        // });
          this.gender =  ['Male', 'Female', 'Others'];
     //Create a new user object
     this.user = new User({email:"", password: { pwd: "" , confirmPwd: ""}, gender: this.gender[0], terms: false});
@@ -70,13 +71,25 @@ export class RegisterComponent implements OnInit {
      //Property for the gender
   private gender: string[];
   //Property for the user
-  private user:User;
+  private user:any;
 
 
-     onFormSubmit({ value, valid}: { value: User, valid: boolean }) {
+     onFormSubmit({ value, valid}: { value: any, valid: boolean }) {
     	this.user = value;
-    	console.log( this.user);
-    	console.log("valid: " + valid);
+    	this.user.password = this.user.password.pwd;
+        // this.user.location = this.place.place_id;
+        this.user.category = this.code[this.user.category];
+         this.loading = true;
+        this.userService.createAdvisor(this.user)
+            .subscribe(
+            data => {
+                this.alertService.success('Registration successful', true);
+                this.router.navigate(['/login']);
+            },
+            error => {
+                this.alertService.error(error);
+                this.loading = false;
+            });
   	}
 }
 export class User {

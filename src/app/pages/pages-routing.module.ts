@@ -20,6 +20,10 @@ const routes: Routes = [{
     loadChildren: './messages/message.module#MessageModule',
   }, 
   {
+    path: 'myprofile',
+    loadChildren: './profile/profile.module#ProfileModule',
+  }, 
+  {
     path: 'calender',
     loadChildren: './calender/calender.module#CalenderModule',
   },

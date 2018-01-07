@@ -76,5 +76,9 @@ export class HeaderComponent implements OnInit {
     {
       this.router.navigateByUrl('/login');
     }
+     if(event.title === 'Profile')
+    {
+      this.router.navigateByUrl('/pages/myprofile');
+    }
   }
 }
