@@ -8,16 +8,17 @@ import { QueryService } from '../../components/post-query/post-query.service';
 import { MessageRowComponent } from '../../components/message-row/message-row.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { MessageDetailComponent } from '../../components/message-detail/message-detail.component';
-import { FileSelectDirective } from 'ng2-file-upload';
+import { FileUploadModule } from 'ng2-file-upload';
+import {ProfilePictureComponent } from '../../components/profile-picture/profile-picture.component';
 //import { Ng2FileInputModule } from 'ng2-file-input';
 
 
 @NgModule({
     imports: [
-        ProfileRoutingModule, CommonModule, ThemeModule, //Ng2FileInputModule.forRoot() 
+        ProfileRoutingModule, CommonModule, ThemeModule, FileUploadModule //Ng2FileInputModule.forRoot() 
     ],
     declarations: [
-        ProfileComponent,FileSelectDirective
+        ProfileComponent,ProfilePictureComponent
     ],
     providers: [ProfileService],
 })

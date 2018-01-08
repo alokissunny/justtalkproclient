@@ -1,8 +1,14 @@
 
-<!-- File input for the file-upload plugin, with special ng2-file-upload directive called ng2FileSelect -->
-<input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
-<!-- button to trigger the file upload when submitted -->
+
+<!--<input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
 <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
       Upload with ng-2 file uploader
-</button>
-<ng2-file-input></ng2-file-input> 
+</button>   -->
+  <h2>Profile Picture Upload</h2>
+
+  <div class="row">
+    <div class="col">
+      <app-profile-picture [(url)]=picurl [editmode]=editEnabled></app-profile-picture>
+    </div>
+  </div>
