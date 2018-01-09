@@ -8,6 +8,7 @@ import { ReplaySubject } from 'rxjs';
 export class AuthenticationService {
 
     onLogin = new ReplaySubject();
+    onDpChange = new ReplaySubject();
     constructor(private http: Http) { }
 
     login(username: string, password: string , isAdvisor :boolean) {
