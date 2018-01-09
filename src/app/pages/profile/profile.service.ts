@@ -8,9 +8,11 @@ import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/observable/forkJoin';
 @Injectable()
 export class ProfileService {
-
+    url = "/upload/updateimage";
     constructor(private http: Http, private userService: UserService) { }
 
-  
+    updatePicInfo(data: any) {
+        return this.http.post(this.url, data);
+    }
 
 }

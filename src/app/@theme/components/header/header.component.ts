@@ -5,6 +5,7 @@ import { UserService } from '../../../_services/user.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
 import { Router }   from '@angular/router';
 import {AuthenticationService} from '../../../_services/authentication.service';
+import {appConfig} from '../../../app.config';
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
@@ -31,9 +32,13 @@ export class HeaderComponent implements OnInit {
     // this.userService.getUsers()
     //   .subscribe((users: any) => this.user = users.rupsu);
     this.user = this.userService.getCurrentUser();
+    this.user.picture = appConfig.apiUrl +"/images/"+ this.user.photo;
     this.authenticationService.onLogin.subscribe(() => {
         this.user = this.userService.getCurrentUser();
-    })
+    });
+    //    this.authenticationService.onDpUpdate.subscribe(() => {
+    //     this.user. = this.userService.getCurrentUser();
+    // })
   }
 
   toggleSidebar(): boolean {

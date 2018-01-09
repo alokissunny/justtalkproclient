@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
+import {ProfileService } from '../../pages/profile/profile.service';
+import {UserService} from '../../_services/user.service';
 const URL = 'http://localhost:4000/upload';
 @Component({
   selector: 'app-profile-picture',
@@ -22,7 +24,7 @@ export class ProfilePictureComponent implements OnInit {
   @Output()
   private urlChange = new EventEmitter();
 
-  constructor() {
+  constructor(private profileService : ProfileService , private userService : UserService) {
     this.uploader = new FileUploader({ url: URL, itemAlias: 'photo', autoUpload: true });
 
 
@@ -43,6 +45,10 @@ export class ProfilePictureComponent implements OnInit {
      let res = JSON.parse(response);
      this.imageId = res["profile-id"].split('/')[3];
      this.url = "http://localhost:4000/images/" + this.imageId;
+     this.profileService.updatePicInfo({"me" : this.userService.getCurrentUser().username , "photo" : this.imageId
+    }).subscribe(() => {
+      console.log("updated");
+    })
     }
   }
 }
