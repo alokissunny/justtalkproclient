@@ -47,7 +47,9 @@ export class ProfilePictureComponent implements OnInit {
      this.url = "http://localhost:4000/images/" + this.imageId;
      this.profileService.updatePicInfo({"me" : this.userService.getCurrentUser().username , "photo" : this.imageId
     }).subscribe(() => {
-      console.log("updated");
+      let user = this.userService.getCurrentUser();
+      user.photo = this.imageId;
+      localStorage.setItem('currentUser', JSON.stringify(user));
     })
     }
   }

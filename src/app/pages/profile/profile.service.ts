@@ -7,7 +7,7 @@ import { UserService } from '../../_services/user.service';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/observable/forkJoin';
 @Injectable()
-export class ProfileService {
+export class ProfileService {   
     url = "/upload/updateimage";
     constructor(private http: Http, private userService: UserService) { }
 

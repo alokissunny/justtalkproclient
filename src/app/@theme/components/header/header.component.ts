@@ -29,16 +29,12 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.userService.getUsers()
-    //   .subscribe((users: any) => this.user = users.rupsu);
     this.user = this.userService.getCurrentUser();
     this.user.picture = appConfig.apiUrl +"/images/"+ this.user.photo;
     this.authenticationService.onLogin.subscribe(() => {
         this.user = this.userService.getCurrentUser();
+        this.user.picture = appConfig.apiUrl +"/images/"+ this.user.photo;
     });
-    //    this.authenticationService.onDpUpdate.subscribe(() => {
-    //     this.user. = this.userService.getCurrentUser();
-    // })
   }
 
   toggleSidebar(): boolean {
