@@ -9,19 +9,20 @@ import {BookComponent} from '../book-cancel/book-cancel.component';
 import {BookService} from '../book-cancel/book-cancel.service';
 import {UserService} from '../../_services/user.service';
 import {LoginComponent} from '../../login/login.component';
+import {appConfig} from '../../app.config';
 
 
 @Component({
   selector: 'app-advisor-card',
   templateUrl: './advisor-card.component.html',
   styleUrls: ['./advisor-card.component.scss'],
-  
 })
 export class AdvisorCardComponent implements OnInit {
 
   about: String = 'asdkjgdgfd';
   _advisor: Advisor;
   starRate = 2;
+  pic : String;
   @Input()
   set advisor(value: Advisor) {
     this._advisor = value;
@@ -32,11 +33,11 @@ export class AdvisorCardComponent implements OnInit {
     return this._advisor;
 
   }
-  
   constructor(private modalService: NgbModal,private ref: ChangeDetectorRef,private query:QueryService , private bookService : BookService , private userService : UserService) {
    }
 
   ngOnInit() {
+    this.pic = appConfig.apiUrl + "/images/"+ this._advisor.photo;
   }
   openQuery() {
     if(this.userService.isSessionActive()) {

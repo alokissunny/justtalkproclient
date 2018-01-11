@@ -49,7 +49,7 @@ export class ProfilePictureComponent implements OnInit {
      let res = JSON.parse(response);
      this.imageId = res["profile-id"].split('/')[3];
      this.url = "http://localhost:4000/images/" + this.imageId;
-     this.profileService.updatePicInfo({"me" : this.userService.getCurrentUser().username , "photo" : this.imageId
+     this.profileService.updatePicInfo({"me" : this.userService.getCurrentUser().username , "photo" : this.imageId ,"isAdvisor" :  this.userService.isLoginUserAdvisor()
     }).subscribe(() => {
       let user = this.userService.getCurrentUser();
       user.photo = this.imageId;
