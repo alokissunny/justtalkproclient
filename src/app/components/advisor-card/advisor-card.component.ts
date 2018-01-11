@@ -9,7 +9,7 @@ import {BookComponent} from '../book-cancel/book-cancel.component';
 import {BookService} from '../book-cancel/book-cancel.service';
 import {UserService} from '../../_services/user.service';
 import {LoginComponent} from '../../login/login.component';
-
+import{appConfig} from '../../app.config';
 
 @Component({
   selector: 'app-advisor-card',
@@ -22,6 +22,7 @@ export class AdvisorCardComponent implements OnInit {
   about: String = 'asdkjgdgfd';
   _advisor: Advisor;
   starRate = 2;
+  pic : String;
   @Input()
   set advisor(value: Advisor) {
     this._advisor = value;
@@ -37,6 +38,8 @@ export class AdvisorCardComponent implements OnInit {
    }
 
   ngOnInit() {
+  this._advisor.photo = this._advisor.photo? this._advisor.photo : 'placeholder';
+    this.pic = appConfig.apiUrl + "/images/" + this._advisor.photo;
   }
   openQuery() {
     if(this.userService.isSessionActive()) {

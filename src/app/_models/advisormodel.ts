@@ -10,4 +10,5 @@ export class Advisor {
     rating: Number;
     email : String;
     location: String;
+    photo : String;
     comments: Array<String>; }
