@@ -6,6 +6,7 @@ import {QueryModel}  from '../../_models/QueryModel';
 import * as _ from 'lodash';
 //import the file uploader plugin
 import {  FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import {UserService} from '../../_services/user.service';
 //define the constant url we would be uploading to.
 const URL = 'http://localhost:4000/upload';
 
@@ -20,20 +21,19 @@ public uploader:FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
     //This is the default title property created by the angular cli. Its responsible for the app works 
   public editEnabled = true;
   public picurl: string;
+  public user : any = {};
 
-  constructor(private profileService: ProfileService, private route: ActivatedRoute, private cd: ChangeDetectorRef) {
+  constructor(private profileService: ProfileService, private route: ActivatedRoute, private cd: ChangeDetectorRef , private userService: UserService) {
 
   }
   ngOnInit() {
-    // this.uploader.onAfterAddingFile = (file)=> { file.withCredentials = false; };
-    //  this.uploader.onBeforeUploadItem = ((file)=> {
-    //       console.log("before upload");
-    //     });
-    //    //overide the onCompleteItem property of the uploader so we are 
-    //    //able to deal with the server response.
-    //    this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
-    //         console.log("ImageUpload:uploaded:", item, status, response);
-    //     };
+    this.user = this.userService.getCurrentUser();
+
+  }
+  modify() {
+    this.profileService.updateUserInfo(this.user).subscribe((res) => {
+      console.log("upadted");
+    })
   }
 
 

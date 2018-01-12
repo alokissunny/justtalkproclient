@@ -9,10 +9,16 @@ import 'rxjs/add/observable/forkJoin';
 @Injectable()
 export class ProfileService {   
     url = "/upload/updateimage";
+    url2 = "/users/modify"
     constructor(private http: Http, private userService: UserService) { }
 
     updatePicInfo(data: any) {
         return this.http.post(this.url, data);
+    }
+    updateUserInfo(data) {
+        return this.http.post(this.url2,data).map(res => {
+            res.json();
+        })
     }
 
 }

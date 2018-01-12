@@ -1,14 +1,74 @@
-
-
 <!--<input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
 
 <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
       Upload with ng-2 file uploader
 </button>   -->
-  <h2>Upload Picture</h2>
+<h2>Upload Picture</h2>
 
-  <div class="row">
-    <div class="col">
-      <app-profile-picture [(url)]=picurl [editmode]=editEnabled></app-profile-picture>
+<div class="row">
+  <div class="col">
+    <app-profile-picture [(url)]=picurl [editmode]=editEnabled></app-profile-picture>
+  </div>
+</div>
+<div>
+  <!-- Firstname input block -->
+  <div class="form-group">
+    <label for="inputfirstName" class="col-lg-2
+		      control-label">firstName</label>
+    <div class="col-lg-7">
+      <input type="text" class="form-control" [(ngModel)]="user.firstName" name="firstName" #firstName="ngModel" id="inputfirstName"
+        placeholder="firstName" required>
+    </div>
+
+
+    <!-- firstName error block -->
+
+    <div *ngIf="firstName.invalid && ( firstName.touched)" class="col-sm-3 text-danger">
+      <div *ngIf="firstName.errors?.required">
+        firstName field can't be blank
+      </div>
     </div>
   </div>
+  <!-- lastName input block -->
+  <div class="form-group">
+    <label for="inputlastName" class="col-lg-2
+		      control-label">lasttName</label>
+    <div class="col-lg-7">
+      <input type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" #lastName="ngModel" id="inputlastName"
+        placeholder="lastName" required>
+    </div>
+
+
+    <!-- lastName error block -->
+
+    <div *ngIf="lastName.invalid && ( lastName.touched)" class="col-sm-3 text-danger">
+      <div *ngIf="lastName.errors?.required">
+        lastName field can't be blank
+      </div>
+    </div>
+
+    <!-- Email input block -->
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2
+		      control-label">Email</label>
+      <div class="col-lg-7">
+        <input type="text" class="form-control" [(ngModel)]="user.email" name="email" #email="ngModel" id="inputEmail" placeholder="Email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+      </div>
+
+
+      <!-- Email error block -->
+
+      <div *ngIf="email.invalid && ( email.touched)" class="col-sm-3 text-danger">
+        <div *ngIf="email.errors?.required">
+          Email field can't be blank
+        </div>
+        <div *ngIf="email.errors?.pattern && email.touched">
+          The email id doesn't seem right
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="submit" class="btn btn-success" (click)="modify()"> change
+					</button>
