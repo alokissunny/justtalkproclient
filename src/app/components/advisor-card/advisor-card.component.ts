@@ -37,7 +37,8 @@ export class AdvisorCardComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.pic = appConfig.apiUrl + "/images/"+ this._advisor.photo;
+  this._advisor.photo = this._advisor.photo? this._advisor.photo : 'placeholder';
+    this.pic = appConfig.apiUrl + "/images/" + this._advisor.photo;
   }
   openQuery() {
     if(this.userService.isSessionActive()) {
