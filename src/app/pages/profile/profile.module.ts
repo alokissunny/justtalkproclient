@@ -10,6 +10,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { MessageDetailComponent } from '../../components/message-detail/message-detail.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import {ProfilePictureComponent } from '../../components/profile-picture/profile-picture.component';
+import {GoogleService} from '../../_services/google.service';
 //import { Ng2FileInputModule } from 'ng2-file-input';
 
 
@@ -20,7 +21,7 @@ import {ProfilePictureComponent } from '../../components/profile-picture/profile
     declarations: [
         ProfileComponent,ProfilePictureComponent
     ],
-    providers: [ProfileService],
+    providers: [ProfileService,GoogleService],
 })
 export class ProfileModule {
 }

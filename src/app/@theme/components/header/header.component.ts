@@ -30,6 +30,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userService.getCurrentUser();
+    if(this.userService.isSessionActive())
     this.user.picture = appConfig.apiUrl +"/images/"+ this.user.photo;
     this.authenticationService.onLogin.subscribe(() => {
         this.user = this.userService.getCurrentUser();
@@ -79,7 +80,7 @@ export class HeaderComponent implements OnInit {
     }
      if(event.title === 'Profile')
     {
-      this.router.navigateByUrl('/pages/myprofile');
+      this.router.navigateByUrl('/pages/profile/me');
     }
   }
 }

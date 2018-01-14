@@ -9,7 +9,8 @@ import 'rxjs/add/observable/forkJoin';
 @Injectable()
 export class ProfileService {   
     url = "/upload/updateimage";
-    url2 = "/users/modify"
+    url2 = "/users/modify";
+    url3 = "/advisors/current/"
     constructor(private http: Http, private userService: UserService) { }
 
     updatePicInfo(data: any) {
@@ -19,6 +20,9 @@ export class ProfileService {
         return this.http.post(this.url2,data).map(res => {
             res.json();
         })
+    }
+    getBasicInfo(id) {
+        return this.http.get(this.url3 + id).map(res => res.json())
     }
 
 }

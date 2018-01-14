@@ -1,7 +1,7 @@
 <div style=" display: flex ; max-width: 600px" *ngIf="advisor?.username">
     <div class="items">
-        <img src="{{pic}}" height="100px" width="100px" />
-        <button (click)="openQuery()" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
+        <img src="{{pic}}" (click)="details()" height="100px" width="100px" />
+        <button (click)="openQuery()" [disabled]="isDisable" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
     left: 0;
     bottom: 0; cursor:pointer;background-color: cadetblue;
     display: inherit;height: 45px;font-size: x-small;
@@ -34,7 +34,7 @@
     height: 40px;
     padding: 15px;
     font-family: inherit;
-    margin: 10px;" (click)="bookcancel()"> Book Appointment</button>
+    margin: 10px;" (click)="bookcancel()" [disabled]="isDisable"> Book Appointment</button>
         </div>
     </div>
 </div>

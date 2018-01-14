@@ -31,7 +31,7 @@ export class UserService {
     }
     getCurrentUser() {
         var user = JSON.parse(localStorage.getItem('currentUser'));
-        return user? user :{username :  "Hi Guest !"};
+        return user? user :{firstName :  "Hi Guest !"};
     }
     isSessionActive() {
         return localStorage.getItem('currentUser') ? true : false;

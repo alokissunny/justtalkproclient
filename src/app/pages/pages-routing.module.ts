@@ -20,7 +20,7 @@ const routes: Routes = [{
     loadChildren: './messages/message.module#MessageModule',
   }, 
   {
-    path: 'myprofile',
+    path: 'profile/:id',
     loadChildren: './profile/profile.module#ProfileModule',
   }, 
   {
