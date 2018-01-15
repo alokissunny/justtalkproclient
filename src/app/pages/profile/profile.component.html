@@ -1,98 +1,97 @@
 <div>
   <div>
     <div style="float: left" class="row">
-      <div class="col">
-        <app-profile-picture [imageId]="imageId" [editmode]=editEnabled></app-profile-picture>
+<div class="col">
+  <app-profile-picture [imageId]="imageId" [editmode]=editEnabled></app-profile-picture>
+</div>
+</div>
+<div style="float: right;width: 70%">
+<!-- Firstname input block -->
+<div class="form-group">
+  <label for="inputfirstName" class="col-lg-2
+		      control-label">firstName</label>
+  <div class="col-lg-7">
+    <input type="text" class="form-control" [(ngModel)]="user.firstName" name="firstName" #firstName="ngModel" id="inputfirstName"
+      [disabled]="!editEnabled" placeholder="firstName" required>
+  </div>
+
+
+  <!-- firstName error block -->
+
+  <div *ngIf="firstName.invalid && ( firstName.touched)" class="col-sm-3 text-danger">
+    <div *ngIf="firstName.errors?.required">
+      firstName field can't be blank
+    </div>
+  </div>
+</div>
+<!-- lastName input block -->
+<div class="form-group">
+  <label for="inputlastName" class="col-lg-2
+		      control-label">lasttName</label>
+  <div class="col-lg-7">
+    <input type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" #lastName="ngModel" id="inputlastName"
+      [disabled]="!editEnabled" placeholder="lastName" required>
+  </div>
+
+
+  <!-- lastName error block -->
+
+  <div *ngIf="lastName.invalid && ( lastName.touched)" class="col-sm-3 text-danger">
+    <div *ngIf="lastName.errors?.required">
+      lastName field can't be blank
+    </div>
+  </div>
+
+  <!-- Email input block -->
+  <div class="form-group">
+    <label for="inputEmail" class="col-lg-2
+		      control-label">Email</label>
+    <div class="col-lg-7">
+      <input type="text" class="form-control" [(ngModel)]="user.email" name="email" #email="ngModel" id="inputEmail" placeholder="Email"
+        [disabled]="!editEnabled" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+    </div>
+
+
+    <!-- Email error block -->
+
+    <div *ngIf="email.invalid && ( email.touched)" class="col-sm-3 text-danger">
+      <div *ngIf="email.errors?.required">
+        Email field can't be blank
+      </div>
+      <div *ngIf="email.errors?.pattern && email.touched">
+        The email id doesn't seem right
       </div>
     </div>
-    <div style="float: right;width: 70%">
-      <!-- Firstname input block -->
-      <div class="form-group">
-        <label for="inputfirstName" class="col-lg-2
-		      control-label">firstName</label>
-        <div class="col-lg-7">
-          <input type="text" class="form-control" [(ngModel)]="user.firstName" name="firstName" #firstName="ngModel" id="inputfirstName"
-            [disabled]="!editEnabled" placeholder="firstName" required>
-        </div>
-
-
-        <!-- firstName error block -->
-
-        <div *ngIf="firstName.invalid && ( firstName.touched)" class="col-sm-3 text-danger">
-          <div *ngIf="firstName.errors?.required">
-            firstName field can't be blank
-          </div>
-        </div>
-      </div>
-      <!-- lastName input block -->
-      <div class="form-group">
-        <label for="inputlastName" class="col-lg-2
-		      control-label">lasttName</label>
-        <div class="col-lg-7">
-          <input type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" #lastName="ngModel" id="inputlastName"
-            [disabled]="!editEnabled" placeholder="lastName" required>
-        </div>
-
-
-        <!-- lastName error block -->
-
-        <div *ngIf="lastName.invalid && ( lastName.touched)" class="col-sm-3 text-danger">
-          <div *ngIf="lastName.errors?.required">
-            lastName field can't be blank
-          </div>
-        </div>
-
-        <!-- Email input block -->
-        <div class="form-group">
-          <label for="inputEmail" class="col-lg-2
-		      control-label">Email</label>
-          <div class="col-lg-7">
-            <input type="text" class="form-control" [(ngModel)]="user.email" name="email" #email="ngModel" id="inputEmail" placeholder="Email"
-              [disabled]="!editEnabled" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-          </div>
-
-
-          <!-- Email error block -->
-
-          <div *ngIf="email.invalid && ( email.touched)" class="col-sm-3 text-danger">
-            <div *ngIf="email.errors?.required">
-              Email field can't be blank
-            </div>
-            <div *ngIf="email.errors?.pattern && email.touched">
-              The email id doesn't seem right
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Select Category block -->
-      <div *ngIf="isAdvisor" class="form-group">
-        <label for="select" class="col-lg-2">Category</label>
-        <div class="col-lg-7">
-          <select id="selectcat" class="form-control" [disabled]="!editEnabled" [ngModel]="catMap[user.category]" (ngModelChange)="onChange($event)"
-            name="category" required>
-		          
-		          <option *ngFor = "let e of advisorCategories"  
+  </div>
+</div>
+<!-- Select Category block -->
+<div *ngIf="isAdvisor" class="form-group">
+  <label for="select" class="col-lg-2">Category</label>
+  <div class="col-lg-7">
+    <select id="selectcat" class="form-control" [disabled]="!editEnabled" [ngModel]="catMap[user.category]" (ngModelChange)="onChange($event)"
+      name="category" required>
+		          <option *ngFor = "let e of advisorCategories" 
 		            [value] = "e"> {{e}} 
 		          </option>
 		        </select>
-        </div>
-      </div>
-      <div *ngIf="isAdvisor" class="form-group">
-        <textarea class="form-control" placeholder="Basic Info" name="basicInfo" [(ngModel)]="user.basicInfo"></textarea>
-      </div>
-       <div *ngIf="isAdvisor" class="form-group">
-        <textarea class="form-control" placeholder="City" name="city" [(ngModel)]="user.city"></textarea>
-      </div>
-       <div *ngIf="isAdvisor" class="form-group">
-        <textarea class="form-control" placeholder="Address1" name="address1" [(ngModel)]="user.address1"></textarea>
-      </div>
-       <div *ngIf="isAdvisor" class="form-group">
-        <textarea class="form-control" placeholder="Address2" name="address2" [(ngModel)]="user.address2"></textarea>
-       </div>
-      <button *ngIf="editEnabled" type="submit" class="btn btn-success" (click)="modify()"> Update
-					</button>
-    </div>
-    
   </div>
-  
+</div>
+<div *ngIf="isAdvisor" class="form-group">
+  <textarea [disabled]="!editEnabled" class="form-control" placeholder="Basic Info" name="basicInfo" [(ngModel)]="user.basicInfo"></textarea>
+</div>
+<div *ngIf="isAdvisor" class="form-group">
+  <textarea [disabled]="!editEnabled" class="form-control" placeholder="City" name="city" [(ngModel)]="user.city"></textarea>
+</div>
+<div *ngIf="isAdvisor" class="form-group">
+  <textarea [disabled]="!editEnabled" class="form-control" placeholder="Address1" name="address1" [(ngModel)]="user.address1"></textarea>
+</div>
+<div *ngIf="isAdvisor" class="form-group">
+  <textarea [disabled]="!editEnabled" class="form-control" placeholder="Address2" name="address2" [(ngModel)]="user.address2"></textarea>
+</div>
+<button *ngIf="editEnabled" type="submit" class="btn btn-success" (click)="modify()"> Update
+					</button>
+</div>
+
+</div>
+
 </div>
