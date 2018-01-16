@@ -64,16 +64,17 @@ export class ProfileComponent implements OnInit {
   }
   modify() {
     console.log("modify");
-    this.googleService.getGoogleLocation(this.user.address1 +"+"+ this.user.address2+"+"+this.user.city).subscribe(res => {
+    this.googleService.getGoogleLocation(this.user.location +"+"+this.user.city).subscribe(res => {
       this.user.lat = res.results[0].geometry.location.lat;
       this.user.lng = res.results[0].geometry.location.lng;
-    })
-    this.profileService.updateUserInfo(this.user).subscribe((res) => {
+      this.profileService.updateUserInfo(this.user).subscribe((res) => {
       localStorage.setItem('currentUser', JSON.stringify(this.user));
       this.authentication.onLogin.next({});
       this.router.navigateByUrl('/');
 
     })
+    })
+    
   }
   onChange(sel) {
     this.user.category = this.code[sel];
