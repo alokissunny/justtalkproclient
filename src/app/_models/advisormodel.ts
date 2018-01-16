@@ -11,5 +11,8 @@ export class Advisor {
     rating: Number;
     email : String;
     location: String;
+    city: String;
+    lat : Number;
+    lng: Number;
     photo: String;
     comments: Array<String>; }

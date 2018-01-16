@@ -85,9 +85,7 @@
 <div *ngIf="isAdvisor" class="form-group">
   <textarea [disabled]="!editEnabled" class="form-control" placeholder="Address1" name="address1" [(ngModel)]="user.address1"></textarea>
 </div>
-<div *ngIf="isAdvisor" class="form-group">
-  <textarea [disabled]="!editEnabled" class="form-control" placeholder="Address2" name="address2" [(ngModel)]="user.address2"></textarea>
-</div>
+
 <button *ngIf="editEnabled" type="submit" class="btn btn-success" (click)="modify()"> Update
 					</button>
 </div>
