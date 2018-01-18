@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { ProfileComponent } from './profile.component'
-import { ProfileRoutingModule } from './profile-routing.module'
-import {ProfileService} from './profile.service';
+// import { ProfileComponent } from './profile.component'
+// import { ProfileRoutingModule } from './profile-routing.module'
+// import {ProfileService} from './profile.service';
 import { CommonModule } from '@angular/common';
 import { ThemeModule } from '../../@theme/theme.module';
 import { QueryService } from '../../components/post-query/post-query.service';
@@ -16,12 +16,12 @@ import {GoogleService} from '../../_services/google.service';
 
 @NgModule({
     imports: [
-        ProfileRoutingModule, CommonModule, ThemeModule, FileUploadModule //Ng2FileInputModule.forRoot() 
+         CommonModule, ThemeModule, FileUploadModule //Ng2FileInputModule.forRoot() 
     ],
     declarations: [
-        ProfileComponent,ProfilePictureComponent
+        ProfilePictureComponent
     ],
-    providers: [ProfileService,GoogleService],
+    providers: [GoogleService],
 })
 export class SearchModule {
 }
