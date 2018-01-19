@@ -6,6 +6,8 @@ import {Advisor} from '../_models/advisormodel';
 
 @Injectable()
 export class UserService {
+    curLat : Number;
+    curLng : Number;
     constructor(private http: Http) { }
 
     getAll() {
