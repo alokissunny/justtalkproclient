@@ -17,7 +17,6 @@ import { ThemeModule } from './@theme/theme.module';
 import { NbThemeService } from '@nebular/theme';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
-import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import {PostQueryComponent} from './components/post-query/post-query.component';
@@ -29,6 +28,7 @@ import {BookService} from './components/book-cancel/book-cancel.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {GoogleService} from './_services/google.service';
 
 
 
@@ -54,7 +54,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
    entryComponents: [
     PostQueryComponent,SendReplyComponent, BookComponent
   ],
-  providers: [AlertService, AuthenticationService, UserService, customHttpProvider,BookService,NgbActiveModal ,
+  providers: [AlertService, AuthenticationService, UserService, customHttpProvider,BookService,NgbActiveModal ,GoogleService,
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })

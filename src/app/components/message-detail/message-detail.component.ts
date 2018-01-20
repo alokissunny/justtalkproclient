@@ -28,6 +28,12 @@ export class MessageDetailComponent implements OnInit {
     this.replies  = new Array<QueryReplyModel>();
     this.prepareReply(this.model.reply);
   }
+  getReplierName(uid) {
+    if(this.messageService.currentUser == uid) 
+       return 'you' ;
+    else
+    return uid;
+  }
   prepareReply(reply : QueryReplyModel) {
     if(reply != undefined)
     {

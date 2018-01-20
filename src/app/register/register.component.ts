@@ -69,9 +69,9 @@ export class RegisterComponent implements OnInit {
     }
     //test
      //Property for the gender
-  private gender: string[];
+  public gender: string[];
   //Property for the user
-  private user:any;
+  public user:any;
 
 
      onFormSubmit({ value, valid}: { value: any, valid: boolean }) {

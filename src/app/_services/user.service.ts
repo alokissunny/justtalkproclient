@@ -3,11 +3,12 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { User } from '../_models/index';
 import {Advisor} from '../_models/advisormodel';
-
+import { ReplaySubject } from 'rxjs';
 @Injectable()
 export class UserService {
     curLat : Number;
     curLng : Number;
+    currentLocationChanged  = new ReplaySubject();
     constructor(private http: Http) { }
 
     getAll() {

@@ -15,10 +15,10 @@ export class ProfilePictureComponent implements OnInit {
 
 
   @Input()
-  private editmode = false;
+  public editmode = false;
 
   @Input()
-  private url = '';
+  public url = '';
   _imageId = '';
 
   @Input()
@@ -57,7 +57,7 @@ export class ProfilePictureComponent implements OnInit {
       this._imageId = res["profile-id"].split('/')[3];
       this.url = "http://localhost:4000/images/" + this._imageId;
       this.profileService.updatePicInfo({
-        "me": this.userService.getCurrentUser().username, "photo": this.imageId, "isAdvisor": this.userService.isLoginUserAdvisor()
+        "me": this.userService.getCurrentUser().username, "photo": this._imageId, "isAdvisor": this.userService.isLoginUserAdvisor()
       }).subscribe(() => {
         let user = this.userService.getCurrentUser();
         user.photo = this._imageId;

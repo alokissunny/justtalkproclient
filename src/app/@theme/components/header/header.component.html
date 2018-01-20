@@ -20,6 +20,10 @@
   <nb-action class="control-item" disabled icon="nb-notifications"></nb-action>
   <nb-action class="control-item" icon="nb-email" (click)="navigateToMessage()"></nb-action>
   <nb-action class="control-item">
-    <nb-search type="rotate-layout" (click)="startSearch()"></nb-search>
+    <nb-search type="rotate-layout" tag="location"  placeholder="enter location" ></nb-search>
+  </nb-action>
+  <nb-action *ngIf="noncurloc" class="control-item">
+    <img src="assets/images/location.jpg" (click)="useloc()" title="use current location" style="width: 25px;     cursor: pointer;
+    height: 25px;"/>
   </nb-action>
 </nb-actions>

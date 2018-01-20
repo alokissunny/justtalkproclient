@@ -1,7 +1,7 @@
 <ul style="background-color: gainsboro ; ">
 <div *ngFor = "let reply of replies" class="reply">
   <div>
-  {{reply.repliedBy}} <span> wrote </span>
+  {{getReplierName(reply.repliedBy)}} <span> wrote </span>
 </div>
 <div>
   {{reply.message}}

@@ -19,7 +19,6 @@ import {GoogleService} from '../../_services/google.service';
          CommonModule, ThemeModule, FileUploadModule //Ng2FileInputModule.forRoot() 
     ],
     declarations: [
-        ProfilePictureComponent
     ],
     providers: [GoogleService],
 })
