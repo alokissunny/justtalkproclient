@@ -1,15 +1,17 @@
 .nonread {
     color: black;
     cursor: pointer;
-        border-top: 1px solid #a9a1a1;
-    border-bottom: 1px solid #a9a1a1;
+    //     border-top: 1px solid #a9a1a1;
+    // border-bottom: 1px solid #a9a1a1;
     padding: 5px;
         font-weight: bold;
+       // background: lightslategrey;
 }
 .read {
     color: #331b1b;
     cursor: pointer;
-        border-top: 1px solid #a9a1a1;
-    border-bottom: 1px solid #a9a1a1;
+   // background: lightslategrey;
+    //     border-top: 1px solid #a9a1a1;
+    // border-bottom: 1px solid #a9a1a1;
       padding: 5px;
 }
