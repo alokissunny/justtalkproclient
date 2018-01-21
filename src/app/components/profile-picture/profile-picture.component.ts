@@ -3,7 +3,8 @@ import { FileUploader } from 'ng2-file-upload';
 import { ProfileService } from '../../pages/profile/profile.service';
 import { UserService } from '../../_services/user.service';
 import { AuthenticationService } from '../../_services/authentication.service';
-const URL = 'http://localhost:4000/upload';
+import {appConfig} from '../../app.config';
+const URL = appConfig.apiUrl +'/upload';
 @Component({
   selector: 'app-profile-picture',
   templateUrl: './profile-picture.component.html',
@@ -24,7 +25,7 @@ export class ProfilePictureComponent implements OnInit {
   @Input()
   set imageId(val) {
     this._imageId =val;
-    this.url = "http://localhost:4000/images/" + this._imageId;
+    this.url = appConfig.apiUrl+ '/images/' + this._imageId;
   }
 
   @Output()
@@ -39,7 +40,7 @@ export class ProfilePictureComponent implements OnInit {
 
     this.uploader.response.subscribe(res => {
       // Upload returns a JSON with the image ID
-      this.url = 'http://localhost:4000/get/' + JSON.parse(res).id;
+      this.url = appConfig.apiUrl + '/get/' + JSON.parse(res).id;
       this.urlChange.emit(this.url);
     });
   }
@@ -55,7 +56,7 @@ export class ProfilePictureComponent implements OnInit {
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
       let res = JSON.parse(response);
       this._imageId = res["profile-id"].split('/')[3];
-      this.url = "http://localhost:4000/images/" + this._imageId;
+      this.url = appConfig.apiUrl+'/images/' + this._imageId;
       this.profileService.updatePicInfo({
         "me": this.userService.getCurrentUser().username, "photo": this._imageId, "isAdvisor": this.userService.isLoginUserAdvisor()
       }).subscribe(() => {

@@ -12,8 +12,9 @@ import { CATEGORIES } from '../../constants';
 import { CATMAP } from '../../constants';
 import { CODE } from '../../constants';
 import {GoogleService} from '../../_services/google.service';
+import {appConfig} from '../../app.config';
 //define the constant url we would be uploading to.
-const URL = 'http://localhost:4000/upload';
+const URL = appConfig.apiUrl+'/upload';
 
 @Component({
   selector: 'profile',
