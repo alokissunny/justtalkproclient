@@ -17,16 +17,13 @@ export class PostQueryComponent implements OnInit {
   qm : QueryModel;
   subject :String ;
   message : String;
-  position = 'toast-top-right';
-  animationType = 'fade';
-  title = 'HI there!';
-  content = `I'm cool toaster!`;
-  timeout = 5000;
+  
+  content = `Query Submitted Successfully!`;
+  timeout = 1200;
   toastsLimit = 5;
   type = 'default';
   config: ToasterConfig;
 
-  isNewestOnTop = true;
   isHideOnClick = true;
   isDuplicatesPrevented = false;
   isCloseButton = true;
@@ -34,19 +31,10 @@ export class PostQueryComponent implements OnInit {
     private toasterService: ToasterService) { }
    ngOnInit() {
   }
-    private showToast(type: string, title: string, body: string) {
-    this.config = new ToasterConfig({
-      positionClass: this.position,
-      timeout: this.timeout,
-      newestOnTop: this.isNewestOnTop,
-      tapToDismiss: this.isHideOnClick,
-      preventDuplicates: this.isDuplicatesPrevented,
-      animation: this.animationType,
-      limit: this.toastsLimit,
-    });
+    private showToast(type: string, body: string) {
     const toast: Toast = {
       type: type,
-      title: title,
+    //  title: title,
       body: body,
       timeout: this.timeout,
       showCloseButton: this.isCloseButton,
@@ -65,7 +53,7 @@ this.qm.unreadForAdvisor = true;
 this.qm.unreadForRequestor = true;
 this.qm.lastUpdatedFrom = this.userService.getCurrentUser()['firstName'];
 this.query.postQuery(this.qm).subscribe(() => {
-   this.showToast(this.type, this.title, this.content);
+   this.showToast(this.type, this.content);
 this.activeModal.close();
 });
 

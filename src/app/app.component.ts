@@ -6,15 +6,40 @@
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from './@core/utils/analytics.service';
 import {  UserService } from './_services/index';
+import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
+import 'style-loader!angular2-toaster/toaster.css';
 
 @Component({
   selector: 'ngx-app',
-  template: '<router-outlet></router-outlet>',
+  template: '<toaster-container [toasterconfig]="config"></toaster-container><router-outlet></router-outlet>',
 })
 export class AppComponent implements OnInit {
   lat: Number;
   lng : Number;
+  position = 'toast-top-right';
+  animationType = 'fade';
+  //title = 'HI there!';
+  //content = `I'm cool toaster!`;
+  timeout = 100;
+  toastsLimit = 5;
+  type = 'default';
+  config: ToasterConfig;
+
+  isNewestOnTop = true;
+  isHideOnClick = true;
+  isDuplicatesPrevented = false;
+  isCloseButton = true;
+  
   constructor(private analytics: AnalyticsService , private userService: UserService) {
+       this.config = new ToasterConfig({
+      positionClass: this.position,
+      timeout: this.timeout,
+      newestOnTop: this.isNewestOnTop,
+      tapToDismiss: this.isHideOnClick,
+      preventDuplicates: this.isDuplicatesPrevented,
+      animation: this.animationType,
+      limit: this.toastsLimit,
+    });
   }
 
   ngOnInit(): void {

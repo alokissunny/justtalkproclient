@@ -14,6 +14,7 @@ import { customHttpProvider } from './_helpers/index';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
+import { ToasterModule } from 'angular2-toaster';
 import { NbThemeService } from '@nebular/theme';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
@@ -39,7 +40,7 @@ import {GoogleService} from './_services/google.service';
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    AppRoutingModule,
+    AppRoutingModule,ToasterModule,
     ReactiveFormsModule,
  AgmCoreModule.forRoot({
       apiKey: "AIzaSyDh0cCwo1_WRML-0QYxKP60LkClJC3Tjig",
