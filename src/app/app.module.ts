@@ -32,6 +32,7 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {GoogleService} from './_services/google.service';
 import {CommentComponent} from './components/comment-card/comment-card.component';
+import {CommentService} from './components/comments/comment.service';
 
 
 
@@ -56,7 +57,7 @@ import {CommentComponent} from './components/comment-card/comment-card.component
    entryComponents: [
     PostQueryComponent,SendReplyComponent, BookComponent,PostCommentComponent,CommentComponent
   ],
-  providers: [AlertService, AuthenticationService, UserService, customHttpProvider,BookService,NgbActiveModal ,GoogleService,
+  providers: [AlertService, AuthenticationService, UserService, customHttpProvider,BookService,NgbActiveModal ,GoogleService,CommentService,
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })

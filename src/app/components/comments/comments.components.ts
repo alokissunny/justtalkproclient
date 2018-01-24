@@ -4,6 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {UserService} from '../../_services/user.service';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import 'style-loader!angular2-toaster/toaster.css';
+import {CommentService} from './comment.service';
 
 
 @Component({
@@ -21,9 +22,13 @@ export class PostCommentComponent implements OnInit {
   isHideOnClick = true;
   isDuplicatesPrevented = false;
   isCloseButton = true;
-   constructor(private activeModal : NgbActiveModal, private userService: UserService ,
+  comments = [];
+   constructor(private activeModal : NgbActiveModal, private userService: UserService , private commentService : CommentService,
     private toasterService: ToasterService) { }
    ngOnInit() {
+     this.commentService.getComments("test").subscribe((comments:any) => {
+      this.comments = comments;
+     })
   }
     private showToast(type: string, body: string) {
     const toast: Toast = {
