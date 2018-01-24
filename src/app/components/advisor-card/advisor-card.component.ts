@@ -2,6 +2,7 @@ import { OnInit, Input } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PostQueryComponent } from '../post-query/post-query.component';
+import {PostCommentComponent} from '../comments/comments.components';
 import { Advisor } from '../../_models/advisormodel';
 import { QueryService } from '../post-query/post-query.service';
 import { Component, Inject } from '@angular/core';
@@ -58,6 +59,20 @@ export class AdvisorCardComponent implements OnInit {
       activeModal.componentInstance.modalHeader = 'Large Modal';
     }
   }
+  openfeedBack() {
+    if (this.userService.isSessionActive()) {
+      this.query.advisor = this._advisor.username;
+      const activeModal = this.modalService.open(PostCommentComponent, { size: 'lg', container: 'nb-layout' });
+
+      activeModal.componentInstance.modalHeader = 'Large Modal';
+    }
+    else {
+      const activeModal = this.modalService.open(LoginComponent, { size: 'lg', container: 'nb-layout' });
+
+      activeModal.componentInstance.modalHeader = 'Large Modal';
+    }
+  }
+  
   bookcancel() {
     this.bookService.advisor = this._advisor.username;
     const activeModal = this.modalService.open(BookComponent, { size: 'lg', container: 'nb-layout' });

@@ -6,14 +6,9 @@
       </td>
     </tr>
     <div *ngIf="advisors.length == 0  && !onloading">Sorry No Advisor !</div>
-     <div *ngIf="onloading">Fetching Advisors By!!!!</div>
-    <!--<tr>
-      <td>
-        <app-advisor-card></app-advisor-card>
-      </td>
-      <td>
-        <app-advisor-card></app-advisor-card>
-      </td>
-    </tr>-->
+     <div *ngIf="onloading">
+       <span>Fetching Advisors Near Your Location!</span>
+       <div class="loader"></div>
+     </div>
   </table>
 </div>

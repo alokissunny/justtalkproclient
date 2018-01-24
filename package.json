@@ -54,10 +54,12 @@
     "core-js": "2.5.1",
     "d3": "4.8.0",
     "font-awesome": "4.7.0",
+    "helmet": "^3.8.2",
     "intl": "1.2.5",
     "ionicons": "2.0.1",
     "leaflet": "1.0.3",
     "lodash": "^4.17.4",
+    "moment": "^2.20.1",
     "nebular-icons": "1.0.6",
     "ng2-ckeditor": "1.1.9",
     "ng2-comment": "0.0.9",
@@ -75,9 +77,8 @@
     "tinymce": "4.5.7",
     "typeface-exo": "0.0.22",
     "web-animations-js": "2.2.5",
-    "zone.js": "0.8.18",
     "winston": "^2.1.1",
-    "helmet": "^3.8.2"
+    "zone.js": "0.8.18"
   },
   "devDependencies": {
     "@angular/cli": "1.4.9",

@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { CoreModule } from './@core/core.module';
-	import { NgModel } from '@angular/forms';
+import { NgModel } from '@angular/forms';
 import { customHttpProvider } from './_helpers/index';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,7 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import {PostQueryComponent} from './components/post-query/post-query.component';
+import {PostCommentComponent} from './components/comments/comments.components';
 import { CommentModule } from 'ng2-comment';
 import {SendReplyComponent} from './components/send-reply/send-reply.component';
 import {BookComponent} from './components/book-cancel/book-cancel.component';
@@ -30,12 +31,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {GoogleService} from './_services/google.service';
-
+import {CommentComponent} from './components/comment-card/comment-card.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent , RegisterComponent , BookComponent],
+  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent , RegisterComponent , BookComponent , PostCommentComponent ,CommentComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -53,7 +54,7 @@ import {GoogleService} from './_services/google.service';
   ],
   bootstrap: [AppComponent],
    entryComponents: [
-    PostQueryComponent,SendReplyComponent, BookComponent
+    PostQueryComponent,SendReplyComponent, BookComponent,PostCommentComponent,CommentComponent
   ],
   providers: [AlertService, AuthenticationService, UserService, customHttpProvider,BookService,NgbActiveModal ,GoogleService,
     { provide: APP_BASE_HREF, useValue: '/' },
