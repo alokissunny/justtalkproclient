@@ -5,6 +5,7 @@ import {UserService} from '../../_services/user.service';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import 'style-loader!angular2-toaster/toaster.css';
 import {CommentModel} from '../../_models/commentModel';
+import {appConfig} from '../../app.config';
 
 
 @Component({
@@ -27,6 +28,10 @@ export class CommentComponent implements OnInit {
     private toasterService: ToasterService) { }
    ngOnInit() {
 
+  }
+  getPicture() {
+    
+    return appConfig.apiUrl + "/images/" + this.comment.photo; 
   }
   
     

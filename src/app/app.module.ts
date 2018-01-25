@@ -33,11 +33,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {GoogleService} from './_services/google.service';
 import {CommentComponent} from './components/comment-card/comment-card.component';
 import {CommentService} from './components/comments/comment.service';
+import {FromNowPipe} from './pipes/from-now';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent , RegisterComponent , BookComponent , PostCommentComponent ,CommentComponent],
+  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent ,FromNowPipe,
+   RegisterComponent , BookComponent , PostCommentComponent ,CommentComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

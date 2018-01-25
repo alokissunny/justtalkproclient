@@ -4,4 +4,5 @@ export class CommentModel {
     time : Number;
     photo : String;
     comment : String;
+    advisorId : String;
 }

@@ -12,6 +12,7 @@ import { UserService } from '../../_services/user.service';
 import { LoginComponent } from '../../login/login.component';
 import { appConfig } from '../../app.config';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {CommentService} from '../comments/comment.service';
 
 
 @Component({
@@ -36,7 +37,8 @@ export class AdvisorCardComponent implements OnInit {
     return this._advisor;
 
   }
-  constructor(private router : Router ,private modalService: NgbModal, private ref: ChangeDetectorRef, private query: QueryService, private bookService: BookService, private userService: UserService) {
+  constructor(private router : Router ,private modalService: NgbModal, private ref: ChangeDetectorRef,private commentService: CommentService,
+   private query: QueryService, private bookService: BookService, private userService: UserService) {
   }
 
   ngOnInit() {
@@ -61,7 +63,7 @@ export class AdvisorCardComponent implements OnInit {
   }
   openfeedBack() {
     if (this.userService.isSessionActive()) {
-      this.query.advisor = this._advisor.username;
+      this.commentService.advisorId = this._advisor.username;
       const activeModal = this.modalService.open(PostCommentComponent, { size: 'lg', container: 'nb-layout' });
 
       activeModal.componentInstance.modalHeader = 'Large Modal';
