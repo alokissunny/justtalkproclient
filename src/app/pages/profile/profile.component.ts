@@ -64,8 +64,9 @@ export class ProfileComponent implements OnInit {
     }
   }
   modify() {
-    console.log("modify");
-    this.googleService.getGoogleLocation(this.user.location +"+"+this.user.city).subscribe(res => {
+    if(this.validation()) {
+      let location = this.user.location? this.user.location +"+"+this.user.city : this.user.city;
+    this.googleService.getGoogleLocation(location).subscribe(res => {
       this.user.lat = res.results[0].geometry.location.lat;
       this.user.lng = res.results[0].geometry.location.lng;
       this.profileService.updateUserInfo(this.user).subscribe((res) => {
@@ -75,7 +76,10 @@ export class ProfileComponent implements OnInit {
 
     })
     })
-    
+     }
+  }
+  validation() {
+    return true;
   }
   onChange(sel) {
     this.user.category = this.code[sel];

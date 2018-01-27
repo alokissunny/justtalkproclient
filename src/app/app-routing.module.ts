@@ -11,11 +11,17 @@ import {
 import {LoginComponent} from './login/index';
 import {NewLoginComponent} from './login-new/login.component';
 import {RegisterComponent} from './register/register.component';
-
+import {AdvisorLoginComponent} from './advisor-login/advisor-login.component';
 const routes: Routes = [
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
   { path: 'login',
     component : NewLoginComponent  
+  },
+  { path: 'logina',
+    component : LoginComponent  
+  },
+    { path: 'loginad',
+    component : AdvisorLoginComponent  
   },
    {
         path: 'register',

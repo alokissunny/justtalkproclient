@@ -44,20 +44,26 @@
   
    <div class="cont_form_sign_up">
 <!--<a href="#" (click)="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>-->
-     <h2>SIGN UP</h2>
-<input type="text" placeholder="Email" [(ngModel)]="user.username" />
-<input type="text" placeholder="FirstName" [(ngModel)]="user.firstName" />
-<input type="text" placeholder="LastName" [(ngModel)]="user.lastName" />
-<input type="password" placeholder="Password" [(ngModel)]="user.password"/>
+     <h2 style="  margin-top: 20px;">SIGN UP</h2>
+<input type="text"  class="field"  placeholder="Email" [(ngModel)]="user.username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
+<input type="text"  class="field"  placeholder="FirstName" [(ngModel)]="user.firstName" required/>
+<input type="text" class="field" placeholder="LastName" [(ngModel)]="user.lastName" required />
+<input type="text"  class="field"  placeholder="City" [(ngModel)]="user.city" required />
+<input type="password" class="field"  placeholder="Password" [(ngModel)]="user.password" required/>
 <!--<input type="password" placeholder="Confirm Password" />-->
 <button class="btn_sign_up" (click)="cambiar_sign_up()">SIGN UP</button>
+ 
 
   </div>
 
     </div>
     
   </div>
+ <button style="margin: 30px;
+    float: right;
+    padding: 10px;" (click)="advisor()" class="btn btn-primary btn-sm"> Be Adviosor</button>
  </div>
+
 </div>
   
 

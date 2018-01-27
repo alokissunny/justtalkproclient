@@ -5,4 +5,8 @@
     firstName: string;
     lastName: string;
     photo : string;
+    city: string;
+    lat:Number;
+    lng:Number;
+    email: string;
 }

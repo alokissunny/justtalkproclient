@@ -8,6 +8,7 @@ import { AnalyticsService } from './@core/utils/analytics.service';
 import {  UserService } from './_services/index';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import 'style-loader!angular2-toaster/toaster.css';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ngx-app',
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit {
   isDuplicatesPrevented = false;
   isCloseButton = true;
   
-  constructor(private analytics: AnalyticsService , private userService: UserService) {
+  constructor(private analytics: AnalyticsService , private userService: UserService , private router : Router) {
        this.config = new ToasterConfig({
       positionClass: this.position,
       timeout: this.timeout,
@@ -53,5 +54,8 @@ export class AppComponent implements OnInit {
       } else {
         console.log("Geolocation is not supported by this browser.");
   }
+  if( !this.userService.isSessionActive()) {
+             this.router.navigateByUrl('/login');
+          }
   }
 }

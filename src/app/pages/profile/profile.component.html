@@ -48,7 +48,7 @@
 		      control-label">Email</label>
     <div class="col-lg-7">
       <input type="text" class="form-control" [(ngModel)]="user.email" name="email" #email="ngModel" id="inputEmail" placeholder="Email"
-        [disabled]="!editEnabled" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+        [disabled]="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
     </div>
 
 
@@ -60,6 +60,24 @@
       </div>
       <div *ngIf="email.errors?.pattern && email.touched">
         The email id doesn't seem right
+      </div>
+    </div>
+  </div>
+    <!-- CITY input block -->
+  <div class="form-group">
+    <label for="inputCity" class="col-lg-2
+		      control-label">City</label>
+    <div class="col-lg-7">
+      <input type="text" class="form-control" [(ngModel)]="user.city" name="city" #city="ngModel" id="inputCity" placeholder="City"
+        [disabled]="!editEnabled" required>
+    </div>
+
+
+    <!-- city error block -->
+
+    <div *ngIf="city.invalid && ( city.touched)" class="col-sm-3 text-danger">
+      <div *ngIf="city.errors?.required">
+        city field can't be blank
       </div>
     </div>
   </div>
@@ -79,9 +97,9 @@
 <div *ngIf="isAdvisor" class="form-group">
   <textarea [disabled]="!editEnabled" class="form-control" placeholder="Basic Info" name="basicInfo" [(ngModel)]="user.basicInfo"></textarea>
 </div>
-<div *ngIf="isAdvisor" class="form-group">
-  <textarea [disabled]="!editEnabled" class="form-control" placeholder="City" name="city" [(ngModel)]="user.city"></textarea>
-</div>
+<!--<div *ngIf="isAdvisor" class="form-group">
+  <input type="text" [disabled]="!editEnabled" class="form-control" placeholder="City" name="city" [(ngModel)]="user.city">
+</div>-->
 <div *ngIf="isAdvisor" class="form-group">
   <textarea [disabled]="!editEnabled" class="form-control" placeholder="Address1" name="address1" [(ngModel)]="user.location"></textarea>
 </div>

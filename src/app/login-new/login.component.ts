@@ -4,7 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertService, AuthenticationService } from '../_services/index';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { User } from '../_models/user';
-
+import { GoogleService } from '../_services/google.service';
 @Component({
     moduleId: module.id,
     templateUrl: 'login.component.html',
@@ -26,9 +26,9 @@ export class NewLoginComponent implements OnInit {
     isCloseButton = true;
 
     constructor(
-        private route: ActivatedRoute,
+        private route: ActivatedRoute, private googleService: GoogleService,
         private router: Router,
-        private authenticationService: AuthenticationService,private toasterService: ToasterService,
+        private authenticationService: AuthenticationService, private toasterService: ToasterService,
         private alertService: AlertService, private activeModal: NgbActiveModal) { }
 
     ngOnInit() {
@@ -39,17 +39,20 @@ export class NewLoginComponent implements OnInit {
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
+    advisor() {
+        this.router.navigateByUrl('/loginad');
+    }
     private showToast(type: string, body: string) {
-    const toast: Toast = {
-      type: type,
-      //  title: title,
-      body: body,
-      timeout: this.timeout,
-      showCloseButton: this.isCloseButton,
-      bodyOutputType: BodyOutputType.TrustedHtml,
-    };
-    this.toasterService.popAsync(toast);
-  }
+        const toast: Toast = {
+            type: type,
+            //  title: title,
+            body: body,
+            timeout: this.timeout,
+            showCloseButton: this.isCloseButton,
+            bodyOutputType: BodyOutputType.TrustedHtml,
+        };
+        this.toasterService.popAsync(toast);
+    }
     /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
 ---------------------------------------
 */
@@ -106,10 +109,16 @@ export class NewLoginComponent implements OnInit {
 
     }
     signUp() {
-        this.authenticationService.userSignUp(this.user).subscribe(res => {
-            this.showToast(this.type,this.content);
+        this.user.email = this.user.username;
+        this.googleService.getGoogleLocation(this.user.city).subscribe(res => {
+            this.user.lat = res.results[0].geometry.location.lat;
+            this.user.lng = res.results[0].geometry.location.lng;
+            this.authenticationService.userSignUp(this.user).subscribe(res => {
+            this.showToast(this.type, this.content);
             this.cambiar_login();
         });
+        })
+        
     }
 
     login() {
@@ -122,9 +131,9 @@ export class NewLoginComponent implements OnInit {
                 this.router.navigate([this.returnUrl]);
             },
             error => {
-                 this.showToast(this.type,"login failed");
-                 this.model.username = '';
-                 this.model.password = '';
+                this.showToast(this.type, "login failed");
+                this.model.username = '';
+                this.model.password = '';
             });
     }
 }
