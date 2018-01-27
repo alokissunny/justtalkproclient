@@ -33,12 +33,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {GoogleService} from './_services/google.service';
 import {CommentComponent} from './components/comment-card/comment-card.component';
 import {CommentService} from './components/comments/comment.service';
-import {FromNowPipe} from './pipes/from-now';
-
+import {UtilityModule} from './utility/utility.module';
+import {NewLoginComponent} from './login-new/login.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent ,FromNowPipe,
+  declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent , NewLoginComponent,
    RegisterComponent , BookComponent , PostCommentComponent ,CommentComponent],
   imports: [
     BrowserModule,
@@ -46,6 +46,7 @@ import {FromNowPipe} from './pipes/from-now';
     HttpModule,
     AppRoutingModule,ToasterModule,
     ReactiveFormsModule,
+    UtilityModule,
  AgmCoreModule.forRoot({
       apiKey: "AIzaSyDh0cCwo1_WRML-0QYxKP60LkClJC3Tjig",
       libraries: ["places"]

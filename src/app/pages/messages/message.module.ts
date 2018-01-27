@@ -8,11 +8,11 @@ import {QueryService} from '../../components/post-query/post-query.service';
 import {MessageRowComponent} from '../../components/message-row/message-row.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { MessageDetailComponent } from '../../components/message-detail/message-detail.component'; 
-
+import {UtilityModule} from '../../utility/utility.module';
 
 @NgModule({
   imports: [
-   MessageRoutingModule, CommonModule, ThemeModule,
+   MessageRoutingModule, CommonModule, ThemeModule,UtilityModule
   ],
   declarations: [
       MessageComponent, MessageRowComponent, MessageDetailComponent

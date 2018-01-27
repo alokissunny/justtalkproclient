@@ -15,7 +15,7 @@ export class MessageRowComponent implements OnInit {
   advisor: String;
   subject: String;
   message: String;
-  time: String;
+  time: Number;
   _dataModel: QueryModel;
   unread: Boolean;
   messageClass: String = "nonread";
@@ -30,7 +30,7 @@ export class MessageRowComponent implements OnInit {
     this.subject = this._dataModel.subject;
     this.message = this._dataModel.message;
     this.advisor = this._dataModel.advisor;
-    this.time = new Date(this._dataModel.requestOn as any).toDateString();
+    this.time = this._dataModel.requestOn;//new Date(this._dataModel.requestOn as any).toDateString();
     this.lastUpdatedFrom = this._dataModel.lastUpdatedFrom;
     if (this.userService.getCurrentUser().username == this._dataModel.advisor) {
       this.unread = this._dataModel.unreadForAdvisor;

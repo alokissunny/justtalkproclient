@@ -1,3 +1,3 @@
 ﻿export const appConfig = {
-    apiUrl: 'http://localhost:4000',
+    apiUrl: 'http://760f3d62.ngrok.io'//'http://localhost:4000',
 };

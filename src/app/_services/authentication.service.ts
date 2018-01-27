@@ -3,10 +3,11 @@ import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 import { ReplaySubject } from 'rxjs';
+import{User} from '../_models/user';
 
 @Injectable()
 export class AuthenticationService {
-
+    user:User = new User();
     onLogin = new ReplaySubject();
     onDpChange = new ReplaySubject();
     constructor(private http: Http) { }
@@ -23,6 +24,10 @@ export class AuthenticationService {
 
                 return user;
             });
+    }
+    userSignUp(user:User) {
+       return this.http.post('/users/register',user);
+
     }
 
     logout() {

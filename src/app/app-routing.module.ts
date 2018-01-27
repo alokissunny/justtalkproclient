@@ -9,12 +9,13 @@ import {
   NbResetPasswordComponent,
 } from '@nebular/auth';
 import {LoginComponent} from './login/index';
+import {NewLoginComponent} from './login-new/login.component';
 import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
   { path: 'login',
-    component : LoginComponent  
+    component : NewLoginComponent  
   },
    {
         path: 'register',

@@ -1,11 +1,21 @@
-<div style="background: blanchedalmond;
-    height: 50px;">
-    <nb-user style="float:left ;     padding-left: 5px;" [name]="comment?.cname" [picture]="getPicture()" ></nb-user>
-    <div style="width: 500px;
+<div style="    background: content-box;
+    border-style: double;
+    height: 80px;">
+    <nb-user style="float:left ; color: cadetblue;    padding-left: 5px;" [name]="comment?.cname" [picture]="getPicture()"></nb-user>
+    <div style="width: 500px;width: 600px;
     float: right;
+    padding-top: 1%;
+    display: block;
+    /* width: 400px; */
+    /* height: 20px; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: right;
+    color: black;
     padding-top: 1%;">
-    <span >{{comment.comment}}</span>
-    <span style="margin-right: 10px; float: right">{{comment.time | fromNow}} </span>
+        <span>{{comment.comment}}</span>
+        <span style="margin-right: 10px; float: right">{{comment.time | fromNow}} </span>
     </div>
-    
+
 </div>

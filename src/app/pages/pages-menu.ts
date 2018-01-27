@@ -7,16 +7,22 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/dashboard',
     home: true,
   },
-  {
-    title: 'Auth',
-    icon: 'nb-locked',
-    children: [
-      {
-        title: 'Register As Advisor',
-        link: '/register',
-      },
-    ],
+    {
+    title: 'Recent Contacts',
+     icon: 'nb-locked'
+   // link: '/pages/dashboard',
+   // home: true,
   },
+  // {
+  //   title: 'Auth',
+  //   icon: 'nb-locked',
+  //   children: [
+  //     {
+  //       title: 'Register As Advisor',
+  //       link: '/register',
+  //     },
+  //   ],
+  // },
 ];
 export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
   {
