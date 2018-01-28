@@ -2,23 +2,36 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertService, AuthenticationService } from '../_services/index';
+import { UserService } from '../_services/user.service';
+import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 
 @Component({
     moduleId: module.id,
     templateUrl: 'advisor-login.html',
-     styleUrls: ['./login.scss'],
+    styleUrls: ['./login.scss'],
 })
 
 export class AdvisorLoginComponent implements OnInit {
     model: any = {};
+    loginmodel: any = {};
     loading = false;
     returnUrl: string;
+    content = `SignUp Successful!!`;
+    contentFail = 'SignUp failed!!';
+    timeout = 1200;
+    toastsLimit = 5;
+    type = 'default';
+    config: ToasterConfig;
+    isHideOnClick = true;
+    isDuplicatesPrevented = false;
+    isCloseButton = true;
+    isSignUp = true;
 
     constructor(
-        private route: ActivatedRoute,
-        private router: Router,
+        private route: ActivatedRoute, private userService: UserService,
+        private router: Router, private toasterService: ToasterService,
         private authenticationService: AuthenticationService,
-        private alertService: AlertService , private activeModal : NgbActiveModal) { }
+        private alertService: AlertService, private activeModal: NgbActiveModal) { }
 
     ngOnInit() {
         // reset login status
@@ -28,80 +41,64 @@ export class AdvisorLoginComponent implements OnInit {
         // // get return url from route parameters or default to '/'
         // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
-     classReg( className ) {
-  return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
-}
+    user() {
+        this.router.navigateByUrl('/login');
+    }
+    switchInterface(val) {
+        this.isSignUp = !val;
+    }
+    private showToast(type: string, body: string) {
+        const toast: Toast = {
+            type: type,
+            //  title: title,
+            body: body,
+            timeout: this.timeout,
+            showCloseButton: this.isCloseButton,
+            bodyOutputType: BodyOutputType.TrustedHtml,
+        };
+        this.toasterService.popAsync(toast);
+    }
+    signUp() {
+        if (this.validation()) {
+            this.model.email = this.model.username;
+            this.userService.createAdvisor(this.model)
+                .subscribe(
+                data => {
+                    //this.alertService.success('Registration successful', true);
+                    this.showToast(this.type, this.content);
+                    this.isSignUp = false;
+                },
+                error => {
+                    this.showToast(this.type, this.contentFail);
+                    //this.alertService.error(error);
+                    this.loading = false;
+                });
+        }
+    }
+    validation() {
+        if (this.model && this.model.username && this.model.firstName && this.model.lastName)
+            return true;
+        else
+            return false;
+    }
+    classReg(className) {
+        return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+    }
+    login() {
+        if (this.loginmodel.username && this.loginmodel.password) {
+            this.authenticationService.login(this.loginmodel.username,
+                this.loginmodel.password, true).subscribe(
+                data => {
+                    this.showToast(this.type, 'login success');
+                    this.router.navigate(['/']);
+                },
+                error => {
+                    this.showToast(this.type, 'login fail');
+                }
+                )
+        }
+    }
 
-// classList support for class management
-// altho to be fair, the api sucks because it won't accept multiple classes at once
- hasClass;
- addClass;
- removeClass;
 
-// if ( 'classList' in document.documentElement ) {
-//   hasClass = function( elem, c ) {
-//     return elem.classList.contains( c );
-//   };
-//   addClass = function( elem, c ) {
-//     elem.classList.add( c );
-//   };
-//   removeClass = function( elem, c ) {
-//     elem.classList.remove( c );
-//   };
-// }
-// else {
-//   hasClass = function( elem, c ) {
-//     return classReg( c ).test( elem.className );
-//   };
-//   addClass = function( elem, c ) {
-//     if ( !hasClass( elem, c ) ) {
-//       elem.className = elem.className + ' ' + c;
-//     }
-//   };
-//   removeClass = function( elem, c ) {
-//     elem.className = elem.className.replace( classReg( c ), ' ' );
-//   };
-// }
 
-// function toggleClass( elem, c ) {
-//   var fn = hasClass( elem, c ) ? removeClass : addClass;
-//   fn( elem, c );
-// }
-
-// var classie = {
-//   // full names
-//   hasClass: hasClass,
-//   addClass: addClass,
-//   removeClass: removeClass,
-//   toggleClass: toggleClass,
-//   // short names
-//   has: hasClass,
-//   add: addClass,
-//   remove: removeClass,
-//   toggle: toggleClass
-// };
-
-// transport
-// if ( typeof define === 'function' && define.amd ) {
-//   // AMD
-//   define( classie );
-// } else {
-//   // browser global
-//   window.classie = classie;
-// }
-
-    // login() {
-    //     this.loading = true;
-    //     this.authenticationService.login(this.model.username, this.model.password, this.model.isAdvisor)
-    //         .subscribe(
-    //             data => {
-    //                 this.activeModal.close();
-    //                 this.authenticationService.onLogin.next({});
-    //                 this.router.navigate([this.returnUrl]);
-    //             },
-    //             error => {
-    //                 this.alertService.error(error);
-    //                 this.loading = false;
-    //             });
-    // }
 }

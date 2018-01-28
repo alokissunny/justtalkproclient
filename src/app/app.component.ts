@@ -12,7 +12,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ngx-app',
-  template: '<toaster-container [toasterconfig]="config"></toaster-container><router-outlet></router-outlet>',
+   styleUrls: ['./app.scss'],
+  template: '<toaster-container style="background: cadetblue;" [toasterconfig]="config"></toaster-container><router-outlet></router-outlet>',
 })
 export class AppComponent implements OnInit {
   lat: Number;

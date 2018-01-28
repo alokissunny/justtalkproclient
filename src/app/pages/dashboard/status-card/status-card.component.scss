@@ -43,7 +43,7 @@
         @include btn-hero-info-gradient();
         @include btn-hero-info-bevel-glow-shadow();
       }
-      &.rel {
+      &.leg {
         @include btn-hero-warning-gradient();
         @include btn-hero-warning-bevel-glow-shadow();
       }
@@ -62,7 +62,7 @@
         &.prop {
           background-image: btn-hero-info-light-gradient();
         }
-        &.rel {
+        &.leg {
           background-image: btn-hero-warning-light-gradient();
         }
       }

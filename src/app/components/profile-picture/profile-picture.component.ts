@@ -20,12 +20,14 @@ export class ProfilePictureComponent implements OnInit {
 
   @Input()
   public url = '';
-  _imageId = '';
+  _imageId = 'placeholder';
 
   @Input()
   set imageId(val) {
+    if(val) {
     this._imageId =val;
     this.url = appConfig.apiUrl+ '/images/' + this._imageId;
+    }
   }
 
   @Output()
@@ -50,8 +52,8 @@ export class ProfilePictureComponent implements OnInit {
   }
 
   ngOnInit() {
-    // if (this.imageId)
-    //   this.url = "http://localhost:4000/images/" + this.imageId;
+    if (this._imageId)
+      this.url = appConfig.apiUrl+'/images/' + this._imageId;
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
       let res = JSON.parse(response);
