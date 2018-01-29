@@ -12,7 +12,7 @@ import { appConfig } from '../../app.config';
   styleUrls: ['./post-comment.component.scss' ],
 })
 export class PostCommentComponent implements OnInit {
- 
+ starRate = 3;
   content = `feedback added!`;
   timeout = 1200;
   toastsLimit = 5;

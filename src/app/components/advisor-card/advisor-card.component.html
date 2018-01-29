@@ -21,13 +21,21 @@
     </div>
     <div class="items" style="width : 600px">
         <div style="float : right">
-          <span class="txt" style="font-style: italic;display: inherit ; color: cadetblue; cursor:pointer; margin: 10px ; position: absolute;
-    right: 0;" (click)="openfeedBack()" >comments</span>
-             <!--<img src="assets/images/like.png"  style="margin-top: 10px; margin: 10px ; position: absolute;
+            <span class="txt" style="font-style: italic;display: inherit ; color: cadetblue; cursor:pointer; margin: 10px ; position: absolute;
+    right: 0;" (click)="openfeedBack()">comments</span>
+            <ngb-rating [(rate)]="starRate" max=5>
+                <ng-template let-fill="fill">
+                    <span class="star fill" [class.filled]="fill === 100">
+                <i class="ion-android-star" *ngIf="fill === 100"></i>
+                <i class="ion-android-star-outline" *ngIf="fill !== 100"></i>
+              </span>
+                </ng-template>
+            </ngb-rating>
+            <!--<img src="assets/images/like.png"  style="margin-top: 10px; margin: 10px ; position: absolute;
     right: 0;    bottom: 100px;
     height: 30px;
     width: 70px;" />-->
-             <button  class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
+            <button class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
     right: 0;
     bottom: 0; cursor:pointer; background-color: cadetblue;
     display: inherit;height: 45px;font-size: x-small;
