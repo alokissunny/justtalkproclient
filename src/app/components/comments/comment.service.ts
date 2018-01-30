@@ -9,6 +9,8 @@ import {CommentModel} from '../../_models/commentModel';
 export class CommentService {
      //hack
   advisorId: String;
+  currentRating : Number;
+  rateCount :Number;
     url = appConfig.apiUrl;
     dummyData = [{
         cname: "alok",

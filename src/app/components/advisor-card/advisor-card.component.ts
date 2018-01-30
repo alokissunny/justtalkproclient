@@ -22,7 +22,7 @@ import {CommentService} from '../comments/comment.service';
 })
 export class AdvisorCardComponent implements OnInit {
 
-  about: String = 'asdkjgdgfd';
+  about: String = 'ADD DESCRIPTION';
   _advisor: Advisor;
   starRate = 2;
   pic: String;
@@ -64,6 +64,8 @@ export class AdvisorCardComponent implements OnInit {
   openfeedBack() {
     if (this.userService.isSessionActive()) {
       this.commentService.advisorId = this._advisor.username;
+       this.commentService.currentRating = this._advisor.currentRating;
+        this.commentService.rateCount = this._advisor.rateCount;
       const activeModal = this.modalService.open(PostCommentComponent, { size: 'lg', container: 'nb-layout' });
 
       activeModal.componentInstance.modalHeader = 'Large Modal';
@@ -74,7 +76,6 @@ export class AdvisorCardComponent implements OnInit {
       activeModal.componentInstance.modalHeader = 'Large Modal';
     }
   }
-  
   bookcancel() {
     this.bookService.advisor = this._advisor.username;
     const activeModal = this.modalService.open(BookComponent, { size: 'lg', container: 'nb-layout' });

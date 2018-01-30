@@ -8,11 +8,13 @@ export class Advisor {
     basicInfo: String;
     phoneAvailablity: boolean;
     phone: Number;
-    rating: Number;
+    //rating: Number;
     email : String;
     location: String;
     city: String;
     lat : Number;
     lng: Number;
     photo: String;
+    currentRating: Number;
+    rateCount: Number;
     comments: Array<String>; }

@@ -13,4 +13,6 @@ export const CODE = {
     "Property": "prop",
     "Legal" : "leg"
 }
+export const BASE_RATE = 3;
+export const BASE_RATE_COUNT = 1;
 export const CATEGORIES = [CATMAP.fin, CATMAP.car, CATMAP.rel, CATMAP.prop , CATMAP.leg];

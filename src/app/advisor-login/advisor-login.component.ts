@@ -4,6 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertService, AuthenticationService } from '../_services/index';
 import { UserService } from '../_services/user.service';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
+import * as constant from '../constants';
 
 @Component({
     moduleId: module.id,
@@ -61,6 +62,8 @@ export class AdvisorLoginComponent implements OnInit {
     signUp() {
         if (this.validation()) {
             this.model.email = this.model.username;
+            this.model.currentRating = constant.BASE_RATE;
+            this.model.rateCount = constant.BASE_RATE_COUNT;
             this.userService.createAdvisor(this.model)
                 .subscribe(
                 data => {

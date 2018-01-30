@@ -1,6 +1,6 @@
 <nb-card>
   <nb-card-header><span> Comments</span>
-    <ngb-rating [(rate)]="starRate" max=5>
+    <ngb-rating [(rate)]="rating" max=5>
     <ng-template let-fill="fill">
       <span class="star fill" [class.filled]="fill === 100">
                 <i class="ion-android-star" *ngIf="fill === 100"></i>
