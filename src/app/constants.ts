@@ -3,7 +3,11 @@ export const CATMAP = {
     "car": "Career",
     "rel": "Relationship",
     "prop": "Property",
-    "leg" : "Legal"
+    "leg" : "Legal",
+    "event": "Event",
+    "yog": "yoga",
+    "nut": "nutrition",
+    "pho": "photography"
 
 }
 export const CODE = {
@@ -11,8 +15,12 @@ export const CODE = {
     "Career": "car",
     "Relationship": "rel",
     "Property": "prop",
-    "Legal" : "leg"
+    "Legal" : "leg",
+    "Event" : "event",
+    "yoga" : "yog",
+    "nutrition": "nut",
+    "photography" : "pho"
 }
 export const BASE_RATE = 3;
 export const BASE_RATE_COUNT = 1;
-export const CATEGORIES = [CATMAP.fin, CATMAP.car, CATMAP.rel, CATMAP.prop , CATMAP.leg];
+export const CATEGORIES = [CATMAP.fin, CATMAP.car, CATMAP.rel, CATMAP.prop , CATMAP.leg , CATMAP.event, CATMAP.yog, CATMAP.nut, CATMAP.pho];

@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import {appConfig} from '../../app.config';
 import {CommentModel} from '../../_models/commentModel';
+import 'rxjs/add/observable/forkJoin';
 
 
 @Injectable()
@@ -30,8 +32,10 @@ export class CommentService {
 //    }, 0);
 //    return ret;
   }
-  addComment(comment:CommentModel) {
-      return this.http.post('/comment/post',comment);
+  addComment(comment:CommentModel , newrate : Number , rateCount , username) {
+      let first = this.http.post('/advisors/rate',{currentRating : newrate , rateCount : rateCount , username : username});
+      let second =  this.http.post('/comment/post',comment);
+      return Observable.forkJoin(first,second)
   }
 
 }

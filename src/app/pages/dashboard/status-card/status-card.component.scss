@@ -47,6 +47,22 @@
         @include btn-hero-warning-gradient();
         @include btn-hero-warning-bevel-glow-shadow();
       }
+            &.event {
+        @include btn-hero-primary-gradient();
+        @include btn-hero-primary-bevel-glow-shadow();
+      }
+      &.yoga {
+        @include btn-hero-success-gradient();
+        @include btn-hero-success-bevel-glow-shadow();
+      }
+      &.nut {
+        @include btn-hero-info-gradient();
+        @include btn-hero-info-bevel-glow-shadow();
+      }
+      &.pho {
+        @include btn-hero-warning-gradient();
+        @include btn-hero-warning-bevel-glow-shadow();
+      }
     }
 
     &:hover {
@@ -63,6 +79,18 @@
           background-image: btn-hero-info-light-gradient();
         }
         &.leg {
+          background-image: btn-hero-warning-light-gradient();
+        }
+        &.event {
+          background-image: btn-hero-primary-light-gradient();
+        }
+        &.yoga {
+          background-image: btn-hero-success-light-gradient();
+        }
+        &.nut {
+          background-image: btn-hero-info-light-gradient();
+        }
+        &.pho {
           background-image: btn-hero-warning-light-gradient();
         }
       }
