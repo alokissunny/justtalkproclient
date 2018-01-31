@@ -42,7 +42,7 @@ export class AdvisorCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.currentRate = this._advisor.currentRating;
+    this.currentRate = this._advisor.currentRating ? this._advisor.currentRating: 3;
     this._advisor.photo = this._advisor.photo ? this._advisor.photo : 'placeholder';
     this.pic = appConfig.apiUrl + "/images/" + this._advisor.photo;
     if(this.userService.getCurrentUser().username === this._advisor.username) {

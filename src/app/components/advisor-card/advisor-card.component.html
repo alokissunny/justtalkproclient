@@ -24,14 +24,15 @@
 <span class="txt" style="font-style: italic;display: inherit ; color: cadetblue; cursor:pointer; margin: 10px ; position: absolute;
     right: 0;" (click)="openfeedBack()">comments</span>
 <ng-template #t let-fill="fill">
-    <span *ngIf="fill === 100" class="star full">&hearts;</span>
-    <span *ngIf="fill === 0" class="star">&hearts;</span>
+    <span *ngIf="fill === 100" class="star full">&#9733;</span>
+    <span *ngIf="fill === 0" class="star">&#9733;</span>
     <span *ngIf="fill < 100 && fill > 0" class="star">
-    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
     </span>
 </ng-template>
 
 <ngb-rating [rate]="currentRate" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+<span>{{currentRate}}</span>
 <!--<img src="assets/images/like.png"  style="margin-top: 10px; margin: 10px ; position: absolute;
     right: 0;    bottom: 100px;
     height: 30px;

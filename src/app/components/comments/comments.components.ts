@@ -64,7 +64,7 @@ export class PostCommentComponent implements OnInit {
       this.comment.time = Date.now();
       this.commentService.addComment(this.comment , newrate , this.rateCount + 1 , this.commentService.advisorId).subscribe(() => {
         this.message = '';
-        this.rating = newrate;
+       // this.rating = newrate;
         this.showToast(this.type, this.content);
         this.getComments();
         //this.activeModal.close();

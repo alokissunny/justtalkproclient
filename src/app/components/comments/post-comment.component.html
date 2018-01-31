@@ -1,13 +1,13 @@
 <nb-card>
   <nb-card-header><span> Comments</span>
-    <ngb-rating [(rate)]="rating" max=5>
-    <ng-template let-fill="fill">
-      <span class="star fill" [class.filled]="fill === 100">
-                <i class="ion-android-star" *ngIf="fill === 100"></i>
-                <i class="ion-android-star-outline" *ngIf="fill !== 100"></i>
-              </span>
-    </ng-template>
-  </ngb-rating>
+  <ng-template #t let-fill="fill">
+    <span *ngIf="fill === 100" class="star full">&#9733;</span>
+    <span *ngIf="fill === 0" class="star">&#9733;</span>
+    <span *ngIf="fill < 100 && fill > 0" class="star">
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+    </span>
+</ng-template>
+<ngb-rating [(rate)]="rating" [starTemplate]="t"  max="5"></ngb-rating>
     <div class="form-group">
       <textarea class="form-control" placeholder="Message" name="message" [(ngModel)]="message"></textarea>
     </div>
