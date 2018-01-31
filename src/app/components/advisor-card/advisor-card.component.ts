@@ -24,7 +24,7 @@ export class AdvisorCardComponent implements OnInit {
 
   about: String = 'ADD DESCRIPTION';
   _advisor: Advisor;
-  starRate = 2;
+  currentRate:any = 3;
   pic: String;
   isDisable = false;
   @Input()
@@ -42,6 +42,7 @@ export class AdvisorCardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.currentRate = this._advisor.currentRating;
     this._advisor.photo = this._advisor.photo ? this._advisor.photo : 'placeholder';
     this.pic = appConfig.apiUrl + "/images/" + this._advisor.photo;
     if(this.userService.getCurrentUser().username === this._advisor.username) {
