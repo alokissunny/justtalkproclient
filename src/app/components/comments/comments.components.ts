@@ -73,6 +73,7 @@ export class PostCommentComponent implements OnInit {
   }
   rateUpdate() {
     let newrate:Number = (this.currentRating* this.rateCount + this.rating) / (this.rateCount + 1 );
+      newrate= parseFloat(newrate.toFixed(1));
     return newrate;
   }
 }
