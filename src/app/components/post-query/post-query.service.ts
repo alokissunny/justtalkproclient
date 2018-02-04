@@ -16,5 +16,8 @@ get advisor (): String {
   postQuery(data) {
     return this.http.post(this.baseUrl, data);
   }
+  addToFav(data) {
+    return this.http.post('/fav/add',data);
+  }
 
 }

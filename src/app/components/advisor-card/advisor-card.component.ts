@@ -13,6 +13,7 @@ import { LoginComponent } from '../../login/login.component';
 import { appConfig } from '../../app.config';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {CommentService} from '../comments/comment.service';
+import {FavModel} from '../../_models/favModel';
 
 
 @Component({
@@ -87,6 +88,16 @@ export class AdvisorCardComponent implements OnInit {
   }
   details() {
     this.router.navigateByUrl('/pages/profile/'+this._advisor._id)
+  }
+  addToFav() {
+    let postData:FavModel= new FavModel();
+    postData.username = this.userService.getCurrentUser().username;
+    postData.fav = this._advisor.username;
+    postData.favCat = this._advisor.category;
+    this.query.addToFav(postData).subscribe(() => {
+      alert("fav added");
+    });
+
   }
 
 }

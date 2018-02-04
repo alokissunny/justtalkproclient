@@ -7,11 +7,17 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/dashboard',
     home: true,
   },
-    {
+  {
     title: 'Recent Contacts',
-     icon: 'nb-locked'
-   // link: '/pages/dashboard',
-   // home: true,
+    icon: 'nb-locked'
+    // link: '/pages/dashboard',
+    // home: true,
+  },
+  {
+    title: 'Favorites',
+    icon: 'nb-locked'
+    // link: '/pages/dashboard',
+    // home: true,
   },
   // {
   //   title: 'Auth',
