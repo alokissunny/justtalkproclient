@@ -1,7 +1,7 @@
 ﻿<div style="padding-left: 30%; background: cadetblue" class="row ">
   <div class="col-sm-7 custom-row jumbotron" style=" overflow: scroll">
 
-    <form novalidate (ngSubmit)="onFormSubmit(signupForm)" #signupForm="ngForm">
+    <form novalidate (ngSubmit)="onFormSubmit(signupForm)" autocomplete="off" #signupForm="ngForm">
       <fieldset>
         <legend>SignUp</legend>
 
@@ -10,7 +10,7 @@
           <label for="inputUser" class="col-lg-2
 		      control-label">UserName</label>
           <div class="col-lg-7">
-            <input type="text" class="form-control" [ngModel]="user.username" name="username" #username="ngModel" id="username" placeholder="Username"
+            <input type="text" class="form-control" autocomplete="off" [ngModel]="user.username" name="username" #username="ngModel" id="username" placeholder="Username"
                required>
           </div>
 
@@ -31,7 +31,7 @@
           <label for="inputfirstName" class="col-lg-2
 		      control-label">firstName</label>
           <div class="col-lg-7">
-            <input type="text" class="form-control" [ngModel]="user.firstName" name="firstName" #firstName="ngModel" id="inputfirstName" placeholder="firstName"
+            <input type="text" class="form-control" autocomplete="off" [ngModel]="user.firstName" name="firstName" #firstName="ngModel" id="inputfirstName" placeholder="firstName"
                required>
           </div>
 
@@ -49,7 +49,7 @@
           <label for="inputlastName" class="col-lg-2
 		      control-label">lasttName</label>
           <div class="col-lg-7">
-            <input type="text" class="form-control" [ngModel]="user.lastName" name="lastName" #lastName="ngModel" id="inputlastName" placeholder="lastName"
+            <input type="text" autocomplete="off" class="form-control" [ngModel]="user.lastName" name="lastName" #lastName="ngModel" id="inputlastName" placeholder="lastName"
                required>
           </div>
 
@@ -77,7 +77,7 @@
           <label for="inputEmail" class="col-lg-2
 		      control-label">Email</label>
           <div class="col-lg-7">
-            <input type="text" class="form-control" [ngModel]="user.email" name="email" #email="ngModel" id="inputEmail" placeholder="Email"
+            <input type="text" autocomplete="off" class="form-control" [ngModel]="user.email" name="email" #email="ngModel" id="inputEmail" placeholder="Email"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
           </div>
 
@@ -99,7 +99,7 @@
           <div class="form-group ">
             <label for="inputPassword" class="col-lg-2 	control-label">Password</label>
             <div class="col-lg-7">
-              <input type="password" class="form-control" ngModel name="pwd" id="inputPassword" placeholder="Password" minlength="8" required>
+              <input type="password" autocomplete="off" class="form-control" ngModel name="pwd" id="inputPassword" placeholder="Password" minlength="8" required>
             </div>
           </div>
 

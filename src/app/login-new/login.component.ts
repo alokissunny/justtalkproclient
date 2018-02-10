@@ -58,6 +58,7 @@ export class NewLoginComponent implements OnInit {
 */
 
     cambiar_login() {
+        this.user = new User();
         if (this.model.username && this.model.password)
             this.login();
         else {
@@ -74,6 +75,7 @@ export class NewLoginComponent implements OnInit {
     }
 
     cambiar_sign_up() {
+        this.model = {};
         if (this.user.username && this.user.firstName && this.user.lastName && this.user.password) {
             this.signUp();
         }

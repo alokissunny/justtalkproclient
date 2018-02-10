@@ -1,7 +1,7 @@
 <div style=" display: flex ; max-width: 600px" *ngIf="advisor?.username">
-<div class="items">
-    <img src="{{pic}}" (click)="details()" height="100px" width="100px" />
-    <button (click)="openQuery()" [disabled]="isDisable" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
+    <div class="items">
+        <img src="{{pic}}" (click)="details()" height="100px" width="100px" />
+        <button (click)="openQuery()" [disabled]="isDisable" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
     left: 0;
     bottom: 0; cursor:pointer;background-color: cadetblue;
     display: inherit;height: 45px;font-size: x-small;
@@ -9,7 +9,7 @@
     padding: 15px;
     font-family: inherit;
     margin: 10px;"> Post query</button>
-    <button *ngIf="!isFavPage" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
+        <button *ngIf="!isFavPage" [disabled]="isDisable" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
     left: 120px;
     bottom: 0; cursor:pointer;background-color: cadetblue;
     display: inherit;height: 45px;font-size: x-small;
@@ -17,7 +17,7 @@
     padding: 15px;
     font-family: inherit;
     margin: 10px;" (click)="addToFav()">Add Favourite</button>
-    <button *ngIf="isFavPage" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
+        <button *ngIf="isFavPage" [disabled]="isDisable" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
     left: 120px;
     bottom: 0; cursor:pointer;background-color: cadetblue;
     display: inherit;height: 45px;font-size: x-small;
@@ -25,35 +25,35 @@
     padding: 15px;
     font-family: inherit;
     margin: 10px;" (click)="removeFav()">Remove Favourite</button>
-</div>
-<div class="items" style="min-width: 300px ;   ">
-<div style=" color: cadetblue;
+    </div>
+    <div class="items" style="min-width: 300px ;   ">
+        <div style=" color: cadetblue;
     font-size: large;">
-<span>{{advisor?.firstName}} </span>
-<span>{{advisor?.lastName}} </span>
-</div>
-<span style="display: inherit">{{advisor?.basicInfo}}</span>
-<span class="txt" style="display: inherit ; cursor:pointer;">{{advisor?.location}}</span>
-</div>
-<div class="items" style="width : 600px">
-<div style="float : right">
-<span class="txt" style="font-style: italic;display: inherit ; color: cadetblue; cursor:pointer; margin: 10px ; position: absolute;
+            <span>{{advisor?.firstName}} </span>
+            <span>{{advisor?.lastName}} </span>
+        </div>
+        <span style="display: inherit">{{advisor?.basicInfo}}</span>
+        <span class="txt" style="display: inherit ; cursor:pointer;">{{advisor?.location}}</span>
+    </div>
+    <div class="items" style="width : 600px">
+        <div style="float : right">
+            <span class="txt" style="font-style: italic;display: inherit ; color: cadetblue; cursor:pointer; margin: 10px ; position: absolute;
     right: 0;" (click)="openfeedBack()">comments</span>
-<ng-template #t let-fill="fill">
-    <span *ngIf="fill === 100" class="star full">&#9733;</span>
-    <span *ngIf="fill === 0" class="star">&#9733;</span>
-    <span *ngIf="fill < 100 && fill > 0" class="star">
+            <ng-template #t let-fill="fill">
+                <span *ngIf="fill === 100" class="star full">&#9733;</span>
+                <span *ngIf="fill === 0" class="star">&#9733;</span>
+                <span *ngIf="fill < 100 && fill > 0" class="star">
     <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
-    </span>
-</ng-template>
+                </span>
+            </ng-template>
 
-<ngb-rating [rate]="currentRate" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
-<span>{{currentRate}}</span>
-<!--<img src="assets/images/like.png"  style="margin-top: 10px; margin: 10px ; position: absolute;
+            <ngb-rating [rate]="currentRate" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+            <span>{{currentRate}}</span>
+            <!--<img src="assets/images/like.png"  style="margin-top: 10px; margin: 10px ; position: absolute;
     right: 0;    bottom: 100px;
     height: 30px;
     width: 70px;" />-->
-<button class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
+            <button class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
     right: 0;
     bottom: 0; cursor:pointer; background-color: cadetblue;
     display: inherit;height: 45px;font-size: x-small;
@@ -61,6 +61,6 @@
     padding: 15px;
     font-family: inherit;
     margin: 10px;" (click)="bookcancel()" [disabled]="isDisable"> Book Appointment</button>
-</div>
-</div>
+        </div>
+    </div>
 </div>
