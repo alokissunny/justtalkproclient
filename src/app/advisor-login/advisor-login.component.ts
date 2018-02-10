@@ -18,7 +18,7 @@ export class AdvisorLoginComponent implements OnInit {
     loading = false;
     returnUrl: string;
     content = `SignUp Successful!!`;
-    contentFail = 'SignUp failed!!';
+    contentFail = 'user name already taken';
     timeout = 1200;
     toastsLimit = 5;
     type = 'default';

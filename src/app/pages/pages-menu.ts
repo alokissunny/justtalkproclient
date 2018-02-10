@@ -15,8 +15,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Favorites',
-    icon: 'nb-locked'
-    // link: '/pages/dashboard',
+    icon: 'nb-locked',
+     link: '/pages/advisor/fav',
     // home: true,
   },
   // {
@@ -48,5 +48,11 @@ export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
     icon: 'nb-home',
     link: '/pages/calender',
     home: false,
+  },
+    {
+    title: 'Favorites',
+    icon: 'nb-locked',
+     link: '/pages/advisor/fav',
+    // home: true,
   },
 ];

@@ -116,6 +116,8 @@ export class NewLoginComponent implements OnInit {
             this.authenticationService.userSignUp(this.user).subscribe(res => {
             this.showToast(this.type, this.content);
             this.cambiar_login();
+        }, (err) => {
+            this.showToast(this.type, "user name already taken!");
         });
         })
         

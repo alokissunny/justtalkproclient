@@ -11,6 +11,9 @@ export class AdvisorService {
 
   constructor(private http: Http , private userService: UserService) { }
   getAdvisor(cat: String,curLat?,curLng?) {
+    if(cat === 'fav') {
+      return this.http.get('/advisors/fav/'+this.userService.getCurrentUser().username).map((response: Response) => response.json());
+    }
     if(!curLat || !curLng) {
       curLat = this.userService.getCurrentUser().lat;
       curLng = this.userService.getCurrentUser().lng;

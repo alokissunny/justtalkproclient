@@ -19,5 +19,8 @@ get advisor (): String {
   addToFav(data) {
     return this.http.post('/fav/add',data);
   }
+  removeFav(data) {
+    return this.http.post('/fav/delete',data);
+  }
 
 }
