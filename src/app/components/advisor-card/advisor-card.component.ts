@@ -119,7 +119,7 @@ export class AdvisorCardComponent implements OnInit {
     let postData: FavModel = new FavModel();
     postData.username = this.userService.getCurrentUser().username;
     postData.fav = this._advisor.username;
-    postData._id = this._advisor._id;
+    postData.id = this._advisor._id;
     postData.favCat = this._advisor.category;
     this.query.addToFav(postData).subscribe(() => {
       this.showToast(this.type,"favorite added");

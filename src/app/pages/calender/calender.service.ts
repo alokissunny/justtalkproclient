@@ -90,13 +90,22 @@ export class CalenderService {
     }
   ];
   url = "/appointment/advisor/";
+  url2 = "/appointment/requestor/";
   constructor(private http: Http , private userService : UserService) {
 
   }
     getMyEvents() {
-      return this.http.get(this.url+ this.userService.getCurrentUser().username).map((response) => {
-          return this.prepareEvents(response.json());
+           let obs1 = this.http.get(this.url+ this.userService.getCurrentUser().username);
+      let obs2 = this.http.get(this.url2+ this.userService.getCurrentUser().username);
+      return (Observable.forkJoin(obs1, obs2) as any ).map((response) => {
+        let ar1 = JSON.parse(response[0]._body);
+        let ar2 = JSON.parse(response[1]._body);
+        let ret = ar1.concat(ar2);
+          return this.prepareEvents(ret);
       });
+      // return this.http.get(this.url+ this.userService.getCurrentUser().username).map((response) => {
+      //     return this.prepareEvents(response.json());
+      // });
 
 }
 
@@ -111,6 +120,7 @@ prepareEvents (appointments) {
     obj["message"] = appointment.message;
     obj["requestorName"] = appointment.requestorName;
     obj["time"] = appointment.time;
+    obj["advisor"] = appointment.advisor;
     events.push(obj);
   });
   return events;
