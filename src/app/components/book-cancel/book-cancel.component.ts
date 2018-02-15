@@ -4,6 +4,8 @@ import { BookService } from './book-cancel.service';
 import { BookingModel } from '../../_models/bookingmodel';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+const now = new Date();
 @Component({
     selector: 'book-cancel',
     templateUrl: './book-cancel.component.html',
@@ -29,6 +31,7 @@ export class BookComponent implements OnInit {
     isDuplicatesPrevented = false;
     isCloseButton = true;
     ngOnInit() {
+        this.model = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
 
     }
     private showToast(type: string, body: string) {

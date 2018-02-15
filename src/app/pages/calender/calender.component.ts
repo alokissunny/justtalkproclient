@@ -115,6 +115,9 @@ export class CalenderComponent  implements OnInit{
       this.events = events as any;
       this.ref.markForCheck();
     })
+    let date = new Date();
+    let obj = {"date" : date , "events" : []};
+    this.dayClicked(obj);
   }
   activeDayIsOpen: boolean = true;
 
