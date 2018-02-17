@@ -9,38 +9,22 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
     {
     title: 'Calender',
-    icon: 'nb-home',
+    icon: 'ion-ios-calendar-outline',
     link: '/pages/calender',
     home: false,
   },
     {
     title: 'Messages',
-    icon: 'nb-home',
+    icon: 'nb-email',
     link: '/pages/messages',
     home: false,
   },
-  // {
-  //   title: 'Recent Contacts',
-  //   icon: 'nb-locked'
-  //   // link: '/pages/dashboard',
-  //   // home: true,
-  // },
   {
     title: 'Favorites',
-    icon: 'nb-locked',
+    icon: 'ion-android-person-add',
      link: '/pages/advisor/fav',
-    // home: true,
+     home: false,
   },
-  // {
-  //   title: 'Auth',
-  //   icon: 'nb-locked',
-  //   children: [
-  //     {
-  //       title: 'Register As Advisor',
-  //       link: '/register',
-  //     },
-  //   ],
-  // },
 ];
 export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
   {

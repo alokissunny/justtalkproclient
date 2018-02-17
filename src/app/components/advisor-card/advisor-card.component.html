@@ -1,44 +1,73 @@
-<div style=" display: flex ; max-width: 600px" *ngIf="advisor?.username">
+<div style=" display: flex ; max-width: 1086px" *ngIf="advisor?.username">
     <div class="items">
-        <img src="{{pic}}" (click)="details()" height="100px" width="100px" />
-        <button (click)="openQuery()" [disabled]="isDisable" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
+        <img src="{{pic}}" style="cursor:pointer;" (click)="details()" height="100px" width="100px" />
+        <i (click)="openQuery()" *ngIf="!isDisable" class="ion-ios-email-outline" style="display: inherit ;position: absolute;
     left: 0;
-    bottom: 0; cursor:pointer;background-color: cadetblue;
-    display: inherit;height: 45px;font-size: x-small;
+    bottom: 0; cursor:pointer;
+    display: inherit;height: 45px;font-size: 25px;
     height: 40px;
     padding: 15px;
     font-family: inherit;
-    margin: 10px;"> Post query</button>
-        <button *ngIf="!isFavPage" [disabled]="isDisable" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
-    left: 120px;
-    bottom: 0; cursor:pointer;background-color: cadetblue;
-    display: inherit;height: 45px;font-size: x-small;
+    margin: 10px;"> </i>
+        <i *ngIf="!isDisable" class="ion-chatbubbles" style="display: inherit ;position: absolute;
+    left: 50px;
+    bottom: 0; 
+    display: inherit;height: 45px;font-size: 25px;
     height: 40px;
     padding: 15px;
     font-family: inherit;
-    margin: 10px;" (click)="addToFav()">Add Favourite</button>
-        <button *ngIf="isFavPage" [disabled]="isDisable" class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
-    left: 120px;
-    bottom: 0; cursor:pointer;background-color: cadetblue;
-    display: inherit;height: 45px;font-size: x-small;
+    margin: 10px;"> </i>
+        <i *ngIf="!isFavPage && !isDisable" class="ion-android-person-add" style="display: inherit ;position: absolute;
+    left: 100px;
+    bottom: 0; cursor:pointer;
+    display: inherit;height: 45px;font-size: 25px;
     height: 40px;
     padding: 15px;
     font-family: inherit;
-    margin: 10px;" (click)="removeFav()">Remove Favourite</button>
+    margin: 10px;" (click)="addToFav()"></i>
+        <i *ngIf="isFavPage" class="ion-trash-a" style="display: inherit ;position: absolute;
+    left: 100px;
+    bottom: 0; cursor:pointer;
+    display: inherit;height: 45px;font-size: 25px;
+    height: 40px;
+    padding: 15px;
+    font-family: inherit;
+    margin: 10px;" (click)="removeFav()"></i>
+        <i *ngIf="!isDisable" class="ion-social-whatsapp-outline" style="display: inherit ;position: absolute;
+    left: 150px;
+    bottom: 0; 
+    display: inherit;height: 45px;font-size: 25px;
+    height: 40px;
+    padding: 15px;
+    font-family: inherit;
+    margin: 10px;"> </i>
+            <i *ngIf="!isDisable" class="ion-ios-alarm-outline" style="display: inherit ;position: absolute;
+    left: 200px;
+    bottom: 0; 
+    display: inherit;height: 45px;font-size: 25px;
+    height: 40px;cursor:pointer;
+    padding: 15px;
+    font-family: inherit;
+    margin: 10px;" (click)="bookcancel()"> </i>
     </div>
-    <div class="items" style="min-width: 300px ;   ">
-        <div style=" color: cadetblue;
-    font-size: large;">
+
+    <div class="items" style="min-width: 500px ;     width: 550px;
+  ">
+        <div style=" color: cadetblue;font-size: larger;
+    font-family: cursive;">
             <span>{{advisor?.firstName}} </span>
             <span>{{advisor?.lastName}} </span>
         </div>
-        <span style="display: inherit">{{advisor?.basicInfo}}</span>
+        <span style="display: inherit ;overflow: hidden;
+    display: inherit;
+    height: 100px;
+    color: black;">{{advisor?.basicInfo}}</span>
         <span class="txt" style="display: inherit ; cursor:pointer;">{{advisor?.location}}</span>
     </div>
     <div class="items" style="width : 600px">
-        <div style="float : right">
-            <span class="txt" style="font-style: italic;display: inherit ; color: cadetblue; cursor:pointer; margin: 10px ; position: absolute;
-    right: 0;" (click)="openfeedBack()">comments</span>
+        <div>
+            <span class="txt" style="font-style: italic;display: inherit ; color: cadetblue; cursor:pointer; margin-right: 10px ; float: right
+    " (click)="openfeedBack()">comments</span>
             <ng-template #t let-fill="fill">
                 <span *ngIf="fill === 100" class="star full">&#9733;</span>
                 <span *ngIf="fill === 0" class="star">&#9733;</span>
@@ -53,14 +82,17 @@
     right: 0;    bottom: 100px;
     height: 30px;
     width: 70px;" />-->
-            <button class="btn btn-success btn-round btn-demo" style="display: inherit ;position: absolute;
+            <!--<i *ngIf="!isDisable" class="ion-ios-alarm-outline" style="display: inherit ;position: absolute;
     right: 0;
-    bottom: 0; cursor:pointer; background-color: cadetblue;
-    display: inherit;height: 45px;font-size: x-small;
+    bottom: 0; cursor:pointer;
+    display: inherit;height: 45px;font-size: 25px;
     height: 40px;
     padding: 15px;
     font-family: inherit;
-    margin: 10px;" (click)="bookcancel()" [disabled]="isDisable"> Book Appointment</button>
+    margin: 10px;" (click)="bookcancel()"> </i>-->
+        </div>
+        <div style="margin: 5px">
+            <li *ngFor="let item of services"> {{item}}</li>
         </div>
     </div>
 </div>

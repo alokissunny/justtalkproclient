@@ -39,6 +39,7 @@ export class AdvisorCardComponent implements OnInit {
   isHideOnClick = true;
   isDuplicatesPrevented = false;
   isCloseButton = true;
+  services = ["Highlight service 1","Highlight service 2","Highlight service 3","Highlight service 4","Highlight service 5"];
   @Output()
   refresh: EventEmitter<string> = new EventEmitter<string>();
   @Input()
