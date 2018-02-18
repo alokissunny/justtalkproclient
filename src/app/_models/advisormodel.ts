@@ -17,4 +17,6 @@ export class Advisor {
     photo: String;
     currentRating: Number;
     rateCount: Number;
+    skills: any;
+    bname: String;
     comments: Array<String>; }

@@ -11,6 +11,7 @@ import { MessageDetailComponent } from '../../components/message-detail/message-
 import { FileUploadModule } from 'ng2-file-upload';
 import {ProfilePictureComponent } from '../../components/profile-picture/profile-picture.component';
 import {GoogleService} from '../../_services/google.service';
+import {RepeaterComponent} from '../../components/repeater/repeater.component';
 //import { Ng2FileInputModule } from 'ng2-file-input';
 
 
@@ -19,7 +20,7 @@ import {GoogleService} from '../../_services/google.service';
         ProfileRoutingModule, CommonModule, ThemeModule, FileUploadModule //Ng2FileInputModule.forRoot() 
     ],
     declarations: [
-        ProfileComponent,ProfilePictureComponent
+        ProfileComponent,ProfilePictureComponent,RepeaterComponent
     ],
     providers: [ProfileService,GoogleService],
 })

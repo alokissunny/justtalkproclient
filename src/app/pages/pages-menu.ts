@@ -2,7 +2,7 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'Dashboard',
+    title: 'Home',
     icon: 'nb-home',
     link: '/pages/dashboard',
     home: true,
@@ -28,27 +28,27 @@ export const MENU_ITEMS: NbMenuItem[] = [
 ];
 export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
   {
-    title: 'Dashboard',
+    title: 'Home',
     icon: 'nb-home',
     link: '/pages/dashboard',
     home: true,
   },
-  {
-    title: 'Messages',
-    icon: 'nb-home',
-    link: '/pages/messages',
-    home: false,
-  },
-  {
+    {
     title: 'Calender',
-    icon: 'nb-home',
+    icon: 'ion-ios-calendar-outline',
     link: '/pages/calender',
     home: false,
   },
     {
+    title: 'Messages',
+    icon: 'nb-email',
+    link: '/pages/messages',
+    home: false,
+  },
+  {
     title: 'Favorites',
-    icon: 'nb-locked',
+    icon: 'ion-android-person-add',
      link: '/pages/advisor/fav',
-    // home: true,
+     home: false,
   },
 ];

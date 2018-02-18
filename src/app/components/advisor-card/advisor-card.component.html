@@ -34,13 +34,13 @@
     font-family: inherit;
     margin: 10px;" (click)="removeFav()"></i>
         <i *ngIf="!isDisable" class="ion-social-whatsapp-outline" style="display: inherit ;position: absolute;
-    left: 150px;
+    left: 150px;cursor:pointer;
     bottom: 0; 
     display: inherit;height: 45px;font-size: 25px;
     height: 40px;
     padding: 15px;
     font-family: inherit;
-    margin: 10px;"> </i>
+    margin: 10px;" (click)="showContactCard()"> </i>
             <i *ngIf="!isDisable" class="ion-ios-alarm-outline" style="display: inherit ;position: absolute;
     left: 200px;
     bottom: 0; 
@@ -92,7 +92,7 @@
     margin: 10px;" (click)="bookcancel()"> </i>-->
         </div>
         <div style="margin: 5px">
-            <li *ngFor="let item of services"> {{item}}</li>
+            <li  *ngFor="let item of services"> <span *ngIf="item.name.length > 0">{{item.name}}</span></li>
         </div>
     </div>
 </div>

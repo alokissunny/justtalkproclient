@@ -15,6 +15,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { CommentService } from '../comments/comment.service';
 import { FavModel } from '../../_models/favModel';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
+import {ContactCardComponent} from '../contact-card/contact-card.component';
 
 
 @Component({
@@ -72,6 +73,7 @@ export class AdvisorCardComponent implements OnInit {
     this.isFavPage = this.route.snapshot.paramMap.get('cat') === "fav" ? true : false;
     this.currentRate = this._advisor.currentRating ? this._advisor.currentRating : 3;
     this.currentRate = parseFloat(this.currentRate.toFixed(1));
+    this.services = this.advisor.skills;
     this._advisor.photo = this._advisor.photo ? this._advisor.photo : 'placeholder';
     this.pic = appConfig.apiUrl + "/images/" + this._advisor.photo;
     if (this.userService.getCurrentUser().username === this._advisor.username) {
@@ -105,6 +107,16 @@ export class AdvisorCardComponent implements OnInit {
 
       activeModal.componentInstance.modalHeader = 'Large Modal';
     }
+  }
+    showContactCard() {
+    const activeModal = this.modalService.open(ContactCardComponent, {
+      size: 'sm',
+      backdrop: 'static',
+      container: 'nb-layout',
+    });
+
+    activeModal.componentInstance.modalHeader = 'Contact '+this._advisor.firstName;
+    activeModal.componentInstance.modalContent = this._advisor.phone;
   }
   bookcancel() {
     this.bookService.advisor = this._advisor.username;

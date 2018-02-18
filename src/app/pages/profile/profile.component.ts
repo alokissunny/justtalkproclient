@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild} from '@angular/core';
 import { ProfileService } from './profile.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
@@ -13,8 +13,10 @@ import { CATMAP } from '../../constants';
 import { CODE } from '../../constants';
 import {GoogleService} from '../../_services/google.service';
 import {appConfig} from '../../app.config';
+import {RepeaterComponent} from '../../components/repeater/repeater.component';
 //define the constant url we would be uploading to.
 const URL = appConfig.apiUrl+'/upload';
+
 
 @Component({
   selector: 'profile',
@@ -23,7 +25,8 @@ const URL = appConfig.apiUrl+'/upload';
 })
 export class ProfileComponent implements OnInit {
 
-
+@ViewChild(RepeaterComponent)
+repeater : RepeaterComponent
   public uploader: FileUploader = new FileUploader({ url: URL, itemAlias: 'photo' });
   //This is the default title property created by the angular cli. Its responsible for the app works 
   public editEnabled = false;
@@ -69,6 +72,8 @@ export class ProfileComponent implements OnInit {
     this.googleService.getGoogleLocation(location).subscribe(res => {
       this.user.lat = res.results[0].geometry.location.lat;
       this.user.lng = res.results[0].geometry.location.lng;
+      if(this.isAdvisor)
+      this.user.skills = this.repeater.skills;
       this.profileService.updateUserInfo(this.user).subscribe((res) => {
       localStorage.setItem('currentUser', JSON.stringify(this.user));
       this.authentication.onLogin.next({});

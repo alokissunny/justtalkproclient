@@ -1,120 +1,199 @@
 <div>
   <div>
     <div style="float: left" class="row">
-<div class="col">
-  <app-profile-picture [imageId]="imageId" [editmode]=editEnabled></app-profile-picture>
-</div>
-</div>
-<div style="float: right;width: 70%">
-<!-- Firstname input block -->
-<div class="form-group">
-  <label for="inputfirstName" class="col-lg-2
+      <div class="col">
+        <app-profile-picture [imageId]="imageId" [editmode]=editEnabled></app-profile-picture>
+      </div>
+    </div>
+    <!--<div style="float: right;width: 70%">
+    
+      <div class="form-group">
+        <label for="inputfirstName" class="col-lg-2
 		      control-label">firstName</label>
-  <div class="col-lg-7">
-    <input type="text" class="form-control" [(ngModel)]="user.firstName" name="firstName" #firstName="ngModel" id="inputfirstName"
-      [disabled]="!editEnabled" placeholder="firstName" required>
-  </div>
+        <div class="col-lg-7">
+          <input type="text" class="form-control" [(ngModel)]="user.firstName" name="firstName" #firstName="ngModel" id="inputfirstName"
+            [disabled]="!editEnabled" placeholder="firstName" required>
+        </div>
 
-
-  <!-- firstName error block -->
-
-  <div *ngIf="firstName.invalid && ( firstName.touched)" class="col-sm-3 text-danger">
-    <div *ngIf="firstName.errors?.required">
-      firstName field can't be blank
-    </div>
-  </div>
-</div>
-<!-- lastName input block -->
-<div class="form-group">
-  <label for="inputlastName" class="col-lg-2
+        <div *ngIf="firstName.invalid && ( firstName.touched)" class="col-sm-3 text-danger">
+          <div *ngIf="firstName.errors?.required">
+            firstName field can't be blank
+          </div>
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <label for="inputlastName" class="col-lg-2
 		      control-label">lasttName</label>
-  <div class="col-lg-7">
-    <input type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" #lastName="ngModel" id="inputlastName"
-      [disabled]="!editEnabled" placeholder="lastName" required>
-  </div>
+        <div class="col-lg-7">
+          <input type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" #lastName="ngModel" id="inputlastName"
+            [disabled]="!editEnabled" placeholder="lastName" required>
+        </div>
 
 
-  <!-- lastName error block -->
+       
 
-  <div *ngIf="lastName.invalid && ( lastName.touched)" class="col-sm-3 text-danger">
-    <div *ngIf="lastName.errors?.required">
-      lastName field can't be blank
-    </div>
-  </div>
+        <div *ngIf="lastName.invalid && ( lastName.touched)" class="col-sm-3 text-danger">
+          <div *ngIf="lastName.errors?.required">
+            lastName field can't be blank
+          </div>
+        </div>
 
-  <!-- Email input block -->
-  <div class="form-group">
-    <label for="inputEmail" class="col-lg-2
+       
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2
 		      control-label">Email</label>
-    <div class="col-lg-7">
-      <input type="text" class="form-control" [(ngModel)]="user.email" name="email" #email="ngModel" id="inputEmail" placeholder="Email"
-        [disabled]="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-    </div>
+          <div class="col-lg-7">
+            <input type="text" class="form-control" [(ngModel)]="user.email" name="email" #email="ngModel" id="inputEmail" placeholder="Email"
+              [disabled]="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+          </div>
 
 
-    <!-- Email error block -->
+         
+          <div *ngIf="email.invalid && ( email.touched)" class="col-sm-3 text-danger">
+            <div *ngIf="email.errors?.required">
+              Email field can't be blank
+            </div>
+            <div *ngIf="email.errors?.pattern && email.touched">
+              The email id doesn't seem right
+            </div>
+          </div>
+        </div>
 
-    <div *ngIf="email.invalid && ( email.touched)" class="col-sm-3 text-danger">
-      <div *ngIf="email.errors?.required">
-        Email field can't be blank
-      </div>
-      <div *ngIf="email.errors?.pattern && email.touched">
-        The email id doesn't seem right
-      </div>
-    </div>
-  </div>
 
-
-  <!-- CITY input block -->
-  <div class="form-group">
-    <label for="inputCity" class="col-lg-2
+       
+        <div class="form-group">
+          <label for="inputCity" class="col-lg-2
 		      control-label">City</label>
-    <!--<div class="col-lg-7">
-      <input type="text" class="form-control" [(ngModel)]="user.city" name="city" #city="ngModel" id="inputCity" placeholder="City"
-        [disabled]="!editEnabled" required>
-    </div>-->
-    <select style=" margin-left: 13px;
+         
+          <select style=" margin-left: 13px;
     width: 596px;" [(ngModel)]="user.city" class="form-control">
 <option value="Gurgaon">Gurgaon</option>
 <option value="Delhi">Delhi</option>
 <option value="Noida">Noida</option>
 </select>
 
-<!-- city error block -->
-
-<!--<div *ngIf="city.invalid && ( city.touched)" class="col-sm-3 text-danger">
-      <div *ngIf="city.errors?.required">
-        city field can't be blank
+        </div>
       </div>
-    </div>-->
-</div>
-</div>
-<!-- Select Category block -->
-<div *ngIf="isAdvisor" class="form-group">
-  <label for="select" class="col-lg-2">Category</label>
-  <div class="col-lg-7">
-    <select id="selectcat" class="form-control" [disabled]="!editEnabled" [ngModel]="catMap[user.category]" (ngModelChange)="onChange($event)"
-      name="category" required>
+   
+      <div *ngIf="isAdvisor" class="form-group">
+        <label for="select" class="col-lg-2">Category</label>
+        <div class="col-lg-7">
+          <select id="selectcat" class="form-control" [disabled]="!editEnabled" [ngModel]="catMap[user.category]" (ngModelChange)="onChange($event)"
+            name="category" required>
 		          <option *ngFor = "let e of advisorCategories" 
 		            [value] = "e"> {{e}} 
 		          </option>
 		        </select>
-  </div>
-</div>
-<div *ngIf="isAdvisor" class="form-group">
-  <textarea [disabled]="!editEnabled" class="form-control" placeholder="Basic Info" name="basicInfo" [(ngModel)]="user.basicInfo"></textarea>
-</div>
-<!--<div *ngIf="isAdvisor" class="form-group">
-  <input type="text" [disabled]="!editEnabled" class="form-control" placeholder="City" name="city" [(ngModel)]="user.city">
-</div>-->
-<div *ngIf="isAdvisor" class="form-group">
-  <textarea [disabled]="!editEnabled" class="form-control" placeholder="Address1" name="address1" [(ngModel)]="user.location"></textarea>
-</div>
+        </div>
+      </div>
+      <div *ngIf="isAdvisor" class="form-group">
+        <textarea [disabled]="!editEnabled" class="form-control" placeholder="Basic Info" name="basicInfo" [(ngModel)]="user.basicInfo"></textarea>
+      </div>
+     
+      <div *ngIf="isAdvisor" class="form-group">
+        <textarea [disabled]="!editEnabled" class="form-control" placeholder="Address1" name="address1" [(ngModel)]="user.location"></textarea>
+      </div>
 
-<button *ngIf="editEnabled" type="submit" class="btn btn-success" (click)="modify()"> Update
+      <button *ngIf="editEnabled" type="submit" class="btn btn-success" (click)="modify()"> Update
 					</button>
-</div>
+    </div> -->
+    <div class="container">
+      <form action="/action_page.php">
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">First Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" [(ngModel)]="user.firstName" name="firstname" placeholder="Your name..">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Last Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="lname" [(ngModel)]="user.lastName" name="lastname" placeholder="Your last name..">
+          </div>
+        </div>
+        <div *ngIf="isAdvisor" class="row">
+          <div class="col-25">
+            <label for="lname">Buisiness Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" [(ngModel)]="user.name" id="bname" name="bname" placeholder="Buisiness Name.">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Email</label>
+          </div>
+          <div class="col-75">
+            <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [disabled]="true" [(ngModel)]="user.email" id="email" name="email" placeholder="Email Id">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Mobile</label>
+          </div>
+          <div class="col-75">
+            <input type="text" pattern="^[0-9]*$" [(ngModel)]="user.phone" id="mobile" name="mobile" placeholder="Mobile">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Address</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="address" [(ngModel)]="user.location" name="address" placeholder="Address">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="country">City</label>
+          </div>
+          <div class="col-75">
+            <select [(ngModel)]="user.city" id="country" name="country">
+          <option value="Gurgaon">Gurgaon</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Noida">Noida</option>
+        </select>
+          </div>
+        </div>
+        <div *ngIf="isAdvisor" class="row">
+          <div class="col-25">
+            <label for="cat">category</label>
+          </div>
+          <div class="col-75">
+            <select  id="catergory" name="category" [ngModel]="catMap[user.category]" (ngModelChange)="onChange($event)">
+         <option *ngFor = "let e of advisorCategories" 
+		            [value] = "e"> {{e}} 
+		          </option>
+        </select>
+          </div>
+          </div>
+        <div *ngIf="isAdvisor" class="row">
+          <div class="col-25">
+            <label for="subject">Bio</label>
+          </div>
+          <div class="col-75">
+            <textarea id="subject" [(ngModel)]="user.basicInfo" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          </div>
+        </div>
+        <div *ngIf="isAdvisor" class="row">
+          <div class="col-25">
+            <label for="subject">Add Key services</label>
+          </div>
+          <div class="col-75">
+            <app-repeater #skills [skills]="user.skills"></app-repeater>
+          </div>
+        </div>
 
-</div>
+        <div *ngIf="editEnabled" class="row">
+          <input type="submit" value="Update" (click)="modify()" >
+        </div>
+      </form>
+    </div>
+  </div>
 
 </div>

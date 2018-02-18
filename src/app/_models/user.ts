@@ -9,4 +9,5 @@
     lat:Number;
     lng:Number;
     email: string;
+    phone: number
 }
