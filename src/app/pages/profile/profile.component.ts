@@ -73,7 +73,9 @@ repeater : RepeaterComponent
       this.user.lat = res.results[0].geometry.location.lat;
       this.user.lng = res.results[0].geometry.location.lng;
       if(this.isAdvisor)
-      this.user.skills = this.repeater.skills;
+      this.user.skills = this.repeater.skills.filter((item )=> {
+        return  item.name && item.name.length > 0;
+      });
       this.profileService.updateUserInfo(this.user).subscribe((res) => {
       localStorage.setItem('currentUser', JSON.stringify(this.user));
       this.authentication.onLogin.next({});

@@ -2,7 +2,7 @@
         <div *ngFor="let skill of skills" style="width: 100%;
     /* margin: 5px; */
     margin-bottom: 10px;">
-            <input [(ngModel)]="skill.name" style="width: 100%" type="text" id="lname" name="lastname" placeholder="Key Service">
+            <input maxlength="50" [(ngModel)]="skill.name" style="width: 100%" type="text" id="lname" name="lastname" placeholder="Key Service">
         </div>
             <i *ngIf="skills.length < 5" class ="ion-plus" (click)="add()"> </i>
              <i *ngIf="skills.length > 1" class ="ion-minus-round" (click)="remove()"> </i>
