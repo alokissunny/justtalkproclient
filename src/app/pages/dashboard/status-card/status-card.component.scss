@@ -63,7 +63,11 @@
         @include btn-hero-warning-gradient();
         @include btn-hero-warning-bevel-glow-shadow();
       }
-      &.event {
+      &.event  {
+        @include btn-hero-warning-gradient();
+        @include btn-hero-warning-bevel-glow-shadow();
+      }
+       &.makeup  {
         @include btn-hero-warning-gradient();
         @include btn-hero-warning-bevel-glow-shadow();
       }
