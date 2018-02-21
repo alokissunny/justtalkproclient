@@ -1,7 +1,7 @@
 <div style=" display: flex ; max-width: 1086px" *ngIf="advisor?.username">
     <div class="items">
         <img src="{{pic}}" style="cursor:pointer;" (click)="details()" height="100px" width="100px" />
-        <i (click)="openQuery()" *ngIf="!isDisable" class="ion-ios-email-outline" style="display: inherit ;position: absolute;
+        <i (click)="openQuery()" *ngIf="!isDisable" title="post query" class="ion-ios-email-outline" style="display: inherit ;position: absolute;
     left: 0;
     bottom: 0; cursor:pointer;
     display: inherit;height: 45px;font-size: 25px;
@@ -9,7 +9,7 @@
     padding: 15px;
     font-family: inherit;
     margin: 10px;"> </i>
-        <i *ngIf="!isDisable" class="ion-chatbubbles" style="display: inherit ;position: absolute;
+        <i *ngIf="!isDisable" class="ion-chatbubbles" title="ping him" style="display: inherit ;position: absolute;
     left: 50px;
     bottom: 0; 
     display: inherit;height: 45px;font-size: 25px;
@@ -17,7 +17,7 @@
     padding: 15px;
     font-family: inherit;
     margin: 10px;"> </i>
-        <i *ngIf="!isFavPage && !isDisable" class="ion-android-person-add" style="display: inherit ;position: absolute;
+        <i *ngIf="!isFavPage && !isDisable" title="add to favorite" class="ion-android-person-add" style="display: inherit ;position: absolute;
     left: 100px;
     bottom: 0; cursor:pointer;
     display: inherit;height: 45px;font-size: 25px;
@@ -25,7 +25,7 @@
     padding: 15px;
     font-family: inherit;
     margin: 10px;" (click)="addToFav()"></i>
-        <i *ngIf="isFavPage" class="ion-trash-a" style="display: inherit ;position: absolute;
+        <i *ngIf="isFavPage" title = "delete from favorite" class="ion-trash-a" style="display: inherit ;position: absolute;
     left: 100px;
     bottom: 0; cursor:pointer;
     display: inherit;height: 45px;font-size: 25px;
@@ -33,7 +33,7 @@
     padding: 15px;
     font-family: inherit;
     margin: 10px;" (click)="removeFav()"></i>
-        <i *ngIf="!isDisable" class="ion-social-whatsapp-outline" style="display: inherit ;position: absolute;
+        <i *ngIf="!isDisable" title="see contact info" class="ion-social-whatsapp-outline" style="display: inherit ;position: absolute;
     left: 150px;cursor:pointer;
     bottom: 0; 
     display: inherit;height: 45px;font-size: 25px;
@@ -41,7 +41,7 @@
     padding: 15px;
     font-family: inherit;
     margin: 10px;" (click)="showContactCard()"> </i>
-            <i *ngIf="!isDisable" class="ion-ios-alarm-outline" style="display: inherit ;position: absolute;
+            <i *ngIf="!isDisable" title="book appointment" class="ion-ios-alarm-outline" style="display: inherit ;position: absolute;
     left: 200px;
     bottom: 0; 
     display: inherit;height: 45px;font-size: 25px;
