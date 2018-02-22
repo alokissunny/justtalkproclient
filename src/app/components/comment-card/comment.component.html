@@ -1,4 +1,4 @@
-<div style="    background: content-box;
+<!--<div style="    background: content-box;
     border-style: double;
     height: 80px;">
     <nb-user style="float:left ; color: cadetblue;    padding-left: 5px;" [name]="comment?.cname" [picture]="getPicture()"></nb-user>
@@ -18,4 +18,27 @@
         <span style="margin-right: 10px; float: right">{{comment.time | fromNow}} </span>
     </div>
 
-</div>
+</div>-->
+
+
+                <div class="avatar">
+                    <nb-user style="width: 55px ; height: 55px" [name]="comment?.cname" [picture]="getPicture()"></nb-user>
+                </div>
+                <div class="cmmnt-content">
+                    <header> <span class="pubdate">{{comment.time | fromNow}}</span></header>
+                    <p>{{comment.comment}}</p>
+                </div>
+                <!--<ul class="replies">
+                    <li class="cmmnt">
+                        <div class="avatar">
+                            <a href="javascript:void(0);"><img src="images/pig.png" width="55" height="55" alt="Sir_Pig photo avatar"></a>
+                        </div>
+                        <div class="cmmnt-content">
+                            <header><a href="javascript:void(0);" class="userlink">Sir_Pig</a> - <span class="pubdate">posted 1 day ago</span></header>
+                            <p>Sed felis lorem, venenatis sed malesuada vitae, tempor vel turpis. Mauris in dui velit, vitae
+                                mollis risus.</p>
+                            <p>Morbi id neque nisl, nec fringilla lorem. Duis molestie sodales leo a blandit. Mauris sit amet
+                                ultricies libero. Etiam quis diam in lacus molestie fermentum non vel quam.</p>
+                        </div>
+                    </li>
+                </ul>-->

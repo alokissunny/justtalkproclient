@@ -1,26 +1,37 @@
 <nb-card>
   <nb-card-header><span> Comments</span>
-  <ng-template #t let-fill="fill">
-    <span *ngIf="fill === 100" class="star full">&#9733;</span>
-    <span *ngIf="fill === 0" class="star">&#9733;</span>
-    <span *ngIf="fill < 100 && fill > 0" class="star">
+    <ng-template #t let-fill="fill">
+      <span *ngIf="fill === 100" class="star full">&#9733;</span>
+      <span *ngIf="fill === 0" class="star">&#9733;</span>
+      <span *ngIf="fill < 100 && fill > 0" class="star">
     <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
-    </span>
-</ng-template>
-<ngb-rating [(rate)]="rating" [starTemplate]="t"  max="5"></ngb-rating>
+      </span>
+    </ng-template>
+    <ngb-rating [(rate)]="rating" [starTemplate]="t" max="5"></ngb-rating>
     <div class="form-group">
       <textarea class="form-control" placeholder="Message" name="message" [(ngModel)]="message"></textarea>
     </div>
     <button type="submit" class="btn btn-success btn-round btn-demo" style="display: inherit ;
      cursor:pointer; background-color: cadetblue;
     display: inherit;font-size: x-small;
-    font-family: inherit;" (click)="addComment()">Save</button></nb-card-header>
-  <nb-card-body>
-    <ul>
+    font-family: inherit;" (click)="addComment()">Save</button>
+</nb-card-header>
+<nb-card-body>
+  <!--<ul>
       <div *ngFor="let comment of comments">
         <app-comment [comment]="comment"></app-comment>
       </div>
-    </ul>
+    </ul>-->
+  <div id="w">
 
-  </nb-card-body>
+    <div id="container">
+      <ul id="comments">
+        <li class="cmmnt" *ngFor="let comment of comments">
+          <app-comment [comment]="comment"></app-comment>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</nb-card-body>
 </nb-card>
