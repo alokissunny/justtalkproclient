@@ -8,7 +8,7 @@ import {UserService} from '../_services/user.service';
   selector: 'ngx-pages',
   template: `
     <ngx-sample-layout>
-      <nb-menu [items]="menu"></nb-menu>
+      <nb-menu [items]="menu" ></nb-menu>
       <router-outlet></router-outlet>
     </ngx-sample-layout>
   `,
@@ -26,5 +26,6 @@ this.menu = MENU_ITEMS_ADVISOR;
   else {
 this.menu = MENU_ITEMS;
   }
+
 }
 }

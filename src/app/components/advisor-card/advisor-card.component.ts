@@ -15,7 +15,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { CommentService } from '../comments/comment.service';
 import { FavModel } from '../../_models/favModel';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
-import {ContactCardComponent} from '../contact-card/contact-card.component';
+import { ContactCardComponent } from '../contact-card/contact-card.component';
 
 
 @Component({
@@ -40,7 +40,7 @@ export class AdvisorCardComponent implements OnInit {
   isHideOnClick = true;
   isDuplicatesPrevented = false;
   isCloseButton = true;
-  services = ["Highlight service 1","Highlight service 2","Highlight service 3","Highlight service 4","Highlight service 5"];
+  services = ["Highlight service 1", "Highlight service 2", "Highlight service 3", "Highlight service 4", "Highlight service 5"];
   @Output()
   refresh: EventEmitter<string> = new EventEmitter<string>();
   @Input()
@@ -53,10 +53,10 @@ export class AdvisorCardComponent implements OnInit {
     return this._advisor;
 
   }
-   private showToast(type: string, body: string) {
+  private showToast(type: string, body: string) {
     const toast: Toast = {
       type: type,
-    //  title: title,
+      //  title: title,
       body: body,
       timeout: this.timeout,
       showCloseButton: this.isCloseButton,
@@ -108,38 +108,52 @@ export class AdvisorCardComponent implements OnInit {
       activeModal.componentInstance.modalHeader = 'Large Modal';
     }
   }
-    showContactCard() {
+  showContactCard() {
     const activeModal = this.modalService.open(ContactCardComponent, {
       size: 'sm',
       backdrop: 'static',
       container: 'nb-layout',
     });
 
-    activeModal.componentInstance.modalHeader = 'Contact '+this._advisor.firstName;
+    activeModal.componentInstance.modalHeader = 'Contact ' + this._advisor.firstName;
     activeModal.componentInstance.modalContent = this._advisor.phone;
   }
   bookcancel() {
-    this.bookService.advisor = this._advisor.username;
-    const activeModal = this.modalService.open(BookComponent, { size: 'lg', container: 'nb-layout' });
+    if (this.userService.isSessionActive()) {
+      this.bookService.advisor = this._advisor.username;
+      const activeModal = this.modalService.open(BookComponent, { size: 'lg', container: 'nb-layout' });
 
-    activeModal.componentInstance.modalHeader = 'Large Modal';
+      activeModal.componentInstance.modalHeader = 'Large Modal';
+    }
+    else {
+      const activeModal = this.modalService.open(LoginComponent, { size: 'lg', container: 'nb-layout' });
+
+      activeModal.componentInstance.modalHeader = 'Large Modal';
+    }
 
   }
   details() {
     this.router.navigateByUrl('/pages/profile/' + this._advisor._id)
   }
   addToFav() {
-    let postData: FavModel = new FavModel();
-    postData.username = this.userService.getCurrentUser().username;
-    postData.fav = this._advisor.username;
-    postData.id = this._advisor._id;
-    postData.favCat = this._advisor.category;
-    this.query.addToFav(postData).subscribe(() => {
-      this.showToast(this.type,"favorite added");
-    }, () => {
-       this.showToast(this.type,"Already added in your fav list");
-    });
+    if (this.userService.isSessionActive()) {
+      let postData: FavModel = new FavModel();
+      postData.username = this.userService.getCurrentUser().username;
+      postData.fav = this._advisor.username;
+      postData.id = this._advisor._id;
+      postData.favCat = this._advisor.category;
+      this.query.addToFav(postData).subscribe(() => {
+        this.showToast(this.type, "favorite added");
+      }, () => {
+        this.showToast(this.type, "Already added in your fav list");
+      });
 
+    }
+    else {
+      const activeModal = this.modalService.open(LoginComponent, { size: 'lg', container: 'nb-layout' });
+
+      activeModal.componentInstance.modalHeader = 'Large Modal';
+    }
   }
   removeFav() {
     let postData = {
@@ -147,7 +161,7 @@ export class AdvisorCardComponent implements OnInit {
       fav: this._advisor.username
     }
     this.query.removeFav(postData).subscribe(() => {
-     this.showToast(this.type,"favorite removed")
+      this.showToast(this.type, "favorite removed")
       this.refresh.emit();
     })
   }

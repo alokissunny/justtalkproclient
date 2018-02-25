@@ -24,6 +24,8 @@ import {
 } from 'angular-calendar';
 import {CalenderService} from './calender.service';
 import { ChangeDetectorRef } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from '../../_services/user.service';
 const colors: any = {
   red: {
     primary: '#ad2121',
@@ -111,17 +113,23 @@ export class CalenderComponent  implements OnInit{
   ];
 
   ngOnInit() {
+    if(this.userService.isSessionActive()) {
    this.calenderService.getMyEvents().subscribe((events) => {
       this.events = events as any;
       this.ref.markForCheck();
-    })
+    });
     let date = new Date();
     let obj = {"date" : date , "events" : []};
     this.dayClicked(obj);
   }
+  else {
+    this.router.navigateByUrl('/login');
+  }
+  }
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal , private calenderService: CalenderService, private ref: ChangeDetectorRef) {}
+  constructor(private modal: NgbModal , private calenderService: CalenderService, private ref: ChangeDetectorRef , 
+  private router : Router , private userService : UserService) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {

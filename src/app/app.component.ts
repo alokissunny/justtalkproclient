@@ -55,8 +55,8 @@ export class AppComponent implements OnInit {
       } else {
         console.log("Geolocation is not supported by this browser.");
   }
-  if( !this.userService.isSessionActive()) {
-             this.router.navigateByUrl('/login');
-          }
+  // if( !this.userService.isSessionActive()) {
+  //            this.router.navigateByUrl('/login');
+  //         }
   }
 }

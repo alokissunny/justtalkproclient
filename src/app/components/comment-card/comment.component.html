@@ -23,9 +23,10 @@
 
                 <div class="avatar">
                     <nb-user style="width: 55px ; height: 55px" [name]="comment?.cname" [picture]="getPicture()"></nb-user>
+                       <span class="pubdate">{{comment.time | fromNow}}</span>
                 </div>
-                <div class="cmmnt-content">
-                    <header> <span class="pubdate">{{comment.time | fromNow}}</span></header>
+                <div class="cmmnt-content" style="word-wrap: break-word;">
+                  
                     <p>{{comment.comment}}</p>
                 </div>
                 <!--<ul class="replies">
