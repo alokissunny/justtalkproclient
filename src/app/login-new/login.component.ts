@@ -42,6 +42,9 @@ export class NewLoginComponent implements OnInit {
     advisor() {
         this.router.navigateByUrl('/loginad');
     }
+    guest() {
+        this.router.navigateByUrl('/');
+    }
     private showToast(type: string, body: string) {
         const toast: Toast = {
             type: type,
