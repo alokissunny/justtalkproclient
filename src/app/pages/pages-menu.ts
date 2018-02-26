@@ -25,12 +25,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
      link: '/pages/advisor/fav',
      home: false,
   },
-  {
-    title: 'Login',
-    icon: 'ion-android-person-add',
-     link: '/login',
-     home: false,
-  },
 ];
 export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
   {
