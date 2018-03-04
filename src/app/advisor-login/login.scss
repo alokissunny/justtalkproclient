@@ -3870,6 +3870,10 @@ hr {
 #header {
   position: relative;
 }
+.txt:hover {
+    text-decoration: underline;
+    color: cadetblue;
+}
 /* FOOTER */
 #footer {
   position: relative;

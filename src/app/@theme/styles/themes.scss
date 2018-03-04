@@ -5,6 +5,9 @@
 
 // which themes you what to enable (empty to enable all)
 $nb-enabled-themes: (default, cosmic);
+.menu-icon {
+    font-size: 30px;
+}
 
 $nb-themes: nb-register-theme((
  // app wise variables for each theme

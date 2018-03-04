@@ -51,7 +51,7 @@
         @include btn-hero-primary-gradient();
         @include btn-hero-primary-bevel-glow-shadow();
       }
-      &.yoga {
+      &.yog {
         @include btn-hero-success-gradient();
         @include btn-hero-success-bevel-glow-shadow();
       }
@@ -92,7 +92,7 @@
         &.event {
           background-image: btn-hero-primary-light-gradient();
         }
-        &.yoga {
+        &.yog {
           background-image: btn-hero-success-light-gradient();
         }
         &.nut {

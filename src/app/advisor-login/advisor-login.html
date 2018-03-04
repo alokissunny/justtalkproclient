@@ -16,6 +16,18 @@
 </head>
 
 <body>-->
+  <div style="background: azure ; padding: 10px">
+<div style="    font-size: large;
+    /* background: azure; */
+    /* padding-left: 5%; */">
+  <img style="height: 30px; width: 30px" src="assets/images/GET.png" />
+  <span>Get Expert</span>
+   <span class="txt" style="font-size: large; font-style: italic;
+    cursor: pointer;
+    float: right;" (click)="user()" > User Login</span>
+</div>
+ 
+  </div>
 <div id="main-wrapper">
 
   <div class="container-fluid">
@@ -27,9 +39,7 @@
         </header>
       </div>
       <div *ngIf="isSignUp" class="col-md-6 right-side">
-        <button style="margin-top: -100px;background: cadetblue;
-    cursor: pointer;border-color : cadetblue;
-    float: right;" (click)="user()" class="btn btn-primary btn-sm"> User Login</button>
+       
         <span class="input input--hoshi">
           <input class="input__field input__field--hoshi" type="text" id="fname" [(ngModel)]="model.firstName"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="name">

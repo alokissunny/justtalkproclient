@@ -7,7 +7,7 @@ import { Router }   from '@angular/router';
   template: `
     <nb-card (click)="on = !on" >
       <div class="icon-container">
-        <div class="icon {{ type }}">
+        <div  class="icon {{ type }}">
           <ng-content></ng-content>
         </div>
       </div>

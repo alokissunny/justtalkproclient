@@ -9,19 +9,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
     {
     title: 'Calender',
-    icon: 'ion-ios-calendar-outline',
+    icon: 'menu-icon nb-locked',
     link: '/pages/calender',
     home: false,
   },
     {
     title: 'Messages',
-    icon: 'nb-email',
+    icon: 'menu-icon nb-locked',
     link: '/pages/messages',
     home: false,
   },
   {
     title: 'Favorites',
-    icon: 'ion-android-person-add',
+    icon: 'menu-icon nb-locked',
      link: '/pages/advisor/fav',
      home: false,
   },

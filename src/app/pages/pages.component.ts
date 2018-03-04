@@ -19,7 +19,7 @@ constructor( private userService: UserService) {
 
 }
 ngOnInit() {
-  if(this.userService.isLoginUserAdvisor())
+  if(this.userService.isSessionActive())
   {
 this.menu = MENU_ITEMS_ADVISOR;
   }

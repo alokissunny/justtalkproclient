@@ -16,7 +16,7 @@ export class AdvisorComponent implements OnInit {
   onloading = true;
   cat = '';
 
-  constructor(private advisorService: AdvisorService, private route: ActivatedRoute, private userService: UserService) {
+  constructor(private advisorService: AdvisorService, private route: ActivatedRoute, private router : Router ,private userService: UserService) {
 
   }
   ngOnInit() {
@@ -37,5 +37,8 @@ export class AdvisorComponent implements OnInit {
       this.onloading = false;
       console.log(advisors);
     });
+  }
+  expertLogin() {
+    this.router.navigateByUrl('/loginad')
   }
 }
