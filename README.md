@@ -5,3 +5,4 @@ steps
 2. cd justtalkproclient
 3. npm install
 4. npm start
+5. open http://localhost:4200/
