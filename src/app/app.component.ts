@@ -5,19 +5,19 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from './@core/utils/analytics.service';
-import {  UserService } from './_services/index';
+import { UserService } from './_services/index';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import 'style-loader!angular2-toaster/toaster.css';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute  , NavigationStart, Event as NavigationEvent } from '@angular/router';
 
 @Component({
   selector: 'ngx-app',
-   styleUrls: ['./app.scss'],
+  styleUrls: ['./app.scss'],
   template: '<toaster-container style="background: cadetblue;" [toasterconfig]="config"></toaster-container><router-outlet></router-outlet>',
 })
 export class AppComponent implements OnInit {
   lat: Number;
-  lng : Number;
+  lng: Number;
   position = 'toast-top-right';
   animationType = 'fade';
   //title = 'HI there!';
@@ -31,9 +31,10 @@ export class AppComponent implements OnInit {
   isHideOnClick = true;
   isDuplicatesPrevented = false;
   isCloseButton = true;
-  
-  constructor(private analytics: AnalyticsService , private userService: UserService , private router : Router) {
-       this.config = new ToasterConfig({
+
+  constructor(private analytics: AnalyticsService, private userService: UserService,
+    private activatedRoute: ActivatedRoute, private router: Router) {
+    this.config = new ToasterConfig({
       positionClass: this.position,
       timeout: this.timeout,
       newestOnTop: this.isNewestOnTop,
@@ -44,19 +45,19 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          this.lat = position.coords.latitude;
-          this.lng = position.coords.longitude;
-          this.userService.curLat = this.lat;
-          this.userService.curLng = this.lng;
-        });
-      } else {
-        console.log("Geolocation is not supported by this browser.");
-  }
-  // if( !this.userService.isSessionActive()) {
-  //            this.router.navigateByUrl('/login');
-  //         }
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+        this.userService.curLat = this.lat;
+        this.userService.curLng = this.lng;
+      });
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+    // if( !this.userService.isSessionActive()) {
+    //            this.router.navigateByUrl('/login');
+    //         }
   }
 }

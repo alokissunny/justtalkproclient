@@ -3,7 +3,7 @@ import { Component, Input, OnInit,ViewChild,ElementRef } from '@angular/core';
 import { NbMenuService, NbSidebarService, NbSearchService } from '@nebular/theme';
 import { UserService } from '../../../_services/user.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
-import { Router } from '@angular/router';
+import { Router  , NavigationStart} from '@angular/router';
 import { AuthenticationService } from '../../../_services/authentication.service';
 import { appConfig } from '../../../app.config';
 import { GoogleService } from '../../../_services/google.service';
@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
   place:any ;
   userMenu = [{ title: 'Login' }];
   location = '';
+  showloc = false;
 
   constructor(private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
@@ -40,6 +41,15 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+   this.router.events
+    .filter(event => event instanceof NavigationStart)
+    .subscribe((event) => {
+      if((event as any).url.indexOf('/pages/advisor/') != -1) {
+        this.showloc =true ;
+      } else {
+        this.showloc = false;
+      }
+    });
     this.user = this.userService.getCurrentUser();
     if (this.userService.isSessionActive())
       this.user.picture = appConfig.apiUrl + "/images/" + this.user.photo;
@@ -67,8 +77,12 @@ export class HeaderComponent implements OnInit {
       });
   }
   autoComplete() {
+    
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
+      if(!this.searchElementRef) {
+      return ;
+    }
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
         types: ["address"]
       });

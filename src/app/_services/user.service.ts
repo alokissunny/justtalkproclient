@@ -8,6 +8,7 @@ import { ReplaySubject } from 'rxjs';
 export class UserService {
     curLat : Number;
     curLng : Number;
+    showLocation  = new ReplaySubject();
     currentLocationChanged  = new ReplaySubject();
     constructor(private http: Http) { }
 

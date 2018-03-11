@@ -66,7 +66,8 @@ export class PostCommentComponent implements OnInit {
         this.message = '';
        // this.rating = newrate;
         this.showToast(this.type, this.content);
-        this.getComments();
+        this.activeModal.close();
+        //this.getComments();
         //this.activeModal.close();
       })
     }
