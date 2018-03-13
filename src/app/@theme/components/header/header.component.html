@@ -23,7 +23,7 @@
   <!--<nb-action class="control-item">
     <nb-search type="rotate-layout" tag="location"  placeholder="enter location" ></nb-search>
   </nb-action>-->
-  <nb-action *ngIf="showloc" class="control-item">
+  <nb-action  [style.visibility]="showloc ? 'visible' : 'hidden'" class="control-item">
           <div class="col-lg-7">
             <input autocorrect="off" autocapitalize="off" spellcheck="off" type="text"  #search  type="text"  [(ngModel)]="location" name="location"  id="location" placeholder="location"
                style="height: 30px;

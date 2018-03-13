@@ -1,4 +1,4 @@
-import { Component, Input, OnInit,ViewChild,ElementRef } from '@angular/core';
+import { Component, Input, OnInit,ViewChild,ElementRef, OnChanges } from '@angular/core';
 
 import { NbMenuService, NbSidebarService, NbSearchService } from '@nebular/theme';
 import { UserService } from '../../../_services/user.service';
@@ -15,7 +15,7 @@ declare var google: any;
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit , OnChanges {
 
   @ViewChild("search")
     public searchElementRef: ElementRef;
@@ -39,7 +39,9 @@ export class HeaderComponent implements OnInit {
     private ngZone: NgZone
   ) {
   }
-
+  ngOnChanges() {
+    this.autoComplete();
+  }
   ngOnInit() {
    this.router.events
     .filter(event => event instanceof NavigationStart)
