@@ -27,7 +27,10 @@ export class AdvisorComponent implements OnInit {
   });
   this.userService.currentLocationChanged.subscribe( () => {
     this.getAdvisors();
-  });    
+  });  
+  this.userService.showLoader.subscribe(() => {
+    this.onloading = true;
+  })  
   }
   getAdvisors() {
     this.onloading = true;

@@ -1,9 +1,9 @@
-import { Component, Input, OnInit,ViewChild,ElementRef, OnChanges } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ElementRef, OnChanges } from '@angular/core';
 
 import { NbMenuService, NbSidebarService, NbSearchService } from '@nebular/theme';
 import { UserService } from '../../../_services/user.service';
 import { AnalyticsService } from '../../../@core/utils/analytics.service';
-import { Router  , NavigationStart} from '@angular/router';
+import { Router, NavigationStart } from '@angular/router';
 import { AuthenticationService } from '../../../_services/authentication.service';
 import { appConfig } from '../../../app.config';
 import { GoogleService } from '../../../_services/google.service';
@@ -15,15 +15,15 @@ declare var google: any;
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent implements OnInit , OnChanges {
+export class HeaderComponent implements OnInit, OnChanges {
 
   @ViewChild("search")
-    public searchElementRef: ElementRef;
+  public searchElementRef: ElementRef;
   @Input() position = 'normal';
 
   user: any;
   noncurloc = false;
-  place:any ;
+  place: any;
   userMenu = [{ title: 'Login' }];
   location = '';
   showloc = false;
@@ -43,15 +43,15 @@ export class HeaderComponent implements OnInit , OnChanges {
     this.autoComplete();
   }
   ngOnInit() {
-   this.router.events
-    .filter(event => event instanceof NavigationStart)
-    .subscribe((event) => {
-      if((event as any).url.indexOf('/pages/advisor/') != -1) {
-        this.showloc =true ;
-      } else {
-        this.showloc = false;
-      }
-    });
+    this.router.events
+      .filter(event => event instanceof NavigationStart)
+      .subscribe((event) => {
+        if ((event as any).url.indexOf('/pages/advisor/') != -1) {
+          this.showloc = true;
+        } else {
+          this.showloc = false;
+        }
+      });
     this.user = this.userService.getCurrentUser();
     if (this.userService.isSessionActive())
       this.user.picture = appConfig.apiUrl + "/images/" + this.user.photo;
@@ -72,19 +72,19 @@ export class HeaderComponent implements OnInit , OnChanges {
   search(evt) {
     console.log(evt);
     this.googleService.getGoogleLocation(evt).subscribe((res) => {
-        this.userService.curLat = res.results[0].geometry.location.lat;
-        this.userService.curLng = res.results[0].geometry.location.lng;
-        this.userService.currentLocationChanged.next({});
-        this.noncurloc = true;
-      });
+      this.userService.curLat = res.results[0].geometry.location.lat;
+      this.userService.curLng = res.results[0].geometry.location.lng;
+      this.userService.currentLocationChanged.next({});
+      this.noncurloc = true;
+    });
   }
   autoComplete() {
-    
+
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
-      if(!this.searchElementRef) {
-      return ;
-    }
+      if (!this.searchElementRef) {
+        return;
+      }
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
         types: ["address"]
       });
@@ -104,13 +104,21 @@ export class HeaderComponent implements OnInit , OnChanges {
   }
   useloc() {
     if (navigator.geolocation) {
+      this.userService.showLoader.next({});
+      var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
       navigator.geolocation.getCurrentPosition((position) => {
         this.userService.curLat = position.coords.latitude;
         this.userService.curLng = position.coords.longitude;
         this.userService.currentLocationChanged.next({});
         this.noncurloc = false;
         this.location = '';
-      });
+      } , (error => {
+        console.log(error);
+      }) , options);
     } else {
       console.log("Geolocation is not supported by this browser.");
     }

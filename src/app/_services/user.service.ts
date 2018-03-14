@@ -10,6 +10,7 @@ export class UserService {
     curLng : Number;
     showLocation  = new ReplaySubject();
     currentLocationChanged  = new ReplaySubject();
+    showLoader= new ReplaySubject();
     constructor(private http: Http) { }
 
     getAll() {
