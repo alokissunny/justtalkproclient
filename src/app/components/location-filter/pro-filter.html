@@ -1,0 +1,23 @@
+<div>
+    <i *ngIf="!showLocation" (click)="showLocation = true" class="ion-location" title="filter"> </i>
+</div>
+<div *ngIf="showLocation" style="width: 360px;">
+    <div>
+    <span style="float: left;">City is </span>
+    <div style="position: absolute;
+    left: 70px;
+    float: left;">
+        <select (ngModelChange)="onChange($event)">
+    <option *ngFor="let city of cities" value="city" >{{city}}</option>
+    </select>
+    </div>
+    <div style="float: right;
+    position: absolute;
+    left: 169px;">
+        <select>
+    <option *ngFor="let loc of location" value="loc" >{{loc}}</option>
+    </select>
+    </div>
+    </div>
+
+</div>

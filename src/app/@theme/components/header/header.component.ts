@@ -67,7 +67,7 @@ export class HeaderComponent implements OnInit, OnChanges {
     //     this.noncurloc = true;
     //   });
     // });
-    this.autoComplete();
+    // this.autoComplete();
   }
   search(evt) {
     console.log(evt);

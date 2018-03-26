@@ -38,9 +38,10 @@ import {NewLoginComponent} from './login-new/login.component';
 import {AdvisorLoginComponent} from './advisor-login/advisor-login.component';
 
 
+
 @NgModule({
   declarations: [AppComponent, LoginComponent, PostQueryComponent, SendReplyComponent , NewLoginComponent,AdvisorLoginComponent,
-   RegisterComponent , BookComponent , PostCommentComponent ,CommentComponent],
+   RegisterComponent , BookComponent , PostCommentComponent ,CommentComponent ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
