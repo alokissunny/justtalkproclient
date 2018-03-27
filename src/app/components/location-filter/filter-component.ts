@@ -10,6 +10,8 @@ import * as constant from './constants';
 export class FilterComponent implements OnInit {
 showLocation = false;
 location = constant.GGN;
+city = 'Gurgaon';
+loc = 'Ashok Vihar Phase II';
 cities = ['Gurgaon' , 'Delhi' , 'Noida'];
     ngOnInit() {
 

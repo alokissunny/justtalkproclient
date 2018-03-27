@@ -1,5 +1,5 @@
 <div>
-    <i *ngIf="!showLocation" (click)="showLocation = true" class="ion-location" title="filter"> </i>
+    <i *ngIf="!showLocation" (click)="showLocation = true" class="ion-search" title="filter"> </i>
 </div>
 <div *ngIf="showLocation" style="width: 360px;">
     <div>
@@ -7,17 +7,21 @@
     <div style="position: absolute;
     left: 70px;
     float: left;">
-        <select (ngModelChange)="onChange($event)">
+        <select class="form-control" (ngModelChange)="onChange($event)">
     <option *ngFor="let city of cities" value="city" >{{city}}</option>
     </select>
     </div>
     <div style="float: right;
     position: absolute;
-    left: 169px;">
-        <select>
+    left: 200px;
+    width: 216px;">
+        <select  class="form-control">
     <option *ngFor="let loc of location" value="loc" >{{loc}}</option>
     </select>
+    <i class="ion-checkmark-round" (click)="search()" ></i>
+    <i class="ion-close-round" (click)="showLocation = false" ></i>
     </div>
+
     </div>
 
 </div>
