@@ -69,6 +69,10 @@ export class HeaderComponent implements OnInit, OnChanges {
     // });
     // this.autoComplete();
   }
+  locSearch (evt) {
+    let address = evt.city + ' ' + evt.loc;
+    this.search(address);
+  }
   search(evt) {
     console.log(evt);
     this.googleService.getGoogleLocation(evt).subscribe((res) => {

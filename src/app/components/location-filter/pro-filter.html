@@ -7,15 +7,15 @@
     <div style="position: absolute;
     left: 70px;
     float: left;">
-        <select class="form-control" (ngModelChange)="onChange($event)">
-    <option *ngFor="let city of cities" value="city" >{{city}}</option>
+        <select class="form-control" (change)="onChange($event)">
+    <option *ngFor="let city of cities" value="{{city}}" >{{city}}</option>
     </select>
     </div>
     <div style="float: right;
     position: absolute;
     left: 200px;
     width: 216px;">
-        <select  class="form-control">
+        <select  (change)="locChange($event)" class="form-control">
     <option *ngFor="let loc of location" value="loc" >{{loc}}</option>
     </select>
     <i class="ion-checkmark-round" (click)="search()" ></i>

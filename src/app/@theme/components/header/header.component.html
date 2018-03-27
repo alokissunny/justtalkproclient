@@ -19,7 +19,7 @@
   </nb-action>-->
   <nb-action [style.visibility]="showloc ? 'visible' : 'hidden'" class="control-item">
     <div class="col-lg-7">
-      <pro-filter></pro-filter>
+      <pro-filter (onSearch)="locSearch($event)"></pro-filter>
       <!--<input autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search type="text" [(ngModel)]="location" name="location"
         id="location" placeholder="location" style="height: 30px;
     width: 300px;" required>-->
