@@ -4,6 +4,7 @@ import { Component, Input, OnInit, ViewChild, ElementRef, Output ,EventEmitter ,
 import { NbMenuService, NbSidebarService, NbSearchService } from '@nebular/theme';
 
 import * as constant from './constants';
+
 @Component({
   selector: 'pro-filter',
   styleUrls: ['./pro-filter.scss'],
@@ -30,6 +31,8 @@ export class FilterComponent implements OnInit {
       case "Gurgaon":
         this.location = constant.GGN;
         break;
+        case "Noida" :
+        this.location = constant.NOIDA;
     }
 
   }

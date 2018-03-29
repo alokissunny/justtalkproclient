@@ -1,25 +1,33 @@
 <div>
     <i *ngIf="!showLocation" (click)="showLocation = true" class="ion-search" title="filter"> </i>
 </div>
-<div *ngIf="showLocation" style="width: 360px;">
+<div *ngIf="showLocation" style="width: 400px;">
     <div>
     <span style="float: left;">City is </span>
     <div style="position: absolute;
     left: 70px;
-    float: left;">
+    float: left;
+    top: -15px;">
         <select class="form-control" (change)="onChange($event)">
     <option *ngFor="let city of cities" value="{{city}}" >{{city}}</option>
     </select>
     </div>
-    <div style="float: right;
+    <div style="    float: right;
     position: absolute;
     left: 200px;
-    width: 216px;">
+    width: 216px;
+    top: -15px;">
         <select  (change)="locChange($event)" class="form-control">
     <option *ngFor="let loc of location" value="loc" >{{loc}}</option>
     </select>
-    <i class="ion-checkmark-round" (click)="search()" ></i>
-    <i class="ion-close-round" (click)="showLocation = false" ></i>
+    <i style="float: right;
+    position: absolute;
+    left: 221px;
+    bottom: 16px;" class="ion-checkmark-round" (click)="search()" ></i>
+    <i style="float: left;
+    position: absolute;
+    left: -205px;
+    bottom: 18px;" class="ion-close-round" (click)="showLocation = false" ></i>
     </div>
 
     </div>
