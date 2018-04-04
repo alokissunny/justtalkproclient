@@ -47,9 +47,9 @@ export class HeaderComponent implements OnInit, OnChanges {
       this.showloc = true;
     }
     this.router.events
-     // .filter(event => event instanceof NavigationStart)
+      //.filter(event => event instanceof NavigationStart)
       .subscribe((event) => {
-        if ((event as any).url.indexOf('/pages/advisor/') != -1) {
+        if (((event as any).url ) && (event as any).url.indexOf('/pages/advisor/') != -1) {
           this.showloc = true;
         } else {
           this.showloc = false;
