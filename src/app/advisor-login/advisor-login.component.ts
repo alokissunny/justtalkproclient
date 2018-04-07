@@ -5,6 +5,7 @@ import { AlertService, AuthenticationService } from '../_services/index';
 import { UserService } from '../_services/user.service';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import * as constant from '../constants';
+import { NgForm } from '@angular/forms';
 
 @Component({
     moduleId: module.id,
@@ -18,7 +19,7 @@ export class AdvisorLoginComponent implements OnInit {
     loading = false;
     returnUrl: string;
     content = `SignUp Successful!!`;
-    contentFail = 'user name already taken';
+    contentFail = 'Email already taken';
     timeout = 1200;
     toastsLimit = 5;
     type = 'default';
@@ -27,6 +28,7 @@ export class AdvisorLoginComponent implements OnInit {
     isDuplicatesPrevented = false;
     isCloseButton = true;
     isSignUp = true;
+    emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
     constructor(
         private route: ActivatedRoute, private userService: UserService,
@@ -59,7 +61,10 @@ export class AdvisorLoginComponent implements OnInit {
         };
         this.toasterService.popAsync(toast);
     }
-    signUp() {
+    signUp(form: NgForm) {
+         if (form.invalid) {
+             return;
+        }
         if (this.validation()) {
             this.model.email = this.model.username;
             this.model.currentRating = constant.BASE_RATE;

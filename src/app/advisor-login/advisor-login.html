@@ -16,7 +16,7 @@
 </head>
 
 <body>-->
-  <div style="background: azure ; padding: 10px">
+  <div style=" padding: 10px">
 <div style="    font-size: large;
     /* background: azure; */
     /* padding-left: 5%; */">
@@ -39,31 +39,32 @@
         </header>
       </div>
       <div *ngIf="isSignUp" class="col-md-6 right-side">
-       
+       <form #userForm="ngForm" (ngSubmit)="signUp(userForm)">
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="text" id="fname" [(ngModel)]="model.firstName"/>
+          <input class="input__field input__field--hoshi" type="text" name="fname" id="fname" [(ngModel)]="model.firstName"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="name">
             <span class="input__label-content input__label-content--hoshi" >First Name</span>
           </label>
         </span>
          <span class="input input--hoshi">
-             <input class="input__field input__field--hoshi" type="text" id="lname" [(ngModel)]="model.lastName"/>
+             <input class="input__field input__field--hoshi" type="text" name="lname" id="lname" [(ngModel)]="model.lastName"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="name">
             <span class="input__label-content input__label-content--hoshi"  >Last Name</span>
           </label>
         </span>
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="text" id="email" [(ngModel)]="model.username"/>
+          <input class="input__field input__field--hoshi" type="text" name= "email" id="email" required [pattern]="emailPattern" [(ngModel)]="model.username"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="email">
             <span class="input__label-content input__label-content--hoshi" >E-mail</span>
           </label>
         </span>
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="password" id="password" [(ngModel)]="model.password" />
+          <input class="input__field input__field--hoshi" name="password" type="password" id="password" [(ngModel)]="model.password" />
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="password">
             <span class="input__label-content input__label-content--hoshi" >Password</span>
           </label>
         </span>
+       
         <!--<span class="input input--hoshi">
           <input class="input__field input__field--hoshi" type="password" id="password1" />
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="password1">
@@ -71,11 +72,12 @@
           </label>
         </span>-->
         <div class="cta">
-          <button class="btn btn-primary pull-left" (click)="signUp()">
+          <button class="btn btn-primary pull-left" type="submit">
             Sign-Up Now
           </button>
           <span style="cursor: pointer"><a (click)="switchInterface(true)">I am already a member</a></span>
         </div>
+        </form>
         <!--<ul class="social list-inline">
           <li><a href="#">Facebook</a></li>
           <li><a href="#">Twitter</a></li>
