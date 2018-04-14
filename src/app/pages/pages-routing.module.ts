@@ -18,7 +18,16 @@ const routes: Routes = [{
   {
     path: 'messages',
     loadChildren: './messages/message.module#MessageModule',
-  }, 
+  },
+    {
+    path: 'login',
+    loadChildren: './login/login.module#LoginModule',
+  },
+   {
+    path: 'elogin',
+    loadChildren: './elogin/elogin.module#eLoginModule',
+  },
+   
   {
     path: 'profile/:id',
     loadChildren: './profile/profile.module#ProfileModule',

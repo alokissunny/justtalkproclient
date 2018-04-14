@@ -1,0 +1,81 @@
+<div id="main-wrapper">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 left-side">
+        <header>
+          <span>Need an account?</span>
+          <h3>Create Account<br>Make Profits</h3>
+        </header>
+      </div>
+      <div *ngIf="isSignUp" class="col-md-6 right-side">
+       <form #userForm="ngForm" (ngSubmit)="signUp(userForm)">
+        <span class="input input--hoshi">
+          <input class="input__field input__field--hoshi" type="text" name="fname" id="fname" [(ngModel)]="model.firstName"/>
+          <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="name">
+            <span class="input__label-content input__label-content--hoshi" >First Name</span>
+          </label>
+        </span>
+         <span class="input input--hoshi">
+             <input class="input__field input__field--hoshi" type="text" name="lname" id="lname" [(ngModel)]="model.lastName"/>
+          <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="name">
+            <span class="input__label-content input__label-content--hoshi"  >Last Name</span>
+          </label>
+        </span>
+        <span class="input input--hoshi">
+          <input class="input__field input__field--hoshi" type="text" name= "email" id="email" required [pattern]="emailPattern" [(ngModel)]="model.username"/>
+          <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="email">
+            <span class="input__label-content input__label-content--hoshi" >E-mail</span>
+          </label>
+        </span>
+        <span class="input input--hoshi">
+          <input class="input__field input__field--hoshi" name="password" type="password" id="password" [(ngModel)]="model.password" />
+          <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="password">
+            <span class="input__label-content input__label-content--hoshi" >Password</span>
+          </label>
+        </span>
+       
+        <!--<span class="input input--hoshi">
+          <input class="input__field input__field--hoshi" type="password" id="password1" />
+          <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="password1">
+            <span class="input__label-content input__label-content--hoshi">Repeat Passowrd</span>
+          </label>
+        </span>-->
+        <div class="cta">
+          <button class="btn btn-primary pull-left" type="submit">
+            Sign-Up Now
+          </button>
+          <span style="cursor: pointer"><a (click)="switchInterface(true)">I am already a member</a></span>
+        </div>
+        </form>
+        <!--<ul class="social list-inline">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Linkedin</a></li>
+        </ul>-->
+      </div>
+        <div *ngIf="!isSignUp" class="col-md-6 right-side">
+        <span class="input input--hoshi">
+          <input class="input__field input__field--hoshi" type="text" id="email" [(ngModel)]="loginmodel.username"/>
+          <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="email">
+            <span class="input__label-content input__label-content--hoshi" >E-mail</span>
+          </label>
+        </span>
+        <span class="input input--hoshi">
+          <input class="input__field input__field--hoshi" type="password" id="password" [(ngModel)]="loginmodel.password" />
+          <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="password">
+            <span class="input__label-content input__label-content--hoshi" >Password</span>
+          </label>
+        </span>
+        <div class="cta">
+          <button class="btn btn-primary pull-left" (click)="login()">
+            Login
+          </button>
+          <span style="cursor: pointer"><a (click) =switchInterface(false)>Not member</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- end #main-wrapper -->
+

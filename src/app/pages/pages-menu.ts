@@ -25,6 +25,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
      link: '/pages/advisor/fav',
      home: false,
   },
+  {
+    title: 'Login',
+    icon: 'menu-icon nb-locked',
+     link: '/pages/login',
+     home: false,
+  },
+    {
+    title: 'Expert-Login',
+    icon: 'menu-icon nb-locked',
+     link: '/pages/elogin',
+     home: false,
+  },
 ];
 export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
   {
@@ -49,6 +61,18 @@ export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
     title: 'Favorites',
     icon: 'ion-android-person-add',
      link: '/pages/advisor/fav',
+     home: false,
+  },
+  {
+    title: 'Login',
+    icon: 'menu-icon nb-locked',
+     link: '/pages/login',
+     home: false,
+  },
+    {
+    title: 'Expert-Login',
+    icon: 'menu-icon nb-locked',
+     link: '/pages/elogin',
      home: false,
   },
 ];

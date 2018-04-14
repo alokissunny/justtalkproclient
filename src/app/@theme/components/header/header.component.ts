@@ -59,6 +59,7 @@ export class HeaderComponent implements OnInit, OnChanges {
     if (this.userService.isSessionActive())
       this.user.picture = appConfig.apiUrl + "/images/" + this.user.photo;
     this.authenticationService.onLogin.subscribe(() => {
+      this.getmenu();
       this.user = this.userService.getCurrentUser();
       this.user.picture = appConfig.apiUrl + "/images/" + this.user.photo;
     });

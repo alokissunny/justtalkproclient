@@ -24,7 +24,7 @@ ngOnInit() {
 this.menu = MENU_ITEMS_ADVISOR;
   }
   else {
-this.menu = MENU_ITEMS;
+this.menu = MENU_ITEMS_ADVISOR;
   }
 
 }
