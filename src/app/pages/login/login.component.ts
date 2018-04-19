@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         // reset login status
-        this.model.isAdvisor = false;
-        this.authenticationService.logout();
+        
+       // this.authenticationService.logout();
 
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -62,8 +62,10 @@ export class LoginComponent implements OnInit {
 
     cambiar_login() {
         this.user = new User();
-        if (this.model.username && this.model.password)
+        if (this.model.username && this.model.password) {
+            this.model.isAdvisor = false;
             this.login();
+        }
         else {
             document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";
             (document.querySelector('.cont_form_login') as any).style.display = "block";
