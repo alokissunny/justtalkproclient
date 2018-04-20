@@ -63,16 +63,4 @@ export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
      link: '/pages/advisor/fav',
      home: false,
   },
-  {
-    title: 'Login',
-    icon: 'menu-icon nb-locked',
-     link: '/pages/login',
-     home: false,
-  },
-    {
-    title: 'Expert-Login',
-    icon: 'menu-icon nb-locked',
-     link: '/pages/elogin',
-     home: false,
-  },
 ];

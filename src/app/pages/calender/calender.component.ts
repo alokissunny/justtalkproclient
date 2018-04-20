@@ -123,7 +123,7 @@ export class CalenderComponent  implements OnInit{
     this.dayClicked(obj);
   }
   else {
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/pages/login');
   }
   }
   activeDayIsOpen: boolean = true;
