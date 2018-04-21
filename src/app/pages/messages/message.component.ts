@@ -14,6 +14,7 @@ import { UserService } from '../../_services/user.service';
 export class MessageComponent implements OnInit {
 
   messages = [];
+  loading = true;
 
   constructor(private messageService: MessageService, private route: ActivatedRoute, private cd: ChangeDetectorRef
   ,private userService : UserService , private router : Router) {
@@ -31,8 +32,10 @@ export class MessageComponent implements OnInit {
      }
   }
   refresh() {
+    this.loading = true;
 this.messageService.getAllMessages().subscribe((data: any) => {
       this.messages = data;
+      this.loading = false;
       this.cd.markForCheck();
     });
   }

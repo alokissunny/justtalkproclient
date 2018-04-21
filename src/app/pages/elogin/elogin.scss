@@ -3883,7 +3883,7 @@ hr {
 /* WRAPPER */
 .left-side {
   position: relative;
-  min-height: 100vh;
+  min-height: 500px;
   text-align: center;
   background: #000 url(../../../assets/images/bg.jpg) no-repeat center;
   background-size: cover;
@@ -3911,7 +3911,6 @@ hr {
 }
 .right-side {
   position: relative;
-  padding: 120px 120px 100px 120px;
   height: 100vh;
   background: #fff;
 }
@@ -3923,7 +3922,7 @@ hr {
   font-size: 14px;
 }
 .right-side .cta {
-  margin-top: 40px;
+  // margin-top: 40px;
 }
 .right-side .cta .btn {
   padding: 13px 25px;

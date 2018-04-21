@@ -98,6 +98,7 @@ export class eLoginComponent implements OnInit {
                 this.loginmodel.password, true).subscribe(
                 data => {
                     this.showToast(this.type, 'login success');
+                      this.authenticationService.onLogin.next({});
                     this.router.navigate(['/']);
                 },
                 error => {

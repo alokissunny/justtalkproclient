@@ -1,11 +1,11 @@
 <div>
   <ul>
-  <div *ngFor="let message of messages" style=" border-style: double;">
+  <div *ngFor="let message of messages" style=" border-style: inset;">
      <app-message-row [dataModel] = "message" (delete)= "removeMessage($event)" >
      </app-message-row>
   </div>
   </ul>
-  <div *ngIf="messages.length == 0" style="margin-top: 20% ; margin-left: 40%">
+  <div *ngIf="messages.length == 0 && !loading" style="margin-top: 20% ; margin-left: 40%">
     <span>No Messages</span>
   </div>
 </div>

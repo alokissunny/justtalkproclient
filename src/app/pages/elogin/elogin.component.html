@@ -8,7 +8,7 @@
           <h3>Create Account<br>Make Profits</h3>
         </header>
       </div>
-      <div *ngIf="isSignUp" class="col-md-6 right-side">
+      <div *ngIf="isSignUp" class="col-md-6 right-side" style="height: 500px">
        <form #userForm="ngForm" (ngSubmit)="signUp(userForm)">
         <span class="input input--hoshi">
           <input class="input__field input__field--hoshi" type="text" name="fname" id="fname" [(ngModel)]="model.firstName"/>
@@ -54,7 +54,7 @@
           <li><a href="#">Linkedin</a></li>
         </ul>-->
       </div>
-        <div *ngIf="!isSignUp" class="col-md-6 right-side">
+        <div *ngIf="!isSignUp" class="col-md-6 right-side" style="height: 500px">
         <span class="input input--hoshi">
           <input class="input__field input__field--hoshi" type="text" id="email" [(ngModel)]="loginmodel.username"/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="email">
