@@ -16,7 +16,7 @@ export class AdvisorService {
       if(this.userService.isSessionActive())
       return this.http.get('/advisors/fav/'+this.userService.getCurrentUser().username).map((response: Response) => response.json());
       else {
-        this.router.navigateByUrl('/login');
+         this.router.navigateByUrl('/pages/login');
       }
      }
     if(!curLat || !curLng) {

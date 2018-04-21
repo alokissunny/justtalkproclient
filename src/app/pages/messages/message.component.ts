@@ -27,7 +27,7 @@ export class MessageComponent implements OnInit {
     this.refresh();
      }
      else {
-       this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('/pages/login');
      }
   }
   refresh() {
