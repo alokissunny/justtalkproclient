@@ -43,6 +43,9 @@ export class AdvisorCardComponent implements OnInit {
   services = ["Highlight service 1", "Highlight service 2", "Highlight service 3", "Highlight service 4", "Highlight service 5"];
   @Output()
   refresh: EventEmitter<string> = new EventEmitter<string>();
+
+  @Output()
+  chat: EventEmitter<any> = new EventEmitter<any>();
   @Input()
   set advisor(value: Advisor) {
     this._advisor = value;
@@ -52,6 +55,9 @@ export class AdvisorCardComponent implements OnInit {
   get advisor(): Advisor {
     return this._advisor;
 
+  }
+  chatClicked() {
+this.chat.emit({});
   }
   private showToast(type: string, body: string) {
     const toast: Toast = {

@@ -62,7 +62,7 @@ import {AdvisorLoginComponent} from './advisor-login/advisor-login.component';
    entryComponents: [
     PostQueryComponent,SendReplyComponent, BookComponent,PostCommentComponent,CommentComponent
   ],
-  providers: [AlertService, AuthenticationService, UserService, customHttpProvider,BookService,NgbActiveModal ,GoogleService,CommentService,
+  providers: [AlertService, AuthenticationService, UserService ,customHttpProvider,BookService,NgbActiveModal ,GoogleService,CommentService,
     { provide: APP_BASE_HREF, useValue: '/' },
   ],
 })

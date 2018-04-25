@@ -9,18 +9,20 @@ import {QueryService} from '../../components/post-query/post-query.service';
 import { CommentModule } from 'ng2-comment'; 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {ContactCardComponent} from '../../components/contact-card/contact-card.component';
+import {ChatComponent} from '../../components/chat/chat.component';
+import {ChatService} from '../../components/chat/chat.service';
 
 @NgModule({
   imports: [
    AdvisorRoutingModule, CommonModule, ThemeModule,//CommentModule
   ],
   declarations: [
-      AdvisorComponent, AdvisorCardComponent,ContactCardComponent 
+      AdvisorComponent, AdvisorCardComponent,ContactCardComponent ,ChatComponent
   ],
   entryComponents: [
     ContactCardComponent,
   ],
-  providers : [AdvisorService ,QueryService ],
+  providers : [AdvisorService ,QueryService ,ChatService],
 })
 export class AdvisorModule {
 }

@@ -21,6 +21,7 @@ import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
 
 
+
 @NgModule({
   imports: [
     ThemeModule,
@@ -45,5 +46,6 @@ import { TrafficChartComponent } from './traffic/traffic-chart.component';
     TrafficComponent,
     TrafficChartComponent,
   ],
+  providers: []
 })
 export class DashboardModule { }

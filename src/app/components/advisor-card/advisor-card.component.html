@@ -9,7 +9,7 @@
     padding: 15px;
     font-family: inherit;
     margin: 10px;"> </i>
-        <i *ngIf="!isDisable" class="ion-chatbubbles" title="ping him" style="display: inherit ;position: absolute;
+        <i *ngIf="!isDisable" class="ion-chatbubbles" (click)="chatClicked()" title="ping him" style="display: inherit ;position: absolute;
     left: 50px;
     bottom: 0; 
     display: inherit;height: 45px;font-size: 25px;

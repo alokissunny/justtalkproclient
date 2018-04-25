@@ -15,9 +15,16 @@ export class AdvisorComponent implements OnInit {
   lng: Number;
   onloading = true;
   cat = '';
+  showChat = false;
 
   constructor(private advisorService: AdvisorService, private route: ActivatedRoute, private router : Router ,private userService: UserService) {
 
+  }
+  chat() {
+    this.showChat = true;
+  }
+  remove() {
+    this.showChat = false;
   }
   ngOnInit() {
   this.getAdvisors();

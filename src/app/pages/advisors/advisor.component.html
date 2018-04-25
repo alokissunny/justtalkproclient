@@ -2,7 +2,7 @@
   <table style="width: 100%">
     <tr   *ngFor = "let advisor of advisors;index as i; even as isEven; odd as isOdd">
       <td *ngIf="!onloading" class="card">
-        <app-advisor-card (refresh)="getAdvisors()" [advisor] = advisor></app-advisor-card>
+        <app-advisor-card (refresh)="getAdvisors()" (chat)="chat()" [advisor] = advisor></app-advisor-card>
       </td>
     </tr>
     <tr>
@@ -23,3 +23,4 @@
      </div>
   </table>
 </div>
+<app-chat *ngIf="showChat" (removeChat)="remove()"></app-chat>
