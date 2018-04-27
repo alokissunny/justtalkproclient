@@ -29,7 +29,7 @@
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
-    "@agm/core": "^1.0.0-beta.0",
+    "@agm/core": "1.0.0-beta.0",
     "@angular/animations": "4.4.6",
     "@angular/common": "4.4.6",
     "@angular/compiler": "4.4.6",
@@ -68,6 +68,7 @@
     "ng2-smart-table": "1.1.0",
     "ng2-tree": "2.0.0-alpha.10",
     "ngx-echarts": "1.2.2",
+    "node-sass": "^4.8.1",
     "normalize.css": "6.0.0",
     "pace-js": "1.0.2",
     "roboto-fontface": "0.8.0",
