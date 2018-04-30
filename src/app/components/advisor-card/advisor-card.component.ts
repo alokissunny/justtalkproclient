@@ -57,7 +57,8 @@ export class AdvisorCardComponent implements OnInit {
 
   }
   chatClicked() {
-this.chat.emit({});
+    let advisorId = this._advisor.email;
+this.chat.emit({advisor : advisorId});
   }
   private showToast(type: string, body: string) {
     const toast: Toast = {
