@@ -7,24 +7,24 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/dashboard',
     home: true,
   },
-    {
-    title: 'Calender',
-    icon: 'menu-icon nb-locked',
-    link: '/pages/calender',
-    home: false,
-  },
-    {
-    title: 'Messages',
-    icon: 'menu-icon nb-locked',
-    link: '/pages/messages',
-    home: false,
-  },
-  {
-    title: 'Favorites',
-    icon: 'menu-icon nb-locked',
-     link: '/pages/advisor/fav',
-     home: false,
-  },
+  //   {
+  //   title: 'Calender',
+  //   icon: 'menu-icon nb-locked',
+  //   link: '/pages/calender',
+  //   home: false,
+  // },
+  //   {
+  //   title: 'Messages',
+  //   icon: 'menu-icon nb-locked',
+  //   link: '/pages/messages',
+  //   home: false,
+  // },
+  // {
+  //   title: 'Favorites',
+  //   icon: 'menu-icon nb-locked',
+  //    link: '/pages/advisor/fav',
+  //    home: false,
+  // },
   {
     title: 'Login',
     icon: 'menu-icon nb-locked',
