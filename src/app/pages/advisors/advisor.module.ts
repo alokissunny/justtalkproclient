@@ -11,10 +11,17 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {ContactCardComponent} from '../../components/contact-card/contact-card.component';
 import {ChatComponent} from '../../components/chat/chat.component';
 import {ChatService} from '../../components/chat/chat.service';
+import { NgChatModule } from 'ng-chat';
+
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:4000', options: {} };
 
 @NgModule({
   imports: [
-   AdvisorRoutingModule, CommonModule, ThemeModule,//CommentModule
+   AdvisorRoutingModule, CommonModule, ThemeModule,
+   NgChatModule,
+    SocketIoModule.forRoot(config) 
   ],
   declarations: [
       AdvisorComponent, AdvisorCardComponent,ContactCardComponent ,ChatComponent

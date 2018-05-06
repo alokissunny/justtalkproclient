@@ -23,4 +23,6 @@
      </div>
   </table>
 </div>
-<!-- <app-chat [hidden]="showChat" (showChat)="showChat = false" [advisorId]='advisorId' (removeChat)="remove()"></app-chat> -->
+<!--<app-chat [hidden]="showChat" (showChat)="showChat = false" [advisorId]='advisorId' (removeChat)="remove()"></app-chat>-->
+<ng-chat *ngIf="userId" [adapter]="adapter" [userId]="userId" [historyEnabled]="false"></ng-chat>
+

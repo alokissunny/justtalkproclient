@@ -61,6 +61,8 @@
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
     "nebular-icons": "1.0.6",
+    "ng-chat": "^1.0.10",
+    "ng-socket-io": "0.1.11",
     "ng2-ckeditor": "1.1.9",
     "ng2-comment": "0.0.9",
     "ng2-file-input": "^1.0.0",
@@ -74,14 +76,14 @@
     "roboto-fontface": "0.8.0",
     "rxjs": "5.5.0",
     "socicon": "3.0.5",
+    "socket.io-client": "^1.7.3",
+    "socketio": "^1.0.0",
     "tether": "1.4.0",
     "tinymce": "4.5.7",
     "typeface-exo": "0.0.22",
     "web-animations-js": "2.2.5",
     "winston": "^2.1.1",
-    "zone.js": "0.8.18",
-    "socket.io-client": "^1.7.3",
-    "socketio": "^1.0.0"
+    "zone.js": "0.8.18"
   },
   "devDependencies": {
     "@angular/cli": "1.4.9",
