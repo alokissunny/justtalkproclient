@@ -164,10 +164,10 @@ export class HeaderComponent implements OnInit, OnChanges {
   menuClick(event) {
     if (event.title === 'Log out') {
       this.authenticationService.logout();
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/pages/login');
     }
     if (event.title === 'Login') {
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/pages/login');
     }
     if (event.title === 'Profile') {
       this.router.navigateByUrl('/pages/profile/me');

@@ -8,6 +8,7 @@ export class SocketIOAdapter extends ChatAdapter
     private socket: Socket;
     private http: Http;
     private userId: string;
+    catFilter:string;
 
     constructor(userId: string, socket: Socket, http: Http) {
         super();
@@ -15,13 +16,13 @@ export class SocketIOAdapter extends ChatAdapter
         this.http = http;
         this.userId = userId;
 
-        this.InitializeSocketListerners();  
+        this.InitializeSocketListerners();
     }
 
     listFriends(): Observable<User[]> {
         // List connected users to show in the friends list
         // Sending the userId from the request body as this is just a demo 
-        return this.http.post("/listFriends", { userId: this.userId })
+        return this.http.post("/listFriends", { userId: this.userId , catFilter : this.catFilter})
         .map((res:Response) => res.json())
         //...errors if any
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));

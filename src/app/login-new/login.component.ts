@@ -7,7 +7,7 @@ import { User } from '../_models/user';
 import { GoogleService } from '../_services/google.service';
 @Component({
     moduleId: module.id,
-    templateUrl: 'login.component.html',
+    templateUrl: 'login.component1.html',
     styleUrls: ['./login.scss'],
 })
 

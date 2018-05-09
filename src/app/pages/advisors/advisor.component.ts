@@ -73,7 +73,7 @@ export class AdvisorComponent implements OnInit {
     this.currentUserInfo.username = this.username;
     this.currentUserInfo.displayName = this.userService.getCurrentUser().firstName;
     this.currentUserInfo.isExpert = this.userService.isLoginUserAdvisor();
-    //this.currentUserInfo.
+    this.currentUserInfo.expertCat = this.cat;
     this.socket.emit("join", this.currentUserInfo);
   }
 
