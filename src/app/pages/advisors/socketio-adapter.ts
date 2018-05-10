@@ -8,6 +8,7 @@ export class SocketIOAdapter extends ChatAdapter
     private socket: Socket;
     private http: Http;
     private userId: string;
+    username: string; 
     catFilter:string;
 
     constructor(userId: string, socket: Socket, http: Http) {
@@ -22,7 +23,7 @@ export class SocketIOAdapter extends ChatAdapter
     listFriends(): Observable<User[]> {
         // List connected users to show in the friends list
         // Sending the userId from the request body as this is just a demo 
-        return this.http.post("/listFriends", { userId: this.userId , catFilter : this.catFilter})
+        return this.http.post("/listFriends", { userId: this.userId , catFilter : this.catFilter , username : this.username})
         .map((res:Response) => res.json())
         //...errors if any
         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -48,7 +49,7 @@ export class SocketIOAdapter extends ChatAdapter
       this.socket.on("friendsListChanged", (usersCollection: Array<any>) => {
         // Handle the received message to ng-chat
         this.onFriendsListChanged(usersCollection.filter(x => {
-            if(x.id != this.userId && x.cat === this.catFilter)
+            if(x.id != this.userId && x.cat == this.catFilter && x.displayName != this.username)
             return true;
             return false;
         }));

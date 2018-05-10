@@ -49,7 +49,9 @@ export class AdvisorComponent implements OnInit {
       this.onloading = true;
     })
     this.username = this.userService.getCurrentUser().username;
-    this.joinRoom();
+    if(this.userService.isSessionActive()) {
+      this.joinRoom();
+    }
   }
   getAdvisors() {
     this.onloading = true;
@@ -83,6 +85,7 @@ export class AdvisorComponent implements OnInit {
       // Initializing the chat with the userId and the adapter with the socket instance
       this.adapter = new SocketIOAdapter(userId, this.socket, this.http);
       this.adapter.catFilter = this.cat;
+      this.adapter.username = this.username;
       this.userId = userId;
     });
   }
