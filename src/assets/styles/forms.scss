@@ -1,0 +1,29 @@
+.formBlock {
+	&.horizontal {
+		display: table;
+		.inner {
+			display: table-row;
+			.label {
+				display: table-cell;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 13px;
+				padding: 5px;
+			}
+			.formFeild {
+				display: table-cell;
+				padding: 5px;
+				input {
+					font-family: Arial, Helvetica, sans-serif;
+					font-size: 13px;
+					width: 100%;
+				}
+			}
+		}
+	}
+	.formTitle {
+		margin-bottom: 15px;
+		font-size: 13px;
+		color: $black;
+		font-weight: bold;
+	}
+}

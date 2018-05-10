@@ -6,21 +6,19 @@
       </td>
     </tr>
     <tr>
-    <button *ngIf="!advisors.length  && !onloading" style="margin: 10px;bottom: 80px;
-    background: azure;
-    cursor: pointer;
-    border-radius: 2px;
-    border: aquamarine;" class="ion-university" (click) = "expertLogin()" >Be Our Expert</button>
+    <button *ngIf="!advisors.length  && !onloading" class="expert_btn" (click) = "expertLogin()" >Be Our Expert</button>
     </tr>
-    <div style=" margin-left: 40%; margin-top: 20%;" *ngIf="(advisors.length === 0 ) && !onloading">Sorry No Expert ! <button 
-     style="background: azure;
-    cursor: pointer;
-    border-radius: 2px;
-    border: aquamarine;" class="ion-university" (click) = "expertLogin()" >Be Our Expert</button></div>
-     <div *ngIf="onloading" style="    padding-left: 40%;">
-       <span style="    margin-left: -10%;">Fetching Advisors Near Your Location!</span>
-       <div style= "margin-top: 50px;" class="loader"></div>
-     </div>
+    <div style=" margin-left: 40%; margin-top: 20%;" *ngIf="(advisors.length === 0 ) && !onloading">
+      Sorry No Expert !
+      <button class="expert_btn2"
+      (click) = "expertLogin()" >
+        Be Our Expert
+      </button>
+    </div>
+    <div *ngIf="onloading" style="padding-left: 40%;">
+      <span style="margin-left: -10%;">Fetching Advisors Near Your Location!</span>
+      <div style= "margin-top: 50px;" class="loader"></div>
+    </div>
   </table>
 </div>
 <!--<app-chat [hidden]="showChat" (showChat)="showChat = false" [advisorId]='advisorId' (removeChat)="remove()"></app-chat>-->

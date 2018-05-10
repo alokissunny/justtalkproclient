@@ -1,0 +1,445 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	background: url("/assets/images/bg-page-2.gif") repeat;
+	font-family: Arial, Helvetica, sans-serif;
+	@include font-size($fontSize14);
+	> .body-content {
+		background: url("/assets/images/bg-top-page.jpg") repeat-x;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table
+}
+
+.clearfix:after { clear: both }
+
+.redArrow {
+  background: url("/assets/images/logo-part-left.png") no-repeat 10% ;
+  width: 270px;
+  height: 224px;
+  position: absolute;
+  top:0;
+  left: -119px;
+}
+
+.alignRight {
+	float: right;
+}
+
+.alignLeft {
+	float: left;
+}
+
+.l_space {
+	letter-spacing: 0.5;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.relative {
+	position: relative;
+}
+
+.center {
+	text-align: center;
+}
+
+.image_size {
+	max-height: 248px;
+	max-width: 248px;
+}
+
+.right {
+	text-align: right;
+}
+
+.full_width {
+	width: 100%;
+}
+
+.inline_block {
+	display: inline-block;
+}
+
+.pointer {
+	cursor: $pointer;
+}
+
+.error {
+	color: $tango;
+	margin: 5px 0;
+	position: relative;
+
+	&.list{
+		&:before {
+	    	content: '';
+	    	border-radius: 50%;
+	    	background: $tango;
+	    	content: "";
+			width: 2px;
+			border: 1px solid;
+			height: 2px;
+			position: absolute;
+			top: 4px;
+			left: -12px;
+    	}
+    }
+}
+
+.tabs_container {
+	min-height: 500px;
+}
+
+.border_solid {
+	border: $borderSolid;
+}
+
+.border_red {
+	border : $borderSolid $red;
+}
+
+.btn_size1 {
+	min-width: 100px;
+}
+
+.rounded_5 {
+	border-radius: $rounded5;
+}
+
+.mandatory {
+    color: $tango;
+}
+
+.caps {
+	text-transform: uppercase;
+}
+
+.table {
+	display: table;
+}
+
+.row {
+	display: table-row;
+}
+
+.cell {
+	display: table-cell;
+}
+
+.textarea {
+	width: 100%;
+	min-height: 100px;
+	padding: 2px;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.form_input {
+	@include font-size($fontSize13);
+    height: 19px;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.pop_footer {
+	padding: 10px;
+    border-top: 1px solid #d8a36a;
+}
+
+/*----------------------------------------------
+Classes for Font-size
+----------------------------------------------*/
+
+.fs10 {
+	@include font-size($fontSize10);
+}
+
+.fs11 {
+	@include font-size($fontSize11);
+}
+
+.fs12 {
+	@include font-size($fontSize12);
+}
+
+.fs13 {
+	@include font-size($fontSize13);
+}
+
+.fs14 {
+	@include font-size($fontSize14);
+}
+
+.fs15 {
+	@include font-size($fontSize15);
+}
+
+.fs16 {
+	@include font-size($fontSize16);
+}
+
+.fs17 {
+	@include font-size($fontSize17);
+}
+
+.fs18 {
+	@include font-size($fontSize18);
+}
+
+.fs20 {
+	@include font-size($fontSize20);
+}
+
+.fs22 {
+	@include font-size($fontSize22);
+}
+
+.fs24 {
+	@include font-size($fontSize24);
+}
+
+.fs25 {
+	@include font-size($fontSize25);
+}
+
+.fs30 {
+	@include font-size($fontSize30);
+}
+
+/*----------------------------------------------
+Classes for Padding
+----------------------------------------------*/
+
+.p05 {
+	padding: $space05;
+}
+.pl05 {
+	padding-left: $space05;
+}
+.pr05 {
+	padding-right: $space05;
+}
+.pt05 {
+	padding-top: $space05;
+}
+.pb05 {
+	padding-bottom: $space05;
+}
+
+.p1 {
+	padding: $space10;
+}
+.pl1 {
+	padding-left: $space10;
+}
+.pr1 {
+	padding-right: $space10;
+}
+.pt1 {
+	padding-top: $space10;
+}
+.pb1 {
+	padding-bottom: $space10;
+}
+
+.p2 {
+	padding: $space20;
+}
+.pl2 {
+	padding-left: $space20;
+}
+.pr2 {
+	padding-right: $space20;
+}
+.pt2 {
+	padding-top: $space20;
+}
+.pb2 {
+	padding-bottom: $space20;
+}
+
+.p3 {
+	padding: $space30;
+}
+.pl3 {
+	padding-left: $space30;
+}
+.pr3 {
+	padding-right: $space30;
+}
+.pt3 {
+	padding-top: $space30;
+}
+.pb3 {
+	padding-bottom: $space30;
+}
+
+/*----------------------------------------------
+Classes for Margin
+----------------------------------------------*/
+
+.m05 {
+	margin: $space05;
+}
+.ml05 {
+	margin-left: $space05;
+}
+.mr05 {
+	margin-right: $space05;
+}
+.mt05 {
+	margin-top: $space05;
+}
+.mb05 {
+	margin-bottom: $space05;
+}
+
+.m1 {
+	margin: $space10;
+}
+.ml1 {
+	margin-left: $space10;
+}
+.mr1 {
+	margin-right: $space10;
+}
+.mt1 {
+	margin-top: $space10;
+}
+.mb1 {
+	margin-bottom: $space10;
+}
+
+.m2 {
+	margin: $space20;
+}
+.ml2 {
+	margin-left: $space20;
+}
+.mr2 {
+	margin-right: $space20;
+}
+.mt2 {
+	margin-top: $space20;
+}
+.mb2 {
+	margin-bottom: $space20;
+}
+
+.m3 {
+	margin: $space30;
+}
+.ml3 {
+	margin-left: $space30;
+}
+.mr3 {
+	margin-right: $space30;
+}
+.mt3 {
+	margin-top: $space30;
+}
+.mb3 {
+	margin-bottom: $space30;
+}
+
+/*----------------------------------------------
+Classes for Color
+----------------------------------------------*/
+
+.metallic_bronze {
+	color: $metallicBronze;
+}
+
+.brown {
+	color: $brown;
+}
+
+.maroon {
+	color: $maroon;
+}
+
+.black {
+	color: $black;
+}
+
+.blue {
+	color: $blue;
+}
+
+.white {
+	color: $white;
+}
+
+.red {
+	color: $red;
+}
+
+/*----------------------------------------------
+Classes for background color
+----------------------------------------------*/
+
+.bg_dark_blue {
+	background: $darkBlue;
+}
+
+.bg_lightBrown {
+	background: $lightBrown;
+}
+
+.bg_grad1 {
+	background: linear-gradient(to bottom, $linen, $linen, $lightBrown);
+}
+
+/*----------------------------------------------
+Responsive Css
+----------------------------------------------*/
+
+@include screen(tablet) {
+	.redArrow {
+	    background-size: contain;
+	    width: 240px;
+	    height: 194px;
+	    left: -40px;
+	}
+}
+
+@include screen(mobile) {
+	.redArrow {
+	    background-size: contain;
+		width: 160px;
+		height: 135px;
+		left: -30px;
+	}
+}
