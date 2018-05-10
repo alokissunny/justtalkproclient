@@ -45,9 +45,13 @@ export class SocketIOAdapter extends ChatAdapter
         this.onMessageReceived(messageWrapper.user, messageWrapper.message);
       });
 
-      this.socket.on("friendsListChanged", (usersCollection: Array<User>) => {
+      this.socket.on("friendsListChanged", (usersCollection: Array<any>) => {
         // Handle the received message to ng-chat
-        this.onFriendsListChanged(usersCollection.filter(x => x.id != this.userId));
+        this.onFriendsListChanged(usersCollection.filter(x => {
+            if(x.id != this.userId && x.cat === this.catFilter)
+            return true;
+            return false;
+        }));
       });
     }
 }

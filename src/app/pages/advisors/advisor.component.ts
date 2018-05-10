@@ -65,7 +65,7 @@ export class AdvisorComponent implements OnInit {
   userId: string;
   username: string;
 
-  public adapter: ChatAdapter;
+  public adapter: SocketIOAdapter;
 
 
 
@@ -81,6 +81,7 @@ export class AdvisorComponent implements OnInit {
     this.socket.on("generatedUserId", (userId) => {
       // Initializing the chat with the userId and the adapter with the socket instance
       this.adapter = new SocketIOAdapter(userId, this.socket, this.http);
+      this.adapter.catFilter = this.cat;
       this.userId = userId;
     });
   }
