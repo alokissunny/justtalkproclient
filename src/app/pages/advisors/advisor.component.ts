@@ -7,6 +7,7 @@ import { SocketIOAdapter } from './socketio-adapter'
 import { Socket } from 'ng-socket-io';
 import { Http } from '@angular/http';
 import { ChatModel} from './ChatModel';
+import {CATMAP} from '../../constants';
 
 @Component({
   selector: 'advisors',
@@ -84,5 +85,8 @@ export class AdvisorComponent implements OnInit {
       this.adapter.catFilter = this.cat;
       this.userId = userId;
     });
+  }
+  getTitle(){
+    return CATMAP[this.cat]+" Advisors"
   }
 }
