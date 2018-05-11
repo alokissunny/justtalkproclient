@@ -1,3 +1,6 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
 /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
 ---------------------------------------
 */
@@ -42,10 +45,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc', end
   width: 640px;
 left: 50%;
 margin-left: -320px;
-  
 }
 
-.cont_back_info {  
+.cont_back_info {
 position: relative;
   float: left;
   width: 640px;
@@ -60,40 +62,40 @@ box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
   position: absolute;
   overflow: hidden;
   top:100px;
-left: 0px;
+  left: 0px;
   width: 320px;
   height: 280px;
   background-color: #eee;
--webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .cont_forms_active_login {
-box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-  height: 420px;  
-top:20px;
-left: 0px;
+  box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
+  height: 420px;
+  top:20px;
+  left: 0px;
   -webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 
 }
 
 .cont_forms_active_sign_up {
-box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-  height: 420px;  
-top:20px;
-left:320px;
--webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
+  box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
+  height: 420px;
+  top:20px;
+  left:320px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .cont_img_back_grey {
@@ -3804,9 +3806,15 @@ iframe {
 	bottom: 0px;
 }
 
+@include media-breakpoint-down(sm) {
+  .col_md_login {
+    float: none;
+  }
 
-
-
+  .col_md_sign_up {
+    float: none;
+  }
+}
 
 
 

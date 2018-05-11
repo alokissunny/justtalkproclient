@@ -1,5 +1,5 @@
 <div>
-  <table style="width: 100%">
+  <table class="table">
     <tr   *ngFor = "let advisor of advisors;index as i; even as isEven; odd as isOdd">
       <td *ngIf="!onloading" class="card">
         <app-advisor-card (refresh)="getAdvisors()" (chat)="chat($event)" [advisor] = advisor></app-advisor-card>

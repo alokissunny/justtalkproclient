@@ -1,3 +1,6 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
 .card {
   height: 200px;
   border-style: solid;
@@ -43,4 +46,10 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@include media-breakpoint-down(sm) {
+  table,tbody, tr {
+    display: block;
+  }
 }

@@ -1,3 +1,6 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+
 /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
 ---------------------------------------
 */
@@ -356,4 +359,14 @@ font-weight: 400;
     float: left;
     margin: 10px;
 margin-left: 30px;
+}
+
+@include media-breakpoint-down(sm) {
+  .col_md_login {
+    float: none;
+  }
+
+  .col_md_sign_up {
+    float: none;
+  }
 }
