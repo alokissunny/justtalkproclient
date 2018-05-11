@@ -49,9 +49,9 @@ export class AdvisorComponent implements OnInit {
       this.onloading = true;
     })
     this.username = this.userService.getCurrentUser().username;
-    if(this.userService.isSessionActive()) {
+   // if(this.userService.isSessionActive()) {
       this.joinRoom();
-    }
+    //}
   }
   getAdvisors() {
     this.onloading = true;
@@ -74,7 +74,7 @@ export class AdvisorComponent implements OnInit {
 
   public joinRoom(): void {
     this.currentUserInfo.username = this.username;
-    this.currentUserInfo.displayName = this.userService.getCurrentUser().firstName;
+    this.currentUserInfo.displayName = this.userService.isSessionActive()?  this.userService.getCurrentUser().firstName  : "guest";
     this.currentUserInfo.isExpert = this.userService.isLoginUserAdvisor();
     this.currentUserInfo.expertCat = this.cat;
     this.socket.emit("join", this.currentUserInfo);
