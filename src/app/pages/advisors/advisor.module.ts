@@ -12,10 +12,10 @@ import {ContactCardComponent} from '../../components/contact-card/contact-card.c
 import {ChatComponent} from '../../components/chat/chat.component';
 import {ChatService} from '../../components/chat/chat.service';
 import { NgChatModule } from 'ng-chat';
-
+import {appConfig} from '../../app.config';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 
-const config: SocketIoConfig = { url: 'http://localhost:4000', options: {} };
+const config: SocketIoConfig = { url: appConfig.apiUrl, options: {} };
 
 @NgModule({
   imports: [
