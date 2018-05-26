@@ -145,7 +145,7 @@
             <label for="lname">Address</label>
           </div>
           <div class="col-75">
-            <input [disabled]="!editEnabled" type="text" maxlength="50" id="address" [(ngModel)]="user.location" name="address" placeholder="Address">
+            <input [disabled]="!editEnabled" type="text"  id="address" [(ngModel)]="user.location" name="address" placeholder="Address">
           </div>
         </div>
         <div class="row">
@@ -177,7 +177,7 @@
             <label for="subject">Bio</label>
           </div>
           <div class="col-75">
-            <textarea [disabled]="!editEnabled" id="subject" maxlength="200" [(ngModel)]="user.basicInfo" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <textarea [disabled]="!editEnabled" id="subject"  [(ngModel)]="user.basicInfo" name="subject" placeholder="Write something.." style="height:200px"></textarea>
           </div>
         </div>
         <div *ngIf="isAdvisor && editEnabled" class="row">
