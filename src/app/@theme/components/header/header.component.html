@@ -18,7 +18,9 @@
     <nb-search type="rotate-layout" tag="location"  placeholder="enter location" ></nb-search>
   </nb-action>-->
   <nb-action [style.visibility]="showloc ? 'visible' : 'hidden'" class="control-item">
-    <div class="col-lg-7">
+    <div class="col-lg-7" style="margin-top: 10px;
+    font-size: larger;
+    cursor: pointer;">
       <pro-filter (onSearch)="locSearch($event)"></pro-filter>
       <!--<input autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search type="text" [(ngModel)]="location" name="location"
         id="location" placeholder="location" style="height: 30px;

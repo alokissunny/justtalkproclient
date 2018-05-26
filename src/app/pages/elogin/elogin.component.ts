@@ -28,7 +28,7 @@ export class eLoginComponent implements OnInit {
     isDuplicatesPrevented = false;
     isCloseButton = true;
     isSignUp = true;
-    emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+    // emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
     constructor(
         private route: ActivatedRoute, private userService: UserService,
@@ -62,9 +62,9 @@ export class eLoginComponent implements OnInit {
         this.toasterService.popAsync(toast);
     }
     signUp(form: NgForm) {
-         if (form.invalid) {
-             return;
-        }
+        //  if (form.invalid) {
+        //      return;
+        // }
         if (this.validation()) {
             this.model.email = this.model.username;
             this.model.currentRating = constant.BASE_RATE;
@@ -72,14 +72,12 @@ export class eLoginComponent implements OnInit {
             this.userService.createAdvisor(this.model)
                 .subscribe(
                 data => {
-                    //this.alertService.success('Registration successful', true);
                     this.showToast(this.type, this.content);
                     this.isSignUp = false;
                 },
                 error => {
                     this.showToast(this.type, this.contentFail);
-                    //this.alertService.error(error);
-                    this.loading = false;
+                                        this.loading = false;
                 });
         }
     }
