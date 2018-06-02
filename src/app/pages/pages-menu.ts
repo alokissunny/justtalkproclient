@@ -4,7 +4,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Home',
     icon: 'nb-home',
-    link: '/pages/dashboard',
+    link: '/pages/advisor/fin',
     home: true,
   },
   //   {
@@ -42,7 +42,7 @@ export const MENU_ITEMS_ADVISOR: NbMenuItem[] = [
   {
     title: 'Home',
     icon: 'nb-home',
-    link: '/pages/dashboard',
+    link: '/pages/advisor/fin',
     home: true,
   },
     {

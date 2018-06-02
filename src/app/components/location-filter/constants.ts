@@ -12,101 +12,91 @@ export const GGN = [
 'DLF Phase 5' ,
 'Dwarka Expressway' ,
 'Farukh Nagar' ,
-// Garhi Harsaru
-// Golf Course Extn
-// Golf Course Road
-// Gurgaon-Faridabad Road
-// Gwal Pahari
-// Jhajjar Road
-// Khandsa road
-// Manesar
-// Mankrola
-// Maruti Kunj
-// MG Road
-// New Gurgaon
-// NH 8
-// Nirvana Country
-// Palam Vihar
-// Palam Vihar Extension
-// Pataudi
-// Patel Nagar
-// Sector 67A
-// Sector M-1
-// Sector M-1 A
-// Sector M-1 B
-// Sector M-1 C
-// Sector M-1 D
-// Sector M-10
-// Sector M-11
-// Sector M-12
-// Sector M-13
-// Sector M-14
-// Sector M-15
-// Sector M-16
-// Sector M-3
-// Sector M-4
-// Sector M-5
-// Sector M-6
-// Sector M-7
-// Sector M-8
-// Sector M-9
-// Sector-1
-// Sector-10
-// LOCALITY
-// Sector-10 A
-// Sector-100
-// Sector-101
-// Sector-102
-// Sector-103
-// Sector-103A
-// Sector-104
-// Sector-105
-// Sector-106
-// Sector-107
-// Sector-108
-// Sector-109
-// Sector-11
-// Sector-110
-// Sector-110 A
-// Sector-111
-// Sector-112
-// Sector-113
-// Sector-114
-// Sector-115
-// Sector-12
-// Sector-12 A
-// Sector-13
-// Sector-14
-// Sector-15
-// Sector-16
-// Sector-17
-// Sector-18
-// Sector-19
-// Sector-2
-// Sector-20
-// Sector-21
-// Sector-22
-// Sector-23
-// Sector-23 A
-// Sector-24
-// Sector-25
-// Sector-26
-// Sector-26 A
-// Sector-27
-// Sector-28
-// Sector-29
-// Sector-3
-// Sector-3 A
-// Sector-30
-// Sector-31
-// Sector-32
-// Sector-33
-// Sector-34
-// Sector-35
-// Sector-36
-// Sector-37
-// Sector-37 A
-// LOCALITY
+ 'Garhi Harsaru',
+'Golf Course Extn',
+' Golf Course Road',
+'Gurgaon-Faridabad Road',
+'Gwal Pahari',
+'Jhajjar Road',
+'Khandsa road',
+'Manesar',
+'Mankrola',
+'Maruti Kunj',
+'MG Road',
+'New Gurgaon',
+'NH 8',
+'Nirvana Country',
+'Palam Vihar',
+'Palam Vihar Extension',
+'Pataudi',
+'Patel Nagar',
+'Sector 67A',
+'Sector M-1',
+'Sector M-1 A',
+'Sector M-1 B',
+'Sector M-1 C',
+'Sector M-1 D',
+'Sector M-10',
+'Sector M-11',
+'Sector M-12',
+'Sector M-13',
+'Sector M-14',
+'Sector-1',
+'Sector-10',
+'LOCALITY',
+'Sector-10 A',
+'Sector-100',
+'Sector-101',
+'Sector-102',
+'Sector-103',
+'Sector-103A',
+'Sector-104',
+'Sector-105',
+'Sector-106',
+'Sector-107',
+'Sector-108',
+'Sector-109',
+'Sector-11',
+'Sector-110',
+'Sector-110 A',
+'Sector-111',
+'Sector-112',
+'Sector-113',
+'Sector-114',
+'Sector-115',
+'Sector-12',
+'Sector-12 A',
+'Sector-13',
+'Sector-14',
+'Sector-15',
+'Sector-16',
+'Sector-17',
+'Sector-18',
+'Sector-19',
+'Sector-2',
+'Sector-20',
+'Sector-21',
+'Sector-22',
+'Sector-23',
+'Sector-23 A',
+'Sector-24',
+'Sector-25',
+'Sector-26',
+'Sector-26 A',
+'Sector-27',
+'Sector-28',
+'Sector-29',
+'Sector-3',
+'Sector-3 A',
+'Sector-30',
+'Sector-31',
+'Sector-32',
+'Sector-33',
+'Sector-34',
+'Sector-35',
+'Sector-36',
+'Sector-37',
+'Sector-37 A',
 // Sector-37 B
 // Sector-37 C
 // Sector-37 D
@@ -165,36 +155,36 @@ export const GGN = [
 // Sector-81
 // Sector-81 A
 // Sector-82
-// Sector-82 A
-// Sector-83
-// Sector-84
-// Sector-85
-// Sector-86
-// Sector-87
-// Sector-88
-// Sector-88A
-// Sector-88B
-// Sector-89
-// Sector-89A
-// Sector-9
-// Sector-9 A
-// Sector-9 B
-// Sector-90
-// Sector-91
-// Sector-92
-// Sector-93
-// Sector-94
-// Sector-95
-// Sector-95A
-// Sector-95B
-// Sector-96
-// Sector-97
-// Sector-98
-// Sector-99
-// Sector-99A
-// Shivpuri
-// Sohna
-// Sohna Road
+// // Sector-82 A
+// // Sector-83
+// // Sector-84
+// // Sector-85
+// // Sector-86
+// // Sector-87
+// // Sector-88
+// // Sector-88A
+// // Sector-88B
+// // Sector-89
+// // Sector-89A
+// // Sector-9
+// // Sector-9 A
+// // Sector-9 B
+// // Sector-90
+// // Sector-91
+// // Sector-92
+// // Sector-93
+// // Sector-94
+// // Sector-95
+// // Sector-95A
+// // Sector-95B
+// // Sector-96
+// // Sector-97
+// // Sector-98
+// // Sector-99
+// // Sector-99A
+// // Shivpuri
+'Sohna',
+'Sohna Road',
 // Sohna Sector-11
 // Sohna Sector-14
 // Sohna Sector-17
@@ -252,77 +242,57 @@ export const DEL = [
 'Bharat Nagar' ,
 'Bhikaji Cama Place' ,
 'Bhogal' ,
-// Bijwasan
-// Bindapur
-// Brahmpuri
-// Budh Vihar
-// Burari
-// C R Park
-// Central Secretariat
-// Chaman Vihar
-// Chanakyapuri
-// Chandni Chowk
-// Chawri Bazar
-// Chhatarpur
-// Chhawla
-// Chirag Delhi
-// Chittaranjan Park
-// Chokhandi
-// Civil Lines
-// Connaught Place
-// Dabri
-// Dakshinpuri
-// Daryaganj
-// Dashrath Puri
-// Daya Basti
-// Deenpur
-// Defence Colony
-// Delhi Cantoment
-// Dera Mandi
-// Devli
-// Dhaula Kuan
-// Dilshad Garden
-// Dummy
+'Bijwasan',
+'Bindapur',
+'Brahmpuri',
+'Budh Vihar',
+'Burari',
+'C R Park',
+'Central Secretariat',
+'Chaman Vihar',
+'Chanakyapuri',
+'Chandni Chowk',
+'Chawri Bazar',
+'Chhatarpur',
+'Chhawla',
+'Chirag Delhi',
+'Chittaranjan Park',
+'Chokhandi',
+'Civil Lines',
+'Connaught Place',
+'Dabri',
+'Dakshinpuri',
+'Daryaganj',
+'Dashrath Puri',
+'Daya Basti',
+'Deenpur',
+'Defence Colony',
+'Delhi Cantoment',
+'Dera Mandi',
+'Devli',
+'Dhaula Kuan',
+'Dilshad Garden',
 'Dwarka' ,
-// Dwarka Mor
-// Dwarka Sector 11
-// Dwarka Sector 12
-// Dwarka Sector 13
-// Dwarka Sector 14
-// Dwarka Sector 15
-// Dwarka Sector 16
-// Dwarka Sector 16 A
-// Dwarka Sector 16 B
-// Dwarka Sector 17
-// Dwarka Sector 18
-// Dwarka Sector 19
-// Dwarka Sector 19B
-// Dwarka Sector 2
-// Dwarka Sector 20
-// Dwarka Sector 21
-// Dwarka Sector 22
-// Dwarka Sector 23
-// Dwarka Sector 24
-// Dwarka Sector 26
-// Dwarka Sector 27
-// Dwarka Sector 28
-// Dwarka Sector 3
-// Dwarka Sector 4
-// Dwarka Sector 5
-// Dwarka Sector 6
-// LOCALITY
-// Dwarka Sector 7
-// Dwarka Sector 8
-// Dwarka Sector 9
-// Dwarka Sector-1
-// Dwarka Sector-10
-// East Of Kailash
-// Fateh Nagar
-// Fatehpur Beri
-// Freedom Fighter Enclave
-// G T B Nagar
-// Gagan Vihar
-// Gandhi Nagar
+'Dwarka Mor',
+'Dwarka Sector 11',
+'Dwarka Sector 12',
+'Dwarka Sector 13',
+'Dwarka Sector 14',
+'Dwarka Sector 15',
+'Dwarka Sector 16',
+'Dwarka Sector 16 A',
+'Dwarka Sector 16 B',
+'Dwarka Sector 17',
+'Dwarka Sector 18',
+'Dwarka Sector 19',
+'Dwarka Sector 19B',
+'East Of Kailash',
+'Fateh Nagar',
+'Fatehpur Beri',
+'Freedom Fighter Enclave',
+'G T B Nagar',
+'Gagan Vihar',
+'Gandhi Nagar',
 // Ganesh Nagar
 // Gautam Nagar
 // Geeta Colony
@@ -373,16 +343,16 @@ export const DEL = [
 // Kalkaji
 // Kalu Sarai
 // Kalyan Vihar
-// Kamla Nagar
-// Kanjhawala
-// Kapashera
-// Karala
-// Karampura
-// Karawal Nagar
-// Karkardooma
-// Karol Bagh
-// Kashmiri Gate
-// Katwaria Sarai
+'Kamla Nagar',
+'Kanjhawala',
+'Kapashera',
+'Karala',
+'Karampura',
+'Karawal Nagar',
+'Karkardooma',
+'Karol Bagh',
+'Kashmiri Gate',
+'Katwaria Sarai',
 // Keshavpuram
 // Khajoori Khas
 // Khan Market
@@ -395,9 +365,9 @@ export const DEL = [
 // Kondli
 // Krishna Nagar
 // L Zone
-// Lado Sarai
-// Lajpat Nagar
-// Lakshmi Bai Nagar
+'Lado Sarai',
+'Lajpat Nagar',
+'Lakshmi Bai Nagar',
 // Lal Kuan
 // Lawrence Road
 // Laxmi Nagar
@@ -413,76 +383,76 @@ export const DEL = [
 // Malka Ganj
 // Malviya Nagar
 // Mandawali
-// Mandi Hills
-// Mandi House
-// Manglapuri
-// Mangolpuri
-// Mansarover Garden
-// Matiala
-// Mayapuri
-// Mayur Vihar
+'Mandi Hills',
+'Mandi House',
+'Manglapuri',
+'Mangolpuri',
+'Mansarover Garden',
+'Matiala',
+'Mayapuri',
+'Mayur Vihar',
 // Mayur Vihar Phase 1
 // Mayur Vihar Phase 1 Extension
 // Mayur Vihar Phase 2
 // Mayur Vihar Phase 3
-// Mehrauli
-// Mithapur
-// Model Town
-// Mohan Garden
-// Moti Bagh
-// Moti Nagar
-// Mukherjee Nagar
-// Mukundpur
-// Mundka
-// Munirka
-// Mustafabad
-// Najafgarh
-// Nangal Raya
-// Nangloi
-// Naraina
-// Narela
-// Navjeevan Vihar
-// Nawada
-// Neb Sarai
-// Neeti Bagh
-// Nehru Place
-// New Ashok Nagar
-// New Friends Colony
-// Nilothi
-// Nirman Vihar
-// Nizamuddin
-// Okhla
-// Pahar Ganj
-// Palam
-// Panchsheel Enclave
-// Panchsheel Park
-// Pandav Nagar
-// Paschim Vihar
-// Patel Nagar
-// Patparganj
-// Pira Garhi
-// Pitampura
-// Pragati Maidan
-// Preet Vihar
-// Prem Nagar
-// Pulpahladpur
-// Punjabi Bagh
-// Pushp Vihar
-// Qutub Vihar
-// R K Puram
-// Raj Nagar
-// Raja Garden
-// Rajender Nagar
-// Rajouri Garden
-// Ramesh Nagar
-// Ranaji Enclave
-// Rangpuri
-// Ranhola
-// Rani Bagh
-// Ranjeet Nagar
-// Razapur Khurd
-// Rithala
-// Rohini
+'Mehrauli',
+'Mithapur',
+'Model Town',
+'Mohan Garden',
+'Moti Bagh',
+'Moti Nagar',
+'Mukherjee Nagar',
+'Mukundpur',
+'Mundka',
+'Munirka',
+'Mustafabad',
+'Najafgarh',
+'Nangal Raya',
+'Nangloi',
+'Naraina',
+'Narela',
+'Navjeevan Vihar',
+'Nawada',
+'Neb Sarai',
+'Neeti Bagh',
+'Nehru Place',
+'New Ashok Nagar',
+'New Friends Colony',
+'Nilothi',
+'Nirman Vihar',
+'Nizamuddin',
+'Okhla',
+'Pahar Ganj',
+'Palam',
+'Panchsheel Enclave',
+'Panchsheel Park',
+'Pandav Nagar',
+'Paschim Vihar',
+'Patel Nagar',
+'Patparganj',
+'Pira Garhi',
+'Pitampura',
+'Pragati Maidan',
+'Preet Vihar',
+'Prem Nagar',
+'Pulpahladpur',
+'Punjabi Bagh',
+'Pushp Vihar',
+'Qutub Vihar',
+'R K Puram',
+'Raj Nagar',
+'Raja Garden',
+'Rajender Nagar',
+'Rajouri Garden',
+'Ramesh Nagar',
+'Ranaji Enclave',
+'Rangpuri',
+'Ranhola',
+'Rani Bagh',
+'Ranjeet Nagar',
+'Razapur Khurd',
+'Rithala',
+'Rohini',
 // Rohini Extension
 // Rohini Sector 1
 // Rohini Sector 10
@@ -521,23 +491,23 @@ export const DEL = [
 // Rohini Sector-36
 // Rohini Sector-37
 // Roop Nagar
-// Sadar bazar
+' Sadar bazar',
 // Sadiq Nagar
 // Safdarjung Development Area
 // Safdarjung Enclave
 // Sagar Pur
 // Sainik Farm
-// Saket
-// Sangam Vihar
-// Sant Nagar
-// Sarai Kale Khan
-// Sarai Rohilla
-// Sarita Vihar
-// Sarojini Nagar
-// Satbari
-// Savita Vihar
-// Savitri Nagar
-// Sawda
+'Saket',
+'Sangam Vihar',
+'Sant Nagar',
+'Sarai Kale Khan',
+'Sarai Rohilla',
+'Sarita Vihar',
+'Sarojini Nagar',
+'Satbari',
+'Savita Vihar',
+'Savitri Nagar',
+'Sawda',
 // Seelampur
 // Seemapuri
 // Shadipur
@@ -646,8 +616,8 @@ export const NOIDA = [
 'Sector-14 A' ,
 'Sector-140' ,
 'LOCALITY' ,
-'Sector-140 A' 
-// Sector-141
+'Sector-140 A' ,
+'Sector-141',
 // Sector-142
 // Sector-143
 // Sector-143 A

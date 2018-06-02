@@ -38,7 +38,7 @@ const routes: Routes = [{
   },
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'advisor/fin',
     pathMatch: 'full',
   }
   ],

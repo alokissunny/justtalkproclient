@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   place: any;
   userMenu = [{ title: 'Login' }];
   location = '';
-  showloc = false;
+  showloc = true;
 
   constructor(private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit, OnChanges {
     this.router.events
       //.filter(event => event instanceof NavigationStart)
       .subscribe((event) => {
-        if (((event as any).url ) && (event as any).url.indexOf('/pages/advisor/') != -1) {
+        if (((event as any).url ) && (event as any).url.indexOf('/pages/advisor/') !== -1) {
           this.showloc = true;
         } else {
           this.showloc = false;
@@ -72,6 +72,7 @@ export class HeaderComponent implements OnInit, OnChanges {
     //   });
     // });
     // this.autoComplete();
+    this.toggleSidebar();
   }
   locSearch (evt) {
     let address = evt.city + ' ' + evt.loc;

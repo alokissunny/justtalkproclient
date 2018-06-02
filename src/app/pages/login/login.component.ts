@@ -8,7 +8,7 @@ import { GoogleService } from '../../_services/google.service';
 @Component({
     moduleId: module.id,
     templateUrl: 'login.component.html',
-    styleUrls: ['./login.scss'],
+    styleUrls: ['./login.component.scss'],
 })
 
 export class LoginComponent implements OnInit {

@@ -1,7 +1,4 @@
-  <!--<div class="cotn_principal">
-<div class="cont_centrar">-->
-
-  <div class="cont_login">
+<!--<div class="cont_login">
 <div class="cont_info_log_sign_up">
       <div class="col_md_login">
 <div class="cont_ba_opcitiy">
@@ -35,7 +32,7 @@
        <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
        </div>
  <div class="cont_form_login">
-<!--<a href="#" (click)="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>-->
+
    <h2>LOGIN</h2>
  <input type="text" placeholder="username" [(ngModel)]="model.username"/>
 <input type="password" placeholder="Password" [(ngModel)]="model.password" />
@@ -43,14 +40,14 @@
   </div>
   
    <div class="cont_form_sign_up">
-<!--<a href="#" (click)="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>-->
+
      <h2 style="  margin-top: 20px;">SIGN UP</h2>
-<input type="text"  class="field"  placeholder="Email" [(ngModel)]="user.username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
+<input type="text"  class="field"  placeholder="Username" [(ngModel)]="user.username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
 <input type="text"  class="field"  placeholder="FirstName" [(ngModel)]="user.firstName" required/>
 <input type="text" class="field" placeholder="LastName" [(ngModel)]="user.lastName" required />
 <input type="text"  class="field"  placeholder="City" [(ngModel)]="user.city" required />
 <input type="password" class="field"  placeholder="Password" [(ngModel)]="user.password" required/>
-<!--<input type="password" placeholder="Confirm Password" />-->
+
 <button class="btn_sign_up" (click)="cambiar_sign_up()">SIGN UP</button>
  
 
@@ -60,8 +57,71 @@
     
   </div>
  
- <!--</div>
 
-</div>-->
   
-
+-->
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" [(ngModel)]="model.username" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" [(ngModel)]="model.password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				<div class="group">
+					<input type="submit" (click)="cambiar_login()" class="button" value="Sign In">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div>
+			</div>
+			<div class="sign-up-htm">
+				<div class="group">
+					<label for="user" class="label">Email</label>
+					<input id="user" [(ngModel)]="user.username" type="text" class="input">
+				</div>
+        	<div class="group">
+					<label for="user" class="label">First Name</label>
+					<input id="fuser" [(ngModel)]="user.firstName" type="text" class="input">
+				</div>
+        	<div class="group">
+					<label for="user" class="label">Last Name</label>
+					<input id="luser" [(ngModel)]="user.lastName" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" [(ngModel)]="user.password" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">City</label>
+					<!--<input id="city" type="city" [(ngModel)]="user.city" class="input" data-type="password">-->
+          <select class="form-control">
+  <option value="Delhi">Delhi</option>
+  <option value="Gurgaon">Gurgaon</option>
+  <option value="Noida">Noida</option>
+</select>
+				</div>
+				<!--<div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="pass" type="text" class="input">
+				</div>-->
+				<div class="group">
+					<input type="submit" (click)="cambiar_sign_up()" class="button" value="Sign Up">
+				</div>
+				<div class="hr"></div>
+				
+			</div>
+		</div>
+	</div>
+</div>
